@@ -1,0 +1,31 @@
+.MainBody{
+    margin-bottom: 20px;
+    margin: 10px;
+    padding: 2px;
+    background-color: #F5F3F7;
+}
+.card-main{
+    padding: 5px;
+    margin: 20px;
+    border: 2px solid #8B5FBF;
+}
+.card-box{
+    background-color:#D6C6E1;
+    margin-bottom: 20px;
+}
+.colorHeading{
+    background-color: #61398F;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.previewImage{
+    min-height: 200px;
+    min-width: 500px; 
+}
+.card-image{
+    margin-bottom: 20px;
+    border: 2px solid #8B5FBF;
+}
