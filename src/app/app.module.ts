@@ -11,6 +11,7 @@ import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ProductsViewComponent } from './shared/products-view/products-view.component';
 import { ProductViewComponent } from './shared/product-view/product-view.component';
+import { AddManufactureCategoryComponent } from './shared/add-manufacture-category/add-manufacture-category.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductViewComponent } from './shared/product-view/product-view.compone
     ProductPostComponent,
     DashboardComponent,
     ProductsViewComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    AddManufactureCategoryComponent
   ],
   imports: [
     BrowserModule,

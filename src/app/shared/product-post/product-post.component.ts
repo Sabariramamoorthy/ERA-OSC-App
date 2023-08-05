@@ -30,11 +30,7 @@ export class ProductPostComponent {
     ProductImages:  new FormControl('', [Validators.required]),  
   });
 
-  SignInform = new FormGroup({
-    ProductName: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z0-9 ]*')]),
-    ProductPrice: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    Role: new FormControl('', [Validators.required]),
-  });
+  
 
   ProductImages: any[] = [];
   ProductImage: any;
@@ -44,7 +40,6 @@ export class ProductPostComponent {
   FormFlag:boolean=true;
   ProductCatergory :any[]=["Manufacture1","Manufacture2","Manufacture3","Manufacture4"]
 
-  signRole: string = "Select the Role";
   dateNow: any = Date.now();
 
 
@@ -53,37 +48,17 @@ export class ProductPostComponent {
      private _compress:CompressFileService, 
      private _router:Router,
      private _fileService:FirebaseFileService,
-     private location:Location) {
+     private location:Location) 
+     {
      this.ProductForm.invalid
      let now = new Date();
-     let dataUser : DataGet =
-    {
-      basePath: Constant.database.baseName,
-      tableName: Constant.database.signUpData,
-      itemName: ""
-    }
-
-
-     this._db.getAll(dataUser).then(
-      (value) => {
-        const mapped = Object.keys(value).map(key => (value[key]));
-        //console.log(  mapped as Product[]);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-
      this.dateNow = formatDate(now, Constant.dateFormat.string, Constant.dateFormat.lan, Constant.dateFormat.zone)
-  }
+     }
 
   get f() {
     return this.ProductForm.controls;
   }
 
-  get f1() {
-    return this.SignInform.controls;
-  }
 
   compressedImage :any[]=[];
   compressedBlob :any[]=[];
@@ -151,7 +126,7 @@ export class ProductPostComponent {
         let dataInsert: DataInsert =
         {
           basePath: Constant.database.baseName,
-          tableName: Constant.database.signUpData,
+          tableName: Constant.database.productData,
           itemName:this.ProductData.ProductName,
           insertData: this.ProductData
         }
@@ -169,8 +144,6 @@ export class ProductPostComponent {
     this.ProductData = this.ProductForm.value as Product
     this.ProductImage=this.compressedImage[0];
     //console.log(this.ProductData);
-
-
   }
   
   

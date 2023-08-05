@@ -1,1 +1,29 @@
-<p>products-view works!</p>
+<div class="container" >
+    <table class="table mt-3 table-bordered border-light text-black-50" s>
+      <thead class="table-light">
+          <tr>
+              <!-- <th scope="col">Order No</th> -->
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Manufacture</th>
+              <th scope="col">Price Details</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let P of ProductDetails">
+              <td>
+                  <a [routerLink]="['/product', P.ProductName]">{{
+                      P.ProductName
+                      }}</a>
+              </td>
+              <!-- <td>{{ o.CustomerName }}</td> -->
+              <td>{{ P.ProductCatergory }}</td>
+              <td>{{ P.ProductManufacture }}</td>
+              <td>{{ P.ProductPrice }} : {{ P.ProductShipping }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+
+

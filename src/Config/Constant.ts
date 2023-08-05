@@ -7,7 +7,8 @@ export const Constant = {
         baseName: "BusinessManagement",
         signInData: "SignTable",
         signUpData: "SignUpTable",
-        orderData: "OrderTable"
+        orderData: "OrderTable",
+        productData:"ProductTable"
     },
     flag:
     {

@@ -1,0 +1,120 @@
+input:focus ,textarea:focus ,select:focus {
+    outline: 3px solid #00ac69;
+    box-shadow:none;
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  .container {
+    margin-top: -250px;
+    margin-bottom: 50px;
+  }
+  
+  input ,textarea ,select{
+    outline: 2px solid #444ddf;
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 25px;
+    color: #444DDF;
+    box-shadow:  -7px -7px 15px #dfd4fd;
+  }
+  .card-body{
+    background-color: white;
+    border-radius: 25px;
+    color: #444DDF;
+  }
+  
+  .card h3 {
+    color: #6942c8;
+    outline:none;
+    box-shadow:none;
+  
+  }
+  .card input[type="submit"] {
+    background-color:#3850E4;
+    color: white;
+    font-weight: bolder;
+  }
+  
+  input::placeholder ,select::selection,
+  option,
+  option:disabled,
+  select::placeholder,
+  option::selection,
+  input::target-text,
+  select,
+  textarea ,
+  textarea::placeholder 
+  {
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  input ::after{
+    color:  #444DDF;
+  }
+  .error{
+    background-color:  #f4a22b;
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    font-size: small;
+    font-weight: 500;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  input::placeholder ,select::selection,
+  option,
+  select::placeholder,
+  option::selection,
+  input::target-text,
+  select,
+  textarea ,
+  textarea::placeholder
+  {
+    color:  #444DDF;
+    font-weight: 500;
+    font-size: smaller;
+  }
+  input:focus ,textarea:focus ,select:focus {
+    outline: 1.5px solid #00ac69;
+    box-shadow:none;
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  input ,textarea ,select{
+    outline: 1px solid #444ddf;
+    color:  #444DDF;
+    font-weight: 500;
+    font-size: smaller;
+  }
+  
+  .card input[type="submit"] {
+    background-color:#3850E4;
+    color: white;
+    font-weight: bolder;
+    font-size: smaller;
+  }
+    .container {
+      margin-top: -100px;
+      margin-bottom: 50px;
+    }
+  .error{
+    background-color:  #f4a22b;
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    font-size: smaller;
+    font-weight: 500;
+  }
+  
+  
+  }
+  
