@@ -38,7 +38,7 @@
                                     id="ProductCatergory">
                                     <option hidden value="" selected disabled >Select
                                         Product Catergory</option>
-                                    <option *ngFor="let l of ProductCatergory" [value]="l">{{l}}</option>
+                                    <option *ngFor="let l of CategoryDetails" [value]="l.CategoryName">{{l.CategoryName}}</option>
                                 </select>
                                 <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid"
                                     class="error">
@@ -55,7 +55,7 @@
                                     id="ProductManufacture">
                                     <option hidden value="" selected disabled >Select
                                         Product Manufacture</option>
-                                    <option *ngFor="let l of ProductCatergory" [value]="l">{{l}}</option>
+                                    <option *ngFor="let l of ManfactureDetails" [value]="l.ManufactureName">{{l.ManufactureName}}</option>
                                 </select>
                                 <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid"
                                     class="error">

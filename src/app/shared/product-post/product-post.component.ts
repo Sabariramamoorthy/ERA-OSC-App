@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Constant } from 'src/Config/Constant';
 import { errorMessage } from 'src/Config/errorMessage';
 import { DataGet, DataInsert, Fileupload, imageCompress } from 'src/app/models/file-upload.model';
-import { Product, SignIn, SignUp } from 'src/app/models/signin-signup.model';
+import { Category, ConfigData, Manufacture, Product, SignIn, SignUp } from 'src/app/models/signin-signup.model';
 import { CompressFileService } from 'src/app/services/compress-file.service';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 import { FirebaseFileService } from 'src/app/services/firebase-file.service';
@@ -38,8 +38,9 @@ export class ProductPostComponent {
   ProductData !:Product;
 
   FormFlag:boolean=true;
-  ProductCatergory :any[]=["Manufacture1","Manufacture2","Manufacture3","Manufacture4"]
-
+  ManfactureDetails: Manufacture[] = []
+  CategoryDetails: Category[] = []
+  configdetails !:ConfigData;
   dateNow: any = Date.now();
 
 
@@ -51,6 +52,24 @@ export class ProductPostComponent {
      private location:Location) 
      {
      this.ProductForm.invalid
+     let dataUser : DataGet =
+    {
+      basePath: Constant.database.baseName,
+      tableName: Constant.database.ConfigData,
+      itemName: ""
+    }
+    //var result=this._db.getProperty(dataGet);
+    this._db.getAll(dataUser).then(
+      (value) => {
+        this.configdetails = value as ConfigData
+        this.CategoryDetails=this.configdetails.Category;
+        this.ManfactureDetails=this.configdetails.Manufacture;    
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
      let now = new Date();
      this.dateNow = formatDate(now, Constant.dateFormat.string, Constant.dateFormat.lan, Constant.dateFormat.zone)
      }
@@ -100,7 +119,7 @@ export class ProductPostComponent {
   Upload(){
     
     this.ProductData.ProductUploadDate=this.dateNow;
-
+    this.ProductData.ProductName= `${this.ProductData.ProductName}-${this.dateNow.split(" ")[0].replaceAll('-','')}${this.dateNow.split(" ")[1].replaceAll(':','')}`
     const FileUploadPromise: Promise<string>[] = [];
 
     this.compressedBlob.forEach((item, index) => {
@@ -108,7 +127,6 @@ export class ProductPostComponent {
       
       let ProductImageinstance = {
         BasePath: Constant.database.baseName,
-        orderFolder: this.ProductData.ProductName,
         pageName: this.ProductData.ProductCatergory,
         fileName:`${this.ProductData.ProductName}-${index}.png`,
         file: item//file
@@ -135,6 +153,8 @@ export class ProductPostComponent {
           this.ProductForm.reset();
           this.ProductData = this.ProductForm.value as Product
         }
+
+        this._router.navigateByUrl('/product-Views')  
       })
 
     

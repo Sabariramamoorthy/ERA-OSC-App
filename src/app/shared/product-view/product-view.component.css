@@ -1,0 +1,70 @@
+input:focus ,textarea:focus ,select:focus {
+    outline: 3px solid #00ac69;
+    box-shadow:none;
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  .container {
+    /* margin-top: -250px; */
+    margin-bottom: 50px;
+  }
+  
+  input ,textarea ,select{
+    outline: 2px solid #444ddf;
+    color:  #444DDF;
+    font-weight: 500;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 25px;
+    color: #444DDF;
+    box-shadow:  -7px -7px 15px #dfd4fd;
+  }
+  .card-body{
+    background-color: white;
+    border-radius: 25px;
+    color: #444DDF;
+  }
+  
+  h3 {
+    color: #6942c8;
+    outline:none;
+    box-shadow:none; 
+  }
+  
+  p {
+    color: #6942c8;
+    font-weight: 500; 
+    font-size: large;
+    margin: 10px;
+    padding: 5px;
+  }
+  b{
+    color:#ff0000;
+    font-weight: 500; 
+    font-size: large;
+  }
+
+  .previewImage{
+    object-fit:contain;
+    max-height: 400px;
+    min-height: 400px;
+    box-shadow:  none;
+    padding: 20px;
+    border: none;
+    outline: none;
+}
+  
+  
+  @media only screen and (max-width: 600px) {
+ 
+    .container {
+      /* margin-top: -100px; */
+      margin-bottom: 50px;
+    }
+
+ 
+  }
+  

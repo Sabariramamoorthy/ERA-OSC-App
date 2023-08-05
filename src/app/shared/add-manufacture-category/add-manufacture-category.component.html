@@ -1,231 +1,128 @@
 <div class="container">
-    <!--Section: Content-->
-    <section class="dark-grey mb-0 ">
-        <!-- Section heading -->
-        <div  style="text-align: center;align-items: center;margin-top: -10px;">
-            <h2 class="font-weight-bold  text-light ">RESELLER LOGIN</h2>
-        </div>
+  <!--Section: Content-->
+  <section class="dark-grey mb-0 ">
+    <!-- Section heading -->
+    <div style="text-align: center;align-items: center;margin-top: -10px;">
+      <h2 class="font-weight-bold  text-light ">RESELLER LOGIN</h2>
+    </div>
 
-        <!-- Section description -->
-        <!-- <p class="text-center w-responsive mx-auto pb-2 mt-4 bg-light bg-opacity-10 p-2">
+    <!-- Section description -->
+    <!-- <p class="text-center w-responsive mx-auto pb-2 mt-4 bg-light bg-opacity-10 p-2">
             At Iconic Gifts, we specialize in offering a wide range of personalized and customized gift options that are
             sure to impress. Whether you're looking for a stunning photo frame, an exquisite wooden frame, or
             beautifully crafted carvings, we have it all.
         </p> -->
 
-        <!-- Grid row -->
-        <div class="row p-3" style="margin:5px;">
+    <!-- Grid row -->
+    <div class="row p-3" style="margin:5px;">
 
-            <!-- Grid column -->
-            <div class="col-lg-5  mb-4 p-1">
-                <!-- background-color: #ABBA76; -->
-                <!-- Form with header -->
-                <div class="card">
-                    <div class="card-body">
-
-                       
-                            <div class="form-header text-center">
-                                <h3 >SIGN IN</h3>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="UserName"
-                                    id="UserName" 
-                                    type="text" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your User Name"
-                                    >
-                                <div *ngIf="f1['UserName'].touched && f1['UserName'].invalid" class="error">
-                                    <div *ngIf="f1['UserName'].errors && f1['UserName'].errors['required']">* UserName is required.</div>
-                                    <div *ngIf="f1['UserName'].errors && f1['UserName'].errors['minlength']">* UserName should be 8 character.</div>
-                                    <div *ngIf="f1['UserName'].errors && f1['UserName'].errors['pattern']">* UserName should be Only Alpha Numeric.</div>
-                                </div>
-                            </div>
-                            
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="Password"
-                                    id="Password" 
-                                    type="password" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Password"
-                                    >
-                                <div *ngIf="f1['Password'].touched && f1['Password'].invalid" class="error">
-                                    <div *ngIf="f1['Password'].errors && f1['Password'].errors['required']">* Password is required.</div>
-                                    <div *ngIf="f1['UserName'].errors && f1['UserName'].errors['minlength']">* Password should be 6 character.</div>
-                                </div>
-                            </div>
-
-                            
-                            <div class="md-form p-3 shadow-inner" id="inErrorDiv" style="visibility: hidden;display: none;">
-                                <P id="inErrorText" class="error">
-                                </P>
-                            </div>
-                           
-                            <div class="text-center md-form">
-                                <input class="btn btn-light w-25"  type="button" value="Sign In" (click)="signIn()">
-                            </div>
-
-
-
-                    </div>
-                </div>
-
+      <!-- Grid column -->
+      <div class="col-lg-5  mb-4 p-1">
+        <!-- background-color: #ABBA76; -->
+        <!-- Form with header -->
+        <div class="card">
+          <div class="card-body">
+            <div class="form-header text-center">
+              <h3>BRAND & CATEGORY</h3>
             </div>
-
-
-            <div class="col-lg-7 p-1 shadow shadow-sm">
-                <!-- <div id="map-container-section" class="z-depth-1-half map-container-section mb-4">
-                </div> -->
-    
-                <div class="card">
-                    <div class="card-body">
-                        <form [formGroup]="SignUpform" (ngSubmit)="signUp()">
-                            <div class="form-header text-center">
-                                <h3 >SIGN UP</h3>
-                            </div>
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="UserName"
-                                    id="UserName" 
-                                    type="text" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your User Name"
-                                    >
-                                <div *ngIf="f['UserName'].touched && f['UserName'].invalid" class="error">
-                                    <div *ngIf="f['UserName'].errors && f['UserName'].errors['required']">* UserName is required.</div>
-                                    <div *ngIf="f['UserName'].errors && f['UserName'].errors['minlength']">* UserName should be 8 character.</div>
-                                    <div *ngIf="f['UserName'].errors && f['UserName'].errors['pattern']">* UserName should be Only Alpha Numeric.</div>
-                                </div>
-                            </div>
-                            
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="Password"
-                                    id="Password" 
-                                    type="password" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Password"
-                                    >
-                                <div *ngIf="f['Password'].touched && f['Password'].invalid" class="error">
-                                    <div *ngIf="f['Password'].errors && f['Password'].errors['required']">* Password is required.</div>
-                                    <div *ngIf="f['UserName'].errors && f['UserName'].errors['minlength']">* Password should be 6 character.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="ReEnterPassword"
-                                    id="ReEnterPassword" 
-                                    type="ReEnterPassword" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Confirm Your Password"
-                                    >
-                                <div *ngIf="f['ReEnterPassword'].touched && f['ReEnterPassword'].invalid" class="error">
-                                    <div *ngIf="f['ReEnterPassword'].errors && f['ReEnterPassword'].errors['required']">* Confirm Password is required.</div>
-                                    <div *ngIf="f['ReEnterPassword'].errors && f['ReEnterPassword'].errors['minlength']">* Confirm Password should be 6 character.</div>
-                                    <!-- <div *ngif="f['password'].value != f['ReEnterPassword'].value">*Confirm Password does not match</div> -->
-                                </div>
-                            </div>
-
-
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="EmailId"
-                                    id="EmailId" 
-                                    type="text" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Email">
-                                <div *ngIf="f['EmailId'].touched && f['EmailId'].invalid" class="error">
-                                    <div *ngIf="f['EmailId'].errors && f['EmailId'].errors['required']">* Email is required.</div>
-                                    <div *ngIf="f['EmailId'].errors && f['EmailId'].errors['email']">* Please, enter valid email address.</div>
-                                </div>
-                            </div>
-                             
-                            
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="WhatsAppNo"
-                                    id="WhatsAppNo" 
-                                    type="text" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your WhatsApp Number">
-                                <div *ngIf="f['WhatsAppNo'].touched && f['WhatsAppNo'].invalid" class="error">
-                                    <div *ngIf="f['WhatsAppNo'].errors && f['WhatsAppNo'].errors['required']">* WhatsApp number is required.</div>
-                                    <div *ngIf="f['WhatsAppNo'].errors && f['WhatsAppNo'].errors['pattern']">* Please,Enter the Valid WhatsApp Number.</div>   
-                                    <div *ngIf="f['WhatsAppNo'].errors && f['WhatsAppNo'].errors['minlength']">* Please,Enter Minimum of 10 numbers for valid WhatsApp Number.</div> 
-                                    <div *ngIf="f['WhatsAppNo'].errors && f['WhatsAppNo'].errors['maxlength']">* Please,Enter Maximum of 10 numbers for Valid WhatsApp Number.</div>                              
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input 
-                                    formControlName="AlterNateNo"
-                                    id="AlterNateNo" 
-                                    type="text" 
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Alternate Number">
-                                <div *ngIf="f['AlterNateNo'].touched && f['AlterNateNo'].invalid" class="error">
-                                    <div *ngIf="f['AlterNateNo'].errors && f['AlterNateNo'].errors['required']">* AlterNate number is required.</div>
-                                    <div *ngIf="f['AlterNateNo'].errors && f['AlterNateNo'].errors['pattern']">* Please,Enter the Valid Alternate Number.</div>
-                                    <div *ngIf="f['AlterNateNo'].errors && f['AlterNateNo'].errors['minlength']">* Please,Enter Minimum of 10 numbers for Valid Alternate Number.</div> 
-                                    <div *ngIf="f['AlterNateNo'].errors && f['AlterNateNo'].errors['maxlength']">* Please,Enter Maximum of 10 numbers for Valid Alternate Number.</div>                              
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-
-                                <textarea rows="3"
-                                formControlName="FromAddressFormat"
-                                id="FromAddressFormat"
-                                class="form-control rounded-2 hover-shadow border-5 border-light"
-                                placeholder="Enter Your Desired Dispatch Name , Address & Number">
-                                </textarea>
-                                <div *ngIf="f['FromAddressFormat'].touched && f['FromAddressFormat'].invalid" class="error">
-                                    <div *ngIf="f['FromAddressFormat'].errors && f['FromAddressFormat'].errors['required']">* From Address Format number is required.</div>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3 shadow-inner">
-                                <select formControlName="Role"
-                                id="Role"
-                                class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    [(ngModel)]="signRole" id="signRole">
-                                    <option selected disabled [defaultSelected]="signRole">Select the Role</option>
-                                    <option Value="Reseller">Reseller</option>
-                                    <option Value="Editor">Editor</option>
-                                    <option Value="Manufacture">Manufacture</option>
-                                    <option Value="Employee">Employee</option>
-                                </select>
-                                <div *ngIf="f['Role'].touched && f['Role'].invalid" class="error">
-                                    <div *ngIf="f['Role'].errors && f['Role'].errors['required']">* Role is required.</div>                
-                                </div>  
-                            </div>
-
-                            <div class="md-form p-3 shadow-inner" id="ErrorDiv" style="visibility: hidden;display: none;">
-                                <P id="ErrorText" class="error">
-                                </P>
-                            </div>
-                           
-                            <div class="text-center md-form">
-                                <input class="btn btn-light w-25"  [disabled]="SignUpform.invalid" type="submit" value="Sign UP" (click)="signUp()">
-                            </div>
-                        </form>   
-
-                    </div>
-                </div>
-
+            <div class="md-form p-3">
+              <input type="text" class="form-control rounded-2 hover-shadow border-5 border-light"
+                [(ngModel)]="brandName" placeholder="Enter Brand Name">
             </div>
-
-
-            
-
+            <div class="md-form p-3">
+              <input type="text" class="form-control rounded-2 hover-shadow border-5 border-light"
+                [(ngModel)]="categoryName" placeholder="Enter Category Number">
+            </div>
+            <div class="md-form p-3" *ngIf="categoryError != null">
+              <P class="error">{{categoryError}}
+              </P>
+            </div>
+            <div class="text-center md-form">
+              <input class="btn btn-light w-25" type="button" value="Add" (click)="addBrand()">
+              <!-- <input class="btn btn-light w-25 m-3" type="button" value="Edit" (click)="addBrand()">
+              <input class="btn btn-light w-25 btnDelete" type="button" value="Delete" (click)="addBrand()"> -->
+            </div>
+          </div>
         </div>
-        <!-- Grid row -->
 
-    </section>
-    <!--Section: Content-->
+      </div>
+
+
+      <div class="col-lg-7 p-1">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-header text-center">
+              <h3>MANUFACTURE</h3>
+            </div>
+            <div class="md-form p-3">
+              <input type="text" [(ngModel)]="manufactureName"
+                class="form-control rounded-2 hover-shadow border-5 border-light" placeholder="Enter Manufacture Name">
+            </div>
+            <div class="md-form p-3">
+              <input type="number" [(ngModel)]="manufactureNumber"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter Manufacture Number">
+            </div>
+            <div class="md-form p-3" *ngIf="manfactureError != null">
+                <P class="error">{{manfactureError}}
+                </P>
+              </div>
+            <div class="text-center md-form">
+              <input class="btn btn-light w-25" type="button" value="Add" (click)="addManufacture()">
+              <!-- <input class="btn btn-light w-25 m-3" type="button" value="Edit" (click)="addManufacture()">
+              <input class="btn btn-light w-25 .btnDelete " type="button" value="Delete" (click)="addManufacture()"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailsList">
+
+        <h6>BRAND & CATEGORY LIST</h6>
+
+
+        <table class="table mt-3 table-bordered border-light text-black-50" s>
+          <thead class="table-light">
+            <tr>
+              <!-- <th scope="col">Order No</th> -->
+              <th scope="col">Brand</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let C of CategoryDetails">
+              <!-- <td>{{ o.CustomerName }}</td> -->
+              <td>{{ C.BrandName }}</td>
+              <td>{{ C.CategoryName }}</td>
+            </tr>
+          </tbody>
+        </table>
+<hr>
+        <h6>MANUFACTURE LIST</h6>
+
+
+        <table class="table mt-3 table-bordered border-light text-black-50" s>
+          <thead class="table-light">
+            <tr>
+              <!-- <th scope="col">Order No</th> -->
+              <th scope="col">Name</th>
+              <th scope="col">Phone Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let M of ManfactureDetails">
+              <!-- <td>{{ o.CustomerName }}</td> -->
+              <td>{{ M.ManufactureName }}</td>
+              <td>{{ M.ManufacturetNumber }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<br>
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!--Section: Content-->
 
 </div>
