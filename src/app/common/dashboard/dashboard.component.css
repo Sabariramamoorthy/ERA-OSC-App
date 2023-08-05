@@ -68,4 +68,7 @@ a{
       visibility: hidden;
       display: none;
     }
+    a{
+      font-size: smaller;
+    }
   }

@@ -1,7 +1,6 @@
-.sub_div {
-    position: absolute;
-    bottom: 0px
-    ;
+.footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    margin-bottom: 2px;
-}
+    flex-shrink: 0;
+  }

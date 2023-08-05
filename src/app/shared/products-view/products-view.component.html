@@ -1,4 +1,5 @@
-<div class="container" >
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<div class="container"  [hidden]="isLoading">
     <table class="table mt-3 table-bordered border-light text-black-50" s>
       <thead class="table-light">
           <tr>
@@ -22,7 +23,7 @@
               <!-- <td>{{ o.CustomerName }}</td> -->
               <td>{{ P.ProductCatergory }}</td>
               <td>{{ P.ProductManufacture }}</td>
-              <td>{{ P.ProductPrice }} : {{ P.ProductShipping }}</td>
+              <td>{{ P.ProductPrice |currency:'INR' }} : {{ P.ProductShipping }}</td>
           </tr>
       </tbody>
   </table>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataGet } from 'src/app/models/file-upload.model';
 import { Constant } from 'src/Config/Constant';
@@ -10,14 +10,19 @@ import { FirebaseDataService } from 'src/app/services/firebase-data.service';
   templateUrl: './product-view.component.html',
   styleUrls: ['./product-view.component.css']
 })
-export class ProductViewComponent {
+export class ProductViewComponent implements OnInit {
   ProductData !: Product;
+  isLoading: boolean = true;
   ProductImage: any;
   productName !:string;
   clickcount: number = 1;
   constructor(
     private _Activatedroute: ActivatedRoute,
     private _db: FirebaseDataService) {
+    
+  }
+
+  ngOnInit(): void {
     this.productName=this._Activatedroute.snapshot.params["ProductId"];
   
     let dataUser: DataGet =
@@ -36,8 +41,11 @@ export class ProductViewComponent {
       console.log(this.ProductData);
       this.ProductImage=this.ProductData.ProductImages.split(',')[0]
      })
+    setTimeout(() => {
+      this.isLoading = false; // Set to false when data loading is complete
+    }, 3000); // Simulating 2 seconds of loading time
   }
-
+  
   scrollPreview() {
     const images=this.ProductData.ProductImages.split(',');
     this.ProductImage = images[this.clickcount];

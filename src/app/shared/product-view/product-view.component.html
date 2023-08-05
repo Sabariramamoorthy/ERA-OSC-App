@@ -1,11 +1,11 @@
-
-<div class="container">
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<div class="container"  [hidden]="isLoading">
     <div class=" mb-4 p-1" *ngIf="ProductData !=null">
         <div class="card">
             <div class="card-body">
                 <div class="form-header text-center">
                     <h3>
-                        {{ProductData.ProductName.split('-')[0]}}
+                        {{ProductData.ProductName.split('-')[0] |uppercase}}
                     </h3>
                 </div>
                 <div>   
@@ -24,7 +24,7 @@
                         <b>Other Details: </b>  {{ProductData.ProductOtherDetails}}
                     </p>
                     <p>
-                        <b>Price: </b> {{ProductData.ProductPrice}}
+                        <b>Price: </b> {{ProductData.ProductPrice|currency:'INR'}}
                     </p>
                     <p>
                         <b>Shipping: </b>  {{ProductData.ProductShipping}}

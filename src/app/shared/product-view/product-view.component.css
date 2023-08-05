@@ -17,21 +17,28 @@ input:focus ,textarea:focus ,select:focus {
   }
   
   .card {
-    background-color: white;
-    border-radius: 25px;
-    color: #444DDF;
-    box-shadow:  -7px -7px 15px #dfd4fd;
+    border: none;
+    outline: none;
+    background-color: none;
+    box-shadow: none;
   }
   .card-body{
-    background-color: white;
-    border-radius: 25px;
-    color: #444DDF;
+    border: none;
+    outline: none;
+    background-color: none;
+    box-shadow: none;
   }
   
   h3 {
     color: #6942c8;
+    background-color: rgb(22, 64, 255);
     outline:none;
+    color: white;
     box-shadow:none; 
+    margin: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
   }
   
   p {
@@ -40,6 +47,7 @@ input:focus ,textarea:focus ,select:focus {
     font-size: large;
     margin: 10px;
     padding: 5px;
+    white-space:pre-line ;
   }
   b{
     color:#ff0000;
@@ -51,11 +59,12 @@ input:focus ,textarea:focus ,select:focus {
     object-fit:contain;
     max-height: 400px;
     min-height: 400px;
-    box-shadow:  none;
-    padding: 20px;
     border: none;
     outline: none;
-}
+    background-color: none;
+    box-shadow: none;
+  }
+
   
   
   @media only screen and (max-width: 600px) {
@@ -64,6 +73,21 @@ input:focus ,textarea:focus ,select:focus {
       /* margin-top: -100px; */
       margin-bottom: 50px;
     }
+
+    p {
+      color: #6942c8;
+      font-weight: 500; 
+      font-size: smaller;
+      margin: 10px;
+      padding: 5px;
+      white-space:pre-line ;
+    }
+    b{
+      color:#ff0000;
+      font-weight: 500; 
+      font-size: smaller;
+    }
+  
 
  
   }

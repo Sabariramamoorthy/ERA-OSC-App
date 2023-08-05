@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataGet } from 'src/app/models/file-upload.model';
 import { Constant } from 'src/Config/Constant';
 import { Product } from 'src/app/models/signin-signup.model';
@@ -9,12 +9,11 @@ import { FirebaseDataService } from 'src/app/services/firebase-data.service';
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.css']
 })
-export class ProductsViewComponent {
+export class ProductsViewComponent implements OnInit {
   ProductDetails !: Product[];
-  constructor(
-    private _db:FirebaseDataService
-    )
-  {
+  isLoading: boolean = true;
+  constructor(private _db:FirebaseDataService){}
+  ngOnInit(): void { 
     let dataUser : DataGet =
     {
       basePath: Constant.database.baseName,
@@ -34,6 +33,9 @@ export class ProductsViewComponent {
         console.error(error);
       }
     );
+    setTimeout(() => {
+      this.isLoading = false; // Set to false when data loading is complete
+    }, 3000); // Simulating 2 seconds of loading time
   }
 
   
