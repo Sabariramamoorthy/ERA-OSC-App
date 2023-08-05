@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductPostComponent } from './shared/product-post/product-post.component';
+import { ProductsViewComponent } from './shared/products-view/products-view.component';
+import { ProductViewComponent } from './shared/product-view/product-view.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { 
+    path:'product-upload', component:ProductPostComponent
+  },
+  {
+    path:'product-Views',component:ProductsViewComponent
+  }  ,
+  {
+    path:'product-View',component:ProductViewComponent
+  }
+  // {
+  //   path: '',
+  //   redirectTo: "/home",
+  //   pathMatch: 'full'
+  // },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

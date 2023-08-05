@@ -1,1 +1,39 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+
+body{
+    height: 100%;
+    background-color: #f6fafe;
+    
+    }
+    
+    @media only screen and (max-width: 600px) {
+    body{
+    font-size: small;
+    }
+    h1,h2,h3,h4,h5,h6,p,a,span{
+    font-size: small;
+    }
+    input[type="text"]::placeholder {
+    font-size: small;
+    }
+    
+    input[type="file"]::placeholder {
+        font-size: small;
+        }
+        
+    
+    textarea::placeholder{
+    font-size: small;
+    }
+    
+    select::selection ,option,select::placeholder,option::selection
+     {
+    font-size: small;
+     }
+    
+     input::target-text,select,textarea{
+        font-size: xx-small; 
+     }
+    }

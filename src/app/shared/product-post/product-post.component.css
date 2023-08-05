@@ -1,31 +1,184 @@
-.MainBody{
-    margin-bottom: 20px;
-    margin: 10px;
-    padding: 2px;
-    background-color: #F5F3F7;
+:root {
+    --inputText: #0029a3;
+    --inputOutline: #01afff;
+    --inputBorder: #000000;
+    --inputPlaceholder: #021c6d;
+    --cardBackground: #e1e8e6;
 }
-.card-main{
-    padding: 5px;
-    margin: 20px;
-    border: 2px solid #8B5FBF;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;500;500&display=swap');
+
+.container {
+    /* margin-top: -250px; */
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
-.card-box{
-    background-color:#D6C6E1;
-    margin-bottom: 20px;
+
+input:focus,
+textarea:focus,
+select:focus {
+    color: #0029a3;
+    font-weight: 500;
+    outline: none;
+    box-shadow: none;
 }
-.colorHeading{
-    background-color: #61398F;
+
+input::placeholder,
+select::selection,
+option,
+option:disabled,
+select::placeholder,
+option::selection,
+input::target-text,
+select,
+textarea,
+textarea::placeholder {
+    color: #0029a3;
+    font-weight:500;
+}
+
+input ::after {
+    color: #0029a3;
+}
+
+input,
+textarea,
+select {
+    /* outline: 2px solid #0029a3; */
+    color: #0029a3;
+    font-weight: 500;
+    box-shadow: -3px -3px 5px  #babaff;
+}
+ option{
+    margin-top: 3px;
+ }
+label,p,h3 {
+    /* outline: 2px solid #0029a3; */
+    color: #0029a3;
+    font-weight: 500;
+    margin-top:10px;
+    white-space: pre-line;
+}
+.card {
+    background-color: #fbfffe;
+    border-radius: 25px;
+    color: #0029a3;
+    outline: none;
+    border: none;
+    box-shadow: -7px -7px 2px  #babaff;
+}
+
+.card-body {
+    background-color: #fbfffe;
+    border-radius: 25px;
+    color: #0029a3;
+    outline: none;
+    border: none;
+}
+
+.card h3 {
+    color: #0029a3;
+}
+
+.card input[type="submit"] {
+    background-color: #3850E4;
     color: white;
-    padding: 5px;
-    border-radius: 10px;
-    justify-content: center;
-    text-align: center;
+    font-weight: 500;
 }
+
+input[type="button"]{
+    background-color: #3850E4;
+    color: white;
+    font-weight: 500;
+}
+.card input[type="submit"]:disabled {
+    background-color: #f32637;
+    color: white;
+    font-weight: 500;
+}
+
 .previewImage{
-    min-height: 200px;
-    min-width: 500px; 
+    object-fit:contain;
+    max-height: 200px;
+    border: none;
+    outline: none;
+    box-shadow: -3px -3px 5px  #babaff;
 }
-.card-image{
-    margin-bottom: 20px;
-    border: 2px solid #8B5FBF;
+
+.error {
+    background-color: #0029a3;
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    font-size: small;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .container {
+        /* margin-top: -100px; */
+        margin-bottom: 50px;
+    }
+
+
+    input::placeholder,
+    select::selection,
+    option,
+    select::placeholder,
+    option::selection,
+    input::target-text,
+    select,
+    textarea,
+    textarea::placeholder {
+        color: #0029a3;
+        font-weight: 500;
+        font-size: smaller;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: 1.5px solid #00ac69;
+        box-shadow: none;
+        color: #0029a3;
+        font-weight: 500;
+    }
+
+    input,
+    textarea,
+    select {
+        outline: 1px solid #0029a3;
+        color: #0029a3;
+        font-weight: 500;
+        font-size: smaller;
+    }
+
+    label,p,h6 {
+        /* outline: 2px solid #0029a3; */
+        color: #0029a3;
+        font-weight: 500;
+        font-size: smaller;
+    }
+
+    .card input[type="submit"] {
+        background-color: #3850E4;
+        color: white;
+        font-weight: 500;
+        font-size: smaller;
+    }
+
+    .error {
+        background-color: #0029a3;
+        margin-top: 10px;
+        padding: 5px;
+        color: white;
+        border-radius: 10px;
+        font-size: xx-small;
+        font-weight: 500;
+    }
+
+
 }

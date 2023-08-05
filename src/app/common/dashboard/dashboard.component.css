@@ -1,0 +1,71 @@
+#jumbotron {
+    height: 25rem;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  #cardDeck {
+    margin-left: 1rem;
+  }
+a{
+  color: #444DDF;
+  font-weight: bold;
+}
+  #logo-space {
+    background-color: rgb(1, 1, 88);
+    width: auto;
+    height: auto;
+  }
+  
+  #logo {
+    width: 300px;
+    height: 120px;
+    padding: 15px;
+    margin-left: 5rem;
+  }
+  a:hover{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  a::after{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  a::before{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  a::selection{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  #FMS-BTN {
+    width: 12rem;
+    position: relative;
+    top: 3rem;
+    left: 5rem;
+  }
+  li::after{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  li::before{
+    color:  #8993ff;
+    font-weight:normal;
+  }
+  .Headline{
+    min-height: 100px;
+    margin: 5px;
+    background-color: #444DDF;
+  }
+  @media only screen and (max-width: 600px) {
+    .Headline{
+      min-height: 50px;
+      margin: 5px;
+      background-color: #444DDF;
+      visibility: hidden;
+      display: none;
+    }
+  }

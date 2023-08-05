@@ -1,238 +1,173 @@
 
-<div class="container MainBody">
-   
-        <div class="card-main">
-            <div class="row p-3 ">
-                <div class="col-lg-5">
-                    <div class="card card-box">
-                        <div class="card-body">
-                            <h6 class="colorHeading">CUSTOMER IMAGE</h6>
-                            <img class="previewImage" [src]="ImagePreview" id="p1">
-                        </div>
+<div class="container">
+    <section>
+         <div class="p-1">
+                <div class="card">
+                    <div class="card-body">
+                        <form [formGroup]="ProductForm" (ngSubmit)="preView()">
+                            <div class="form-header text-center">
+                                <h3>UPLOAD PRODUCT</h3>
+                            </div>
+                            <div class="md-form p-3">
+                                <input formControlName="ProductName" id="ProductName" type="text"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter The Product Name">
+                                <div *ngIf="f['ProductName'].touched && f['ProductName'].invalid" class="error">
+                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['required']">*
+                                        Product Name is required.</div>
+                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['minlength']">*
+                                        Product Name should be Min 8 character.</div>
+                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['pattern']">* Product
+                                        Name should be Only Alpha Numeric.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <input formControlName="ProductPrice" id="ProductPrice" type="ProductPrice"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter Your ProductPrice">
+                                <div *ngIf="f['ProductPrice'].touched && f['ProductPrice'].invalid" class="error">
+                                    <div *ngIf="f['ProductPrice'].errors && f['ProductPrice'].errors['required']">*
+                                        ProductPrice is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3 shadow-inner">
+                                <select formControlName="ProductCatergory" id="ProductCatergory"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    id="ProductCatergory">
+                                    <option hidden value="" selected disabled [defaultSelected]="signRole">Select
+                                        Product Catergory</option>
+                                    <option *ngFor="let l of ProductCatergory" [value]="l">{{l}}</option>
+                                </select>
+                                <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid"
+                                    class="error">
+                                    <div
+                                        *ngIf="f['ProductCatergory'].errors && f['ProductCatergory'].errors['required']">
+                                        * Product Catergory is required.</div>
+                                </div>
+                            </div>
+
+
+                            <div class="md-form p-3 shadow-inner">
+                                <select formControlName="ProductManufacture" id="ProductManufacture"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    id="ProductManufacture">
+                                    <option hidden value="" selected disabled [defaultSelected]="signRole">Select
+                                        Product Manufacture</option>
+                                    <option *ngFor="let l of ProductCatergory" [value]="l">{{l}}</option>
+                                </select>
+                                <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid"
+                                    class="error">
+                                    <div
+                                        *ngIf="f['ProductManufacture'].errors && f['ProductManufacture'].errors['required']">
+                                        * Product Manufacture is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <input formControlName="ProductShipping" id="ProductShipping" type="text"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter The Product Shipping Amount">
+                                <div *ngIf="f['ProductShipping'].touched && f['ProductShipping'].invalid" class="error">
+                                    <div *ngIf="f['ProductShipping'].errors && f['ProductShipping'].errors['required']">
+                                        * Product Shipping is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <textarea rows="3" formControlName="ProductDetails" id="ProductDetails"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter The Product Details">
+                                </textarea>
+                                <div *ngIf="f['ProductDetails'].touched && f['ProductDetails'].invalid" class="error">
+                                    <div *ngIf="f['ProductDetails'].errors && f['ProductDetails'].errors['required']">*
+                                        Product Details is required.</div>
+
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <textarea rows="3" formControlName="ProductOtherDetails" id="ProductOtherDetails"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter The Product Other Details">
+                                </textarea>
+                                <div *ngIf="f['ProductOtherDetails'].touched && f['ProductOtherDetails'].invalid"
+                                    class="error">
+                                    <div
+                                        *ngIf="f['ProductOtherDetails'].errors && f['ProductOtherDetails'].errors['required']">
+                                        * Other Product Details is required.</div>
+
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <input formControlName="ProductImages" id="ProductImages" type="file"
+                                    (change)="detectFiles($event)" accept="image/png, image/gif, image/jpeg, image/jpg"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light" multiple>
+                                <br />
+                                <label>Upload Product Images</label>
+
+                                <div *ngIf="f['ProductImages'].touched && f['ProductImages'].invalid" class="error">
+                                    <div *ngIf="f['ProductImages'].errors && f['ProductImages'].errors['required']">
+                                        *
+                                        Product Image is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="text-center md-form">
+                                <input class="btn btn-light w-25" [disabled]="FormFlag" type="submit" value="Preview"
+                                    (click)="preView()">
+                            </div>
+                        </form>
+
                     </div>
                 </div>
 
-                <div class="col-lg-7 card-box">
-                    <section >
-                        <div class="card" style="background-color: #bed4db">
-                            <div class="card-body" id="fullOrder">
-                                <form [formGroup]="SoftCopyForm" (ngSubmit)="UploadOrder('SOFTCOPY')">
-                                    <div class="form-header text-center">
-                                        <h3 class="border border-opacity-100 border-light  p-1 w-100">UPLOAD PRODUCT</h3>
-                                        <h6 class="m-2 mt-4 text-bg-light p-2">PRODUCT DETAILS</h6>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="CustomerName" id="CustomerName" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Product Name">
-                                        <div *ngIf="sc['CustomerName'].touched && sc['CustomerName'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['CustomerName'].errors && sc['CustomerName'].errors['required']">
-                                                *
-                                                Customer Name is required.</div>
-                                            <div
-                                                *ngIf="sc['CustomerName'].errors && sc['CustomerName'].errors['pattern']">
-                                                *
-                                                Customer Name should be Only Alpha Numeric.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="CustomerPriority" id="CustomerPriority" type="date"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light">
-                                        <i class="text-black-50 text-bg-info bg-opacity-50">*if Customer have any
-                                            Priority
-                                            Date</i>
-                                    </div>
-                                    <div class="form-header text-center">
-                                        <h6 class="m-2 text-bg-light p-2">PRODUCT DETAILS</h6>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductName" id="ProductName" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Product Name">
-                                        <div *ngIf="sc['ProductName'].touched && sc['ProductName'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductName'].errors && sc['ProductName'].errors['required']">
-                                                *
-                                                Product Name is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductSize" id="ProductSize" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Product Size Specification">
-                                        <div *ngIf="sc['ProductSize'].touched && sc['ProductSize'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductSize'].errors && sc['ProductSize'].errors['required']">
-                                                *
-                                                Product Size Specification is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductQuty" id="ProductQuty" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Product Quantity">
-                                        <div *ngIf="sc['ProductQuty'].touched && sc['ProductQuty'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductQuty'].errors && sc['ProductQuty'].errors['required']">
-                                                *
-                                                Product Quantity is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductRequirement" id="ProductRequirement" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Customer Requirement">
-                                        <div *ngIf="sc['ProductRequirement'].touched && sc['ProductRequirement'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductRequirement'].errors && sc['ProductRequirement'].errors['required']">
-                                                * Customer Requirement is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductQuery" id="ProductQuery" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Any Queries or Futher Information">
-                                        <i class="text-black-50 text-bg-info bg-opacity-50">*if you need any futher
-                                            details</i>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductImage" id="ProductImage" type="file"
-                                            (change)="detectFiles($event,'ProductImage')"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light">
-                                        <label class="text-black-50">Upload Customer Main Image</label>
-                                        <div *ngIf="sc['ProductImage'].touched && sc['ProductImage'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductImage'].errors && sc['ProductImage'].errors['required']">
-                                                *
-                                                Product Image is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductReferenceImage" id="ProductReferenceImage"
-                                            type="file" (change)="detectFiles($event,'ReferenceImage')"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light">
-                                        <label class="text-black-50">Upload Customer Reference Image</label>
-                                        <br />
-                                        <i class="text-black-50 text-bg-info bg-opacity-50"> *Please Upload the
-                                            Screenshot
-                                            of the image which customer approved .</i>
-                                        <div *ngIf="sc['ProductReferenceImage'].touched && sc['ProductReferenceImage'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductReferenceImage'].errors && sc['ProductReferenceImage'].errors['required']">
-                                                * Product Reference Image is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="ProductOtherImages" id="ProductOtherImages" type="file"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter Your User Name"
-                                            (change)="detectFiles($event,'OtherImage')" multiple>
-                                        <label class="text-black-50">Upload Customer Other Image</label>
-                                        <br />
-                                        <i class="text-black-50 text-bg-info bg-opacity-50"> *Please Upload the Other
-                                            images
-                                            which needed for the product making .</i>
-                                        <div *ngIf="sc['ProductOtherImages'].touched && sc['ProductOtherImages'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['ProductOtherImages'].errors && sc['ProductOtherImages'].errors['required']">
-                                                * Product Other Images is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3 shadow-inner">
-                                        <select formControlName="PaymentType" id="PaymentType"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            [(ngModel)]="signRole" id="signRole">
-                                            <option selected disabled [defaultSelected]="signRole">Select the Payment
-                                                Type
-                                            </option>
-                                            <option Value="Google Pay">Google Pay</option>
-                                            <option Value="Phonepe">Phonepe</option>
-                                            <option Value="PayTM">PayTM</option>
-                                            <option Value="Bank Transfer">Bank Transfer</option>
-                                            <option Value="other">Other</option>
-                                        </select>
-                                        <div *ngIf="sc['PaymentType'].touched && sc['PaymentType'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['PaymentType'].errors && sc['PaymentType'].errors['required']">
-                                                *
-                                                Payment Type is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="PaymentAmount" id="PaymentAmount" type="text"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light"
-                                            placeholder="Enter the Paid Amount">
-                                        <div *ngIf="sc['PaymentAmount'].touched && sc['PaymentAmount'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['PaymentAmount'].errors && sc['PaymentAmount'].errors['required']">
-                                                * Payment Amount is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3">
-                                        <input formControlName="PaymentScreenShot" id="PaymentScreenShot" type="file"
-                                            (change)="detectFiles($event,'PaymentSS')"
-                                            class="form-control rounded-2 hover-shadow border-5 border-light">
-                                        <label class="text-black-50">Upload Payment Screenshot</label>
-                                        <br />
-                                        <i class="text-black-50 text-bg-info bg-opacity-50"> *Please Upload the
-                                            Screenshot
-                                            of Successed Payment .</i>
-                                        <div *ngIf="sc['PaymentScreenShot'].touched && sc['PaymentScreenShot'].invalid"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;">
-                                            <div
-                                                *ngIf="sc['PaymentScreenShot'].errors && sc['PaymentScreenShot'].errors['required']">
-                                                * Payment ScreenShot is required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form p-3 shadow-inner" id="inErrorDiv"
-                                        style="visibility: hidden;display: none;">
-                                        <P id="inErrorText"
-                                            class="text-light text-bg-danger bg-opacity-75 p-1 rounded-2 mt-2"
-                                            style="font-size: smaller;"></P>
-                                    </div>
-                                    <!-- <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-info" role="progressbar" [style.width.%]="progress"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div> -->
-                                    <div class="text-center md-form">
-                                        <input class="btn btn-light w-50" [disabled]="SoftCopyForm.invalid"
-                                            type="submit" value="Upload" (click)="UploadOrder('SOFTCOPY')">
-                                    </div>
-                                </form>
+            
+        </div>
+        
+            <div class="mb-4 p-1" *ngIf="ProductData !=null">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-header text-center">
+                            <h3>PRODUCT PREVIEW</h3>
+                        </div>
+                        <img  class="form-control previewImage" alt="Product Photo Preview"
+                            [src]="ProductImage" (click)="scrollPreview()">
+                        <div>
+                            <h3>
+                                {{ProductData.ProductName}}
+                            </h3>
+                            <p>
+                                {{ProductData.ProductCatergory}}
+                            </p>
+                            <p>
+                                {{ProductData.ProductManufacture}}
+                            </p>
+                            <p>
+                                {{ProductData.ProductDetails}}
+                            </p>
+                            <p>
+                                {{ProductData.ProductOtherDetails}}
+                            </p>
+                            <p>
+                                Price:{{ProductData.ProductPrice}}
+                            </p>
+                            <p>
+                                Shipping: {{ProductData.ProductShipping}}
+                            </p>
+                            <div class="text-center md-form">
+                                <input class="btn btn-light w-25" [disabled]="FormFlag" type="button" value="Upload"
+                                    (click)="Upload()">
                             </div>
                         </div>
-                    </section>
-                    <!-- SOFTCOPY -->
 
-                  
+                    </div>
                 </div>
 
-               
-                
-
-
             </div>
-        </div>
+           
+    </section>
+
 </div>
