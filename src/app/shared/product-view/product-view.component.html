@@ -1,1 +1,37 @@
-<p>product-view works!</p>
+
+<div class="container">
+    <div class=" mb-4 p-1" *ngIf="ProductData !=null">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-header text-center">
+                    <h3>
+                        {{ProductData.ProductName.split('-')[0]}}
+                    </h3>
+                </div>
+                <div>   
+                    <img  class="form-control previewImage" alt="Product Photo Preview"
+                    [src]="ProductImage" (click)="scrollPreview()">                 
+                    <p>
+                    <b>Catergory: </b>{{ProductData.ProductCatergory}}
+                    </p>
+                    <p>
+                    <b>Manufacture: </b>{{ProductData.ProductManufacture}}
+                    </p>
+                    <p>
+                        <b>Details: </b>  {{ProductData.ProductDetails}}
+                    </p>
+                    <p>
+                        <b>Other Details: </b>  {{ProductData.ProductOtherDetails}}
+                    </p>
+                    <p>
+                        <b>Price: </b> {{ProductData.ProductPrice}}
+                    </p>
+                    <p>
+                        <b>Shipping: </b>  {{ProductData.ProductShipping}}
+                    </p>
+                </div>
+    
+            </div>
+        </div>
+</div>
+</div>

@@ -4,6 +4,7 @@
           <tr>
               <!-- <th scope="col">Order No</th> -->
               <th scope="col">Name</th>
+              <th scope="col">Image</th>
               <th scope="col">Category</th>
               <th scope="col">Manufacture</th>
               <th scope="col">Price Details</th>
@@ -12,10 +13,12 @@
       <tbody>
           <tr *ngFor="let P of ProductDetails">
               <td>
-                  <a [routerLink]="['/product', P.ProductName]">{{
-                      P.ProductName
+                  <a [routerLink]="['/product-View',P.ProductName]">{{
+                      P.ProductName.split('-')[0]
                       }}</a>
               </td>
+              <img  class="form-control previewImage" alt="Product Photo Preview"
+                            [src]="P.ProductImages.split(',')[0]">
               <!-- <td>{{ o.CustomerName }}</td> -->
               <td>{{ P.ProductCatergory }}</td>
               <td>{{ P.ProductManufacture }}</td>

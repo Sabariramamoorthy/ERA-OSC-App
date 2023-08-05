@@ -4,7 +4,12 @@
     margin-bottom: 50px;
   }
   
-
+img{
+  object-fit: contain;
+  max-height: 100px;
+  border: none;
+  outline: none;
+}
   h6 {
     font-weight: bold;
     background-color: #f4a22b;
@@ -80,5 +85,10 @@
   table {
       border: 2px solid #444ddf;
     }
-  
+    img{
+      object-fit: contain;
+      max-height: 150px;
+      border: none;
+      outline: none;
+    }
   }

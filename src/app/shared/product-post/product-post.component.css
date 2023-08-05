@@ -17,7 +17,15 @@
 
 input:focus,
 textarea:focus,
-select:focus {
+select:focus,
+option:focus {
+    color: #0029a3;
+    font-weight: 500;
+    outline: none;
+    box-shadow: none;
+}
+
+option:hover {
     color: #0029a3;
     font-weight: 500;
     outline: none;
@@ -50,9 +58,9 @@ select {
     font-weight: 500;
     box-shadow: -3px -3px 5px  #babaff;
 }
- option{
-    margin-top: 3px;
- }
+
+option {height: 10px;}
+
 label,p,h3 {
     /* outline: 2px solid #0029a3; */
     color: #0029a3;

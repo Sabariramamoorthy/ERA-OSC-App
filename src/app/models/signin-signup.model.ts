@@ -29,6 +29,23 @@ export interface SignIn {
     ProductImages:  string, 
     ProductUploadDate:  string, 
 }
+
+export interface Manufacture {
+  ManufactureName:string,
+  ManufacturetNumber: string,
+}
+
+export interface Category {
+  BrandName:string,
+  CategoryName: string,
+}
+
+export interface ConfigData{
+  Category:Category[],
+  Manufacture:Manufacture[]
+}
+
+
   
 
  

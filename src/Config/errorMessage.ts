@@ -2,7 +2,7 @@ export const errorMessage = {
     signup: {
         passwordMistach: "Confirmed Password is Not Matched",
         existingUser: "User Name already Signed Up,Please Signin",
-        success:"Regsitered Successfully !",
+        success:"Uploaded Successfully !",
         failed:"Regsitration failed !"
     },
     signin:
