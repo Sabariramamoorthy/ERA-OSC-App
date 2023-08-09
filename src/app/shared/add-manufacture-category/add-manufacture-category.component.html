@@ -1,4 +1,5 @@
-<div class="container">
+<app-loading-spinner *ngIf="isuploading"></app-loading-spinner>
+<div class="container" [hidden]="isuploading">
   <!--Section: Content-->
   <section class="dark-grey mb-0 ">
     <!-- Section heading -->
@@ -31,16 +32,16 @@
             </div>
             <div class="md-form p-3">
               <input type="text" class="form-control rounded-2 hover-shadow border-5 border-light"
-                [(ngModel)]="categoryName" placeholder="Enter Category Number">
+                [(ngModel)]="categoryName" placeholder="Enter Category Name">
             </div>
-            <div class="md-form p-3" *ngIf="categoryError != null">
-              <P class="error">{{categoryError}}
-              </P>
+            <div class="md-form p-3" *ngIf="categoryError !='' ">
+              <p class="error">{{categoryError}}
+              </p>
             </div>
             <div class="text-center md-form">
               <input class="btn btn-light w-25" type="button" value="Add" (click)="addBrand()">
-              <!-- <input class="btn btn-light w-25 m-3" type="button" value="Edit" (click)="addBrand()">
-              <input class="btn btn-light w-25 btnDelete" type="button" value="Delete" (click)="addBrand()"> -->
+              <input class="btn btn-light w-25" type="button" [hidden]="isuploadBrand" [disabled]="isuploadBrand" value="Upload" (click)="UploadBrand()">
+              <input class="btn btn-light w-25" type="button" value="Delete" [hidden]="isDeleteBrand" [disabled]="isDeleteBrand" (click)="deleteBrand()">
             </div>
           </div>
         </div>
@@ -63,61 +64,69 @@
                 class="form-control rounded-2 hover-shadow border-5 border-light"
                 placeholder="Enter Manufacture Number">
             </div>
-            <div class="md-form p-3" *ngIf="manfactureError != null">
-              <P class="error">{{manfactureError}}
-              </P>
+            <div class="md-form p-3" *ngIf="manfactureError != ''">
+              <p class="error">{{manfactureError}}
+              </p>
             </div>
             <div class="text-center md-form">
               <input class="btn btn-light w-25" type="button" value="Add" (click)="addManufacture()">
-              <!-- <input class="btn btn-light w-25 m-3" type="button" value="Edit" (click)="addManufacture()">
-              <input class="btn btn-light w-25 .btnDelete " type="button" value="Delete" (click)="addManufacture()"> -->
+              <input class="btn btn-light w-25" type="button" value="Upload" [hidden]="isuploadManfacture" [disabled]="isuploadManfacture" (click)="UploadManufacture()">
+              <input class="btn btn-light w-25" type="button" value="Delete" [hidden]="isDeleteManfacture" [disabled]="isDeleteManfacture" (click)="deleteManfacture()">
             </div>
           </div>
         </div>
       </div>
 
-      <div class="detailsList">
+      
 
-        <h6>BRAND & CATEGORY LIST</h6>
+        <div *ngIf="CategoryDetails.length >0">
+          <h6>BRAND & CATEGORY LIST</h6>
+          <table class="table mt-3 table-bordered border-light text-black-50" s>
+            <thead class="table-light">
+              <tr>
+                <!-- <th scope="col">Order No</th> -->
+                <th scope="col"></th>
+                <th scope="col">Brand</th>
+                <th scope="col">Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let C of CategoryDetails ;let i = index">
+                <!-- <td>{{ o.CustomerName }}</td> -->
+                <td><input type="checkbox" (change)="onCheckboxChange($event,i,'Category',C.BrandName,C.CategoryName )"></td>
+                <td>{{ C.BrandName }}</td>
+                <td>{{ C.CategoryName }}</td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+       
+
+        <div *ngIf="ManfactureDetails.length >0">
+          <h6>MANUFACTURE LIST</h6>
+          <table class="table mt-3 table-bordered border-light text-black-50" s>
+            <thead class="table-light">
+              <tr>
+                <!-- <th scope="col">Order No</th> -->
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let M of ManfactureDetails; let i = index">
+                <!-- <td>{{ o.CustomerName }}</td> -->
+                <td><input type="checkbox" (change)="onCheckboxChange($event,i,'Manfacture',M.ManufactureName,M.ManufacturetNumber )"></td>
+                <td>{{ M.ManufactureName }}</td>
+                <td>{{ M.ManufacturetNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
 
 
-        <table class="table mt-3 table-bordered border-light text-black-50" s>
-          <thead class="table-light">
-            <tr>
-              <!-- <th scope="col">Order No</th> -->
-              <th scope="col">Brand</th>
-              <th scope="col">Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let C of CategoryDetails">
-              <!-- <td>{{ o.CustomerName }}</td> -->
-              <td>{{ C.BrandName }}</td>
-              <td>{{ C.CategoryName }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <hr>
-        <h6>MANUFACTURE LIST</h6>
-
-
-        <table class="table mt-3 table-bordered border-light text-black-50" s>
-          <thead class="table-light">
-            <tr>
-              <!-- <th scope="col">Order No</th> -->
-              <th scope="col">Name</th>
-              <th scope="col">Phone Number</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let M of ManfactureDetails">
-              <!-- <td>{{ o.CustomerName }}</td> -->
-              <td>{{ M.ManufactureName }}</td>
-              <td>{{ M.ManufacturetNumber }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <br>
     </div>
     <!-- Grid row -->

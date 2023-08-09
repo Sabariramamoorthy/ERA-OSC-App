@@ -18,26 +18,32 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 })
 
 export class ProductPostComponent {
-
+  isuploading :boolean =false;
   ProductForm = new FormGroup({
-    ProductName: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z0-9 ]*')]),
+    ProductName: new FormControl('', [Validators.required, Validators.minLength(8)]),
     ProductPrice: new FormControl('', [Validators.required]),
+    ProductBrand: new FormControl('', [Validators.required]),
     ProductCatergory: new FormControl('', [Validators.required]),
     ProductManufacture:new FormControl('', [Validators.required]),
     ProductShipping: new FormControl('', [Validators.required]),
     ProductDetails: new FormControl('', [Validators.required]),
     ProductOtherDetails: new FormControl('', [Validators.required]),
+    ProductStock: new FormControl('', [Validators.required]),
+    ProductIsOffer: new FormControl('', [Validators.required]),
+    ProductOfferPrice: new FormControl('', [Validators.required]),
+    ProductOfferDiscount: new FormControl('', [Validators.required]),
     ProductImages:  new FormControl('', [Validators.required]),  
   });
 
   
 
   ProductImages: any[] = [];
-  ProductImage: any;
+  ProductImage !: any ;
   signInData !: SignIn;
   ProductData !:Product;
 
   FormFlag:boolean=true;
+  PreviewFlag:boolean=false;
   ManfactureDetails: Manufacture[] = []
   CategoryDetails: Category[] = []
   configdetails !:ConfigData;
@@ -117,7 +123,7 @@ export class ProductPostComponent {
   }
  
   Upload(){
-    
+    this.isuploading=true;
     this.ProductData.ProductUploadDate=this.dateNow;
     this.ProductData.ProductName= `${this.ProductData.ProductName}-${this.dateNow.split(" ")[0].replaceAll('-','')}${this.dateNow.split(" ")[1].replaceAll(':','')}`
     const FileUploadPromise: Promise<string>[] = [];
@@ -141,6 +147,7 @@ export class ProductPostComponent {
         
         //console.log(content);
         this.ProductData.ProductImages=content.toString();
+        this.ProductData.ProductOrderCount=Constant.flag.null;
         let dataInsert: DataInsert =
         {
           basePath: Constant.database.baseName,
@@ -151,22 +158,22 @@ export class ProductPostComponent {
         if (this._db.writeUserData(dataInsert) == Constant.flag.true) {
           window.alert(errorMessage.signup.success)
           this.ProductForm.reset();
-          this.ProductData = this.ProductForm.value as Product
+          this.PreviewFlag=false;
+          this.isuploading=false;
         }
 
-        this._router.navigateByUrl('/product-Views')  
       })
 
     
    
   }
   async preView() {
+    this.PreviewFlag=true;
     this.ProductData = this.ProductForm.value as Product
     this.ProductImage=this.compressedImage[0];
     //console.log(this.ProductData);
   }
-  
-  
+
 
 }
 

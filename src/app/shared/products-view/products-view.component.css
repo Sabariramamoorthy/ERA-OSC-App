@@ -1,95 +1,184 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+img {
+  object-fit: contain;
+  max-width: 100px;
+  max-height: 150px;
+
+}
+
+tr {
+  background-color: #f8f8f9;
+  border: 2px solid #444ddf;
+}
+
+th {
+  color: #6942c8;
+}
+
+td {
+  color: #6942c8;
+  font-weight: 500;
+}
+
+td a {
+  color: #6942c8;
+  font-weight: 500;
+}
+
+td a:hover {
+  color: #cd9aff;
+  font-weight: 600;
+}
+
+td:nth-child(odd) {
+  color: #b9058c;
+}
+
+td:nth-child(even) {
+  color: #047e99;
+}
+
+table {
+  border: 2px solid #444ddf;
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 25px;
+  color: #444DDF;
+  box-shadow: -7px -7px 15px #dfd4fd;
+}
+
+.card-body {
+  background-color: white;
+  border-radius: 25px;
+  color: #444DDF;
+}
+
+p a {
+  font-weight: 500;
+  color: #5315a5;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bolder;
+  font-size: small;
+  width: 100%;
+}
+
+strong {
+  color: #444ddf;
+  font-weight: 500;
+  font-size: small;
+}
+
+.details a {
+  color:  #0905d3;
+  font-weight: 500;
+  font-size: small;
+}
+
+.sStrong {
+  margin-left: 5px;
+  text-align: right;
+}
+
+
+
+.details {
+  float: right;
+}
+
+
+@media only screen and (max-width: 600px) {
 
   .container {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 50px;
   }
-  
-img{
-  object-fit: contain;
-  max-height: 100px;
-  min-height: 100px;
-  box-shadow:  -7px -7px 15px #dfd4fd;
-  
-}
-  h6 {
-    font-weight: bold;
-    background-color: #f4a22b;
-    color: #ffffff;
-  }
-  
+
   tr {
     background-color: #f8f8f9;
     border: 2px solid #444ddf;
+    font-size: x-small;
   }
-  
+
   th {
     color: #6942c8;
   }
-  
+
   td {
     color: #6942c8;
-    font-weight: 500;
+    font-size: x-small;
+
   }
-  
+
   td a {
     color: #6942c8;
-    font-weight: 500;
+    font-size: x-small;
   }
-  
+
   td a:hover {
-    color: #cd9aff;
-    font-weight: 600;
+    color: #005f92;
+    font-size: x-small;
   }
-  td:nth-child(odd){
-      color:#b9058c;
-  }
-  td:nth-child(even){
-      color:#047e99;
-  }
+
   table {
     border: 2px solid #444ddf;
   }
-  
-  @media only screen and (max-width: 600px) {
-  
-    .container {
-      margin-top: 10px;
-      margin-bottom: 50px;
-    }
-  
-    tr {
-      background-color: #f8f8f9;
-      border: 2px solid #444ddf;
-      font-size: x-small;
-    }
-  
-    th {
-      color: #6942c8;
-    }
-  
-    td {
-      color: #6942c8;
-      font-size: x-small;
-      
-    }
-  
-    td a {
-      color: #6942c8;
-      font-size: x-small;
-    }
-  
-    td a:hover {
-      color: #005f92;
-      font-size: x-small;
-    }
-    
-  table {
-      border: 2px solid #444ddf;
-    }
-    img{
-      object-fit: contain;
-      max-height: 150px;
-      border: none;
-      outline: none;
-    }
+
+  p a {
+    font-weight: 500;
+    color: #5315a5;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: smaller;
   }
+
+  strong {
+    color:  #1715a5;
+    font-weight: 500;
+    font-size: x-small;
+  }
+
+  .details a {
+    color:  #0905d3;
+    font-weight: 500;
+    font-size: x-small;
+  }
+
+  .details {
+    margin: 5px;
+    text-align: left;
+    float: left;
+
+  }
+
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .col-lg-8 {
+    text-align: left;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 2000px) {
+  .details {
+    margin: 5px;
+    text-align: left;
+    float: none;
+
+  }
+}

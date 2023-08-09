@@ -1,37 +1,60 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-<div class="container"  [hidden]="isLoading">
-    <div class=" mb-4 p-1" *ngIf="ProductData !=null">
-        <div class="card">
-            <div class="card-body">
-                <div class="form-header text-center">
-                    <h3>
-                        {{ProductData.ProductName.split('-')[0] |uppercase}}
-                    </h3>
-                </div>
-                <div>   
-                    <img  class="form-control previewImage" alt="Product Photo Preview"
-                    [src]="ProductImage" (click)="scrollPreview()">                 
-                    <p>
-                    <b>Catergory: </b>{{ProductData.ProductCatergory}}
-                    </p>
-                    <p>
-                    <b>Manufacture: </b>{{ProductData.ProductManufacture}}
-                    </p>
-                    <p>
-                        <b>Details: </b>  {{ProductData.ProductDetails}}
-                    </p>
-                    <p>
-                        <b>Other Details: </b>  {{ProductData.ProductOtherDetails}}
-                    </p>
-                    <p>
-                        <b>Price: </b> {{ProductData.ProductPrice|currency:'INR'}}
-                    </p>
-                    <p>
-                        <b>Shipping: </b>  {{ProductData.ProductShipping}}
-                    </p>
-                </div>
-    
-            </div>
+<div class="container" [hidden]="isLoading">
+    <div class="row" *ngIf="ProductData !=null">
+        <div class="form-header text-center">
+            <h3>
+                {{ProductData.ProductName.split('-')[0] |uppercase}}
+            </h3>
         </div>
-</div>
+        <div class="col-lg-4">
+
+            <img class="previewImage" alt="Product Photo Preview" [src]="ProductImage" (click)="scrollPreview()">
+
+        </div>
+        <div class="col-lg-8">
+
+            <p>
+                <strong>Brand: </strong> {{ProductData.ProductBrand}}
+            </p>
+            <hr>
+            <p>
+                <strong>Catergory: </strong> {{ProductData.ProductCatergory}}
+            </p>
+            <hr>
+            <p>
+                <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
+            </p>
+            <hr>
+            <p>
+                <strong>Details: </strong>{{ProductData.ProductDetails}}
+            </p>
+            <hr>
+            <p>
+                <strong>Other Details: </strong>{{ProductData.ProductOtherDetails}}
+            </p>
+            <hr>
+            <p>
+                <strong>Stock: </strong>{{ProductData.ProductStock}}<br>
+                <strong class="Sstrong">Orders Count: </strong>{{ProductData.ProductOrderCount}}
+            </p>
+            <hr>
+            <p>
+                <strong>Offer: </strong>{{ProductData.ProductIsOffer}}<br>
+                <strong class="Sstrong">Offer Price: </strong>{{ProductData.ProductOfferPrice}}<br>
+                <strong class="Sstrong">Offer Discount: </strong>{{ProductData.ProductOfferDiscount}}
+            </p>
+            <hr>
+            <p>
+                <strong>Price: </strong>{{ProductData.ProductPrice}}<br>
+                <strong class="Sstrong">Shipping: </strong> {{ProductData.ProductShipping}}
+            </p>
+            <hr>
+            <div class="text-center md-form">
+                <input class="btn btn-light w-25" type="button" value="Update">
+                <input class="btn btn-light w-25" type="button" value="Delete">
+            </div>
+
+        </div>
+
+    </div>
 </div>

@@ -28,6 +28,17 @@ export interface SignIn {
     ProductOtherDetails:string,
     ProductImages:  string, 
     ProductUploadDate:  string, 
+
+    ProductBrand: string,
+    ProductStock: string,
+    ProductOrderCount: string,
+
+    ProductIsOffer: string,
+    ProductOfferPrice: string,
+    ProductOfferDiscount: string,
+
+
+    
 }
 
 export interface Manufacture {

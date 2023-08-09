@@ -1,5 +1,5 @@
-
-<div class="container">
+<app-loading-spinner *ngIf="isuploading"></app-loading-spinner>
+<div class="container" *ngIf="isuploading ==false" >
     <section>
          <div class="p-1">
                 <div class="card">
@@ -17,20 +17,35 @@
                                         Product Name is required.</div>
                                     <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['minlength']">*
                                         Product Name should be Min 8 character.</div>
-                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['pattern']">* Product
-                                        Name should be Only Alpha Numeric.</div>
                                 </div>
                             </div>
 
                             <div class="md-form p-3">
-                                <input formControlName="ProductPrice" id="ProductPrice" type="ProductPrice"
+                                <input formControlName="ProductPrice" id="ProductPrice" type="number"
                                     class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your ProductPrice">
+                                    placeholder="Enter Your Product Price">
                                 <div *ngIf="f['ProductPrice'].touched && f['ProductPrice'].invalid" class="error">
                                     <div *ngIf="f['ProductPrice'].errors && f['ProductPrice'].errors['required']">*
-                                        ProductPrice is required.</div>
+                                        Product Price is required.</div>
                                 </div>
                             </div>
+
+                            <div class="md-form p-3 shadow-inner">
+                                <select formControlName="ProductBrand" id="ProductBrand"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    id="ProductBrand">
+                                    <option hidden value="" selected disabled >Select
+                                        Product Brand</option>
+                                    <option *ngFor="let l of CategoryDetails" [value]="l.BrandName">{{l.BrandName}}</option>
+                                </select>
+                                <div *ngIf="f['ProductBrand'].touched && f['ProductBrand'].invalid"
+                                    class="error">
+                                    <div
+                                        *ngIf="f['ProductBrand'].errors && f['ProductBrand'].errors['required']">
+                                        * Product Brand is required.</div>
+                                </div>
+                            </div>
+
 
                             <div class="md-form p-3 shadow-inner">
                                 <select formControlName="ProductCatergory" id="ProductCatergory"
@@ -102,6 +117,52 @@
                             </div>
 
                             <div class="md-form p-3">
+                                <input formControlName="ProductStock" id="ProductStock" type="number"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter Your Product Stock">
+                                <div *ngIf="f['ProductStock'].touched && f['ProductStock'].invalid" class="error">
+                                    <div *ngIf="f['ProductStock'].errors && f['ProductStock'].errors['required']">*
+                                        Product Stock is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3 shadow-inner">
+                                <select formControlName="ProductIsOffer" id="ProductIsOffer"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    id="ProductIsOffer">
+                                    <option hidden value="" selected disabled >Select
+                                        Product Offer</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <div *ngIf="f['ProductIsOffer'].touched && f['ProductIsOffer'].invalid"
+                                    class="error">
+                                    <div
+                                        *ngIf="f['ProductIsOffer'].errors && f['ProductIsOffer'].errors['required']">
+                                        * Product Offer is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <input formControlName="ProductOfferPrice" id="ProductOfferPrice" type="number"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter Your Product Offer Price">
+                                <div *ngIf="f['ProductOfferPrice'].touched && f['ProductOfferPrice'].invalid" class="error">
+                                    <div *ngIf="f['ProductOfferPrice'].errors && f['ProductOfferPrice'].errors['required']">*
+                                        Product Offer Price is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="md-form p-3">
+                                <input formControlName="ProductOfferDiscount" id="ProductOfferDiscount" type="number"
+                                    class="form-control rounded-2 hover-shadow border-5 border-light"
+                                    placeholder="Enter Your Product Discount Percentage">
+                                <div *ngIf="f['ProductOfferDiscount'].touched && f['ProductOfferDiscount'].invalid" class="error">
+                                    <div *ngIf="f['ProductOfferDiscount'].errors && f['ProductOfferDiscount'].errors['required']">*
+                                        Product Offer Discount Percentage is required.</div>
+                                </div>
+                            </div>
+                            <div class="md-form p-3">
                                 <input formControlName="ProductImages" id="ProductImages" type="file"
                                     (change)="detectFiles($event)" accept="image/png, image/gif, image/jpeg, image/jpg"
                                     class="form-control rounded-2 hover-shadow border-5 border-light" multiple>
@@ -127,7 +188,7 @@
             
         </div>
         
-            <div class="mb-4 p-1" *ngIf="ProductData !=null">
+            <div class="mb-4 p-1" *ngIf="PreviewFlag == true">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-header text-center">
@@ -137,25 +198,41 @@
                             [src]="ProductImage" (click)="scrollPreview()">
                         <div>
                             <h3>
-                                {{ProductData.ProductName}}
+                                {{ProductData.ProductName.split('-')[0]}}
                             </h3>
                             <p>
-                                {{ProductData.ProductCatergory}}
+                                <strong>Brand: </strong> {{ProductData.ProductBrand}}
                             </p>
                             <p>
-                                {{ProductData.ProductManufacture}}
+                                <strong>Catergory: </strong> {{ProductData.ProductCatergory}}
                             </p>
                             <p>
-                                {{ProductData.ProductDetails}}
+                                <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
                             </p>
                             <p>
-                                {{ProductData.ProductOtherDetails}}
+                                <strong>Details: </strong>{{ProductData.ProductDetails}}
                             </p>
                             <p>
-                                Price:{{ProductData.ProductPrice}}
+                                <strong>Other Details: </strong>{{ProductData.ProductOtherDetails}}
                             </p>
                             <p>
-                                Shipping: {{ProductData.ProductShipping}}
+                                <strong>Stock: </strong>{{ProductData.ProductStock}}
+                            </p>
+                            <p>
+                                <strong>Offer: </strong>{{ProductData.ProductIsOffer}}
+                            </p>
+                            <p>
+                                <strong>Offer Price: </strong>{{ProductData.ProductOfferPrice}}
+                            </p>
+                            <p>
+                                <strong>Offer Discount: </strong>{{ProductData.ProductOfferDiscount}}
+                            </p>
+
+                            <p>
+                                <strong>Price: </strong>{{ProductData.ProductPrice}}
+                            </p>
+                            <p>
+                                <strong>Shipping: </strong> {{ProductData.ProductShipping}}
                             </p>
                             <div class="text-center md-form">
                                 <input class="btn btn-light w-25" [disabled]="FormFlag" type="button" value="Upload"

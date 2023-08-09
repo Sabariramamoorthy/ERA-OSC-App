@@ -35,7 +35,6 @@ option:hover {
 input::placeholder,
 select::selection,
 option,
-option:disabled,
 select::placeholder,
 option::selection,
 input::target-text,
@@ -43,7 +42,7 @@ select,
 textarea,
 textarea::placeholder {
     color: #0029a3;
-    font-weight:500;
+    font-weight: 500;
 }
 
 input ::after {
@@ -56,25 +55,26 @@ select {
     /* outline: 2px solid #0029a3; */
     color: #0029a3;
     font-weight: 500;
-    box-shadow: -3px -3px 5px  #babaff;
+    box-shadow: -3px -3px 5px #babaff;
 }
 
-option {height: 10px;}
-
-label,p,h3 {
+label,
+p,
+h3 {
     /* outline: 2px solid #0029a3; */
     color: #0029a3;
     font-weight: 500;
-    margin-top:10px;
+    margin-top: 10px;
     white-space: pre-line;
 }
+
 .card {
     background-color: #fbfffe;
     border-radius: 25px;
     color: #0029a3;
     outline: none;
     border: none;
-    box-shadow: -7px -7px 2px  #babaff;
+    box-shadow: -7px -7px 2px #babaff;
 }
 
 .card-body {
@@ -95,23 +95,24 @@ label,p,h3 {
     font-weight: 500;
 }
 
-input[type="button"]{
+input[type="button"] {
     background-color: #3850E4;
     color: white;
     font-weight: 500;
 }
+
 .card input[type="submit"]:disabled {
     background-color: #f32637;
     color: white;
     font-weight: 500;
 }
 
-.previewImage{
-    object-fit:contain;
+.previewImage {
+    object-fit: contain;
     max-height: 200px;
     border: none;
     outline: none;
-    box-shadow: -3px -3px 5px  #babaff;
+    box-shadow: -3px -3px 5px #babaff;
 }
 
 .error {
@@ -146,6 +147,13 @@ input[type="button"]{
         font-size: smaller;
     }
 
+    select option:disabled {
+        color: #0029a3;
+        font-weight: 500;
+        font-size: xx-small;
+    }
+
+
     input:focus,
     textarea:focus,
     select:focus {
@@ -164,7 +172,9 @@ input[type="button"]{
         font-size: smaller;
     }
 
-    label,p,h6 {
+    label,
+    p,
+    h6 {
         /* outline: 2px solid #0029a3; */
         color: #0029a3;
         font-weight: 500;

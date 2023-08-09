@@ -1,33 +1,70 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-<div class="container"  [hidden]="isLoading">
-    <table class="table mt-3 table-bordered border-light text-black-50" s>
-      <thead class="table-light">
-          <tr>
-              <!-- <th scope="col">Order No</th> -->
-              <th scope="col">Name</th>
-              <th scope="col">Image</th>
-              <th scope="col">Category</th>
-              <th scope="col">Manufacture</th>
-              <th scope="col">Price Details</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let P of ProductDetails">
-              <td>
-                  <a [routerLink]="['/product-View',P.ProductName]">{{
-                      P.ProductName.split('-')[0]
-                      }}</a>
-              </td>
-              <img  class="form-control previewImage" alt="Product Photo Preview"
-                            [src]="P.ProductImages.split(',')[0]">
-              <!-- <td>{{ o.CustomerName }}</td> -->
-              <td>{{ P.ProductCatergory }}</td>
-              <td>{{ P.ProductManufacture }}</td>
-              <td>{{ P.ProductPrice |currency:'INR' }} : {{ P.ProductShipping }}</td>
-          </tr>
-      </tbody>
+<div class="container" [hidden]="isLoading">
+  <table class="table mt-3 table-bordered border-light text-black-50" s>
+    <thead class="table-light">
+      <tr>
+        <!-- <th scope="col">Order No</th> -->
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Category</th>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Price Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let P of ProductDetails">
+        <td>
+          <a [routerLink]="['/product-View',P.ProductName]">{{ P.ProductName.split('-')[0]}}</a>
+        </td>
+        <img class="form-control previewImage" alt="Product Photo Preview" [src]="P.ProductImages.split(',')[0]">
+        <td>{{ P.ProductCatergory }}</td>
+        <td>{{ P.ProductManufacture }}</td>
+        <td>{{ P.ProductPrice |currency:'INR' }} : {{ P.ProductShipping }}</td>
+      </tr>
+    </tbody>
   </table>
+  <div class="row p-3">
+    <!-- Grid column -->
+    <div class="col-lg-4 p-1 " *ngFor="let P of ProductDetails">
+      <div class="card">
+        <div class="card-body">
+          <p class="align-center text-center md-form">
+            <a [routerLink]="['/product-View',P.ProductName]">
+              {{ P.ProductName.split('-')[0] | uppercase }}
+            </a>
+          <p>
+            <hr />
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-lg-4">
+              <img alt="Product Photo Preview" [src]="P.ProductImages.split(',')[0]">
+            </div>
+            <div class="col-lg-8">
+              <div class="details">
+                <a>
+                 <strong>Catergory: </strong> {{P.ProductCatergory}}
+                </a>
+                <hr>
+                <a>
+                 <strong>Manufacture: </strong> {{P.ProductManufacture}}
+                </a>
+                <hr>
+                <a>
+                 <strong>Price: </strong> {{ P.ProductPrice |currency:'INR' }} <strong class="sStrong">Shipping: </strong> {{ P.ProductShipping }}
+                </a>
+                <hr>
+                <a>
+                 <strong>Stock: </strong> {{ P.ProductStock }}  <strong class="sStrong">Orders: </strong> {{ P.ProductOrderCount }}
+                </a>
+                <hr>
+                <a *ngIf="P.ProductIsOffer =='Yes'">
+                    <strong>Offer Price: </strong> {{ P.ProductOfferPrice }}  <strong class="sStrong">Offer Discount: </strong> {{ P.ProductOfferDiscount }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
