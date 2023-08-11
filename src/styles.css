@@ -1,34 +1,25 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 html,
 body {
     height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f6fafe;
+    margin: 0px;
+    padding: 0px;
+    background-color: #EBEAEA;
+    font-family: 'Poppins', sans-serif;
 }
-
-
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+/* head{
+    background-color: #294776;
 }
-
-/* Adjust the main content's styles as needed */
 .main-content {
     flex: 1;
-    /* Allow the main content to grow and fill available space */
+    min-height: 100%;
     padding: 20px;
 }
 
 .footer {
     flex-shrink: 0;
-    /* Prevent the footer from shrinking when content grows */
     height: 50px;
-    /* Adjust the height as needed */
-    background-color: #f0f0f0;
-    /* Footer background color */
-    /* Add any other styling you need for the footer */
-}
+    background-color: #294776;
+   
+} */

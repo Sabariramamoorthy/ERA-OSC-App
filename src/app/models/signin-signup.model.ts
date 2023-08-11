@@ -56,7 +56,11 @@ export interface ConfigData{
   Manufacture:Manufacture[]
 }
 
+export interface BusinessData{
+  ConfigtTable:ConfigData,
+  ProductTable:Product[]
 
+}
   
 
  

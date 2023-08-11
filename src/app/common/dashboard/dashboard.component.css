@@ -41,16 +41,15 @@
 }
 
 .container-fluid {
-  background-color: rgb(252, 250, 247);
   padding: 5px;
   margin: 2px;
   border-radius: 10px;
-  background-color: #6942c8;
+  background-color: #294776;
   border: none;
 }
 
 .navbar-nav {
-  background-color: #6942c8;
+  background-color:#294776;
   color: white;
 }
 
@@ -63,7 +62,7 @@ ul::after,
 a::before,
 li::before,
 ul::before {
-  background-color: #6942c8;
+  background-color: #294776;
   color: white;
   font-weight: bold;
 }
@@ -76,20 +75,20 @@ ul::before {
 .nav-link:focus,
 .dropdown-toggle::after,
 .dropdown-toggle::before {
-  background-color: #6942c8;
+  background-color: #294776;
   color: white;
   font-weight: 500;
 }
 
 .dropdown-menu {
-  border: 1px solid #ab8df8;
+  border: 1px solid #294776;
   outline: none;
   box-shadow: none;
 }
 
 li:hover,
 a:hover {
-  background-color: #6942c8;
+  background-color: #294776;
   color: white;
   font-weight: normal;
 }

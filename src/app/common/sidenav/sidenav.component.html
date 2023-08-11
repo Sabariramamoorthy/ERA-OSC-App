@@ -1,0 +1,31 @@
+
+<header>
+  <div class="top">
+<P>ONLINE SHOPPING CART SINCE 2018</P>
+  </div>
+  <nav>
+    <div class="logo">
+      <h3>OSC</h3>
+    </div>
+    <ul class="nav-links" [ngClass]="{'active': showMenu}">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/product-upload">About</a></li>
+      <li><a routerLink="#">Services</a></li>
+      <li><a routerLink="#">Contact</a></li>
+      <li><a routerLink="#">Home</a></li>
+      <li><a routerLink="#">About</a></li>
+      <li><a routerLink="#">Services</a></li>
+      <li><a routerLink="#">Contact</a></li>
+    </ul>
+    <div class="burger" (click)="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<body>
+ <router-outlet></router-outlet>
+</body>

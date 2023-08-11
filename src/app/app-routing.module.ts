@@ -4,6 +4,7 @@ import { ProductPostComponent } from './shared/product-post/product-post.compone
 import { ProductsViewComponent } from './shared/products-view/products-view.component';
 import { ProductViewComponent } from './shared/product-view/product-view.component';
 import { AddManufactureCategoryComponent } from './shared/add-manufacture-category/add-manufacture-category.component';
+import { HomeComponent } from './common/home/home.component';
 
 const routes: Routes = [
   {
@@ -18,11 +19,15 @@ const routes: Routes = [
   {
     path:'add-category',component:AddManufactureCategoryComponent
   }
-  // {
-  //   path: '',
-  //   redirectTo: "/home",
-  //   pathMatch: 'full'
-  // },
+  ,
+  {
+    path:'home',component:HomeComponent
+  },
+  {
+    path: '',
+    redirectTo: "/home",
+    pathMatch: 'full'
+  },
 
 ];
 

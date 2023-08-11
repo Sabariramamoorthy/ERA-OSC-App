@@ -85,6 +85,24 @@ export class FirebaseDataService {
       
     }
   
+    async getAlldata(input: DataGet): Promise<any> {
+      let result !:any;
+      const dbRef = this.db.database.ref(input.basePath);
+      await dbRef.get().then((snapshot) => {
+        if (snapshot.exists()) {
+          result=snapshot.val();        
+        }
+        else
+        {
+          result=null;
+        }
+      });
+      //console.log(result);
+      return result;
+      
+    }
+  
+
   
     async update(input:DataUpdate):Promise<any> {
      await this.db.database.ref(`/${input.basePath}/${input.tableName}/${input.itemName}`).update(input.insertData)

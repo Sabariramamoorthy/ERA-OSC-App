@@ -1,6 +1,9 @@
 export const Constant = {
     localStorage: {
-        Sign: "SignData"
+        Sign: "SignData",
+        Product: "Product",
+        Manufacture:"Manufacture",
+        Brand:"Brand"
     },
     database:
     {

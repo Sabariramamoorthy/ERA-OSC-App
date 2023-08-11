@@ -13,6 +13,9 @@ import { ProductsViewComponent } from './shared/products-view/products-view.comp
 import { ProductViewComponent } from './shared/product-view/product-view.component';
 import { AddManufactureCategoryComponent } from './shared/add-manufacture-category/add-manufacture-category.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { HomeComponent } from './common/home/home.component';
+import { SidenavComponent } from './common/sidenav/sidenav.component';
+import { PhotoCarouselComponent } from './shared/photo-carousel/photo-carousel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     ProductsViewComponent,
     ProductViewComponent,
     AddManufactureCategoryComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    HomeComponent,
+    SidenavComponent,
+    PhotoCarouselComponent
   ],
   imports: [
     BrowserModule,
