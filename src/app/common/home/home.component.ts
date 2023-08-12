@@ -4,6 +4,7 @@ import { Constant } from 'src/Config/Constant';
 import { BusinessData, Category, Product } from 'src/app/models/signin-signup.model';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 import { CustomStorageService } from 'src/app/services/custom-storage.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,8 @@ export class HomeComponent implements OnInit {
   Brand: Category[] = [];
 
 
-
-  constructor(private _db: FirebaseDataService, private customStorageService: CustomStorageService) { }
+ 
+  constructor(private _db: FirebaseDataService, private customStorageService: CustomStorageService,private sanitizer: DomSanitizer) { }
   ngOnInit(): void {
     let dataUser: DataGet =
     {
@@ -63,5 +64,18 @@ export class HomeComponent implements OnInit {
   }
   toggleSideNav() {
     this.showSideNav = !this.showSideNav;
+  }
+  sendmessage(product:Product){
+    const phoneNumber = '+919042350714'; // Replace with the desired phone number
+   const message = `Hi Onoline Shopping Cart \n I wish to Buy:*${product.ProductName.split('-')[0]}* \n *Price*:${product.ProductPrice} \n *ProductURL*:https://myfood-app-11272.web.app/product-View/${product.ProductName}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    console.log(message);
+    
+    //this._router.navigateByUrl('/uploading-gif') https://myfood-app-11272.web.app/product-View/Women%20Watches-08122023042238
+    // Sanitize the URL
+    const safeUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(whatsappUrl);
+
+    // Open the WhatsApp message link in a new window
+    //window.open(safeUrl.toString(), '_blank');
   }
 }

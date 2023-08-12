@@ -5,21 +5,23 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-color: #EBEAEA;
+    background-color: #fcfdff;
     font-family: 'Poppins', sans-serif;
 }
-/* head{
-    background-color: #294776;
-}
+
 .main-content {
     flex: 1;
     min-height: 100%;
     padding: 20px;
 }
 
+
 .footer {
     flex-shrink: 0;
     height: 50px;
-    background-color: #294776;
+    background-color: #230754;
+    font-size: xx-small;
+    margin: 20px;
+    padding:5px;;
    
-} */
+} 

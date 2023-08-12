@@ -5,17 +5,17 @@ body {
 .top{
   margin: 0;
   min-height: 40px;
-  background-color: #3a332c;
+  background-color: #272728;
   text-align: center;
 }
 .top p{
   padding: 6px;
   font-size: smaller;
-  color: #ebeaea;
+  color: #ffffff;
   font-weight: lighter;
 }
 h3{
-  color: #ebeaea;
+  color: #ffffff;
 }
 /* header {
   background-color:  #294776;
@@ -24,8 +24,9 @@ h3{
 } */
 
 nav {
-  background-color:  #294776;
-  padding: 1rem;
+  background: rgb(38,33,113);
+  background: linear-gradient(270deg, rgba(38,33,113,1) 0%, rgba(53,48,132,1) 90%);
+  padding: 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

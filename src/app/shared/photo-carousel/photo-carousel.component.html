@@ -3,10 +3,11 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-item" *ngFor="let photo of photos; let i = index" [class.active]="i === activeIndex">
-            <img [src]="photo.url"  class="d-block w-100" [alt]="photo.alt">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <img [src]="photo.url"  class="d-block w-100" [alt]="photo.title">
+            <div class="carousel-caption ">
+                <h5>{{photo.title |uppercase}}</h5>
+                <p>{{photo.text}}</p>
+                <button>{{photo.button}}</button>
               </div>
           </div>
         </div>
