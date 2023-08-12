@@ -76,6 +76,7 @@ export class HomeComponent implements OnInit {
     const safeUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(whatsappUrl);
 
     // Open the WhatsApp message link in a new window
-    //window.open(safeUrl.toString(), '_blank');
+    //window.redirect();
+    window.location.href=whatsappUrl;
   }
 }
