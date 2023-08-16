@@ -1,11 +1,8 @@
-body {
-  margin: 0;
-}
 
 .top{
   margin: 0;
   min-height: 40px;
-  background-color: #272728;
+  background-color: #2A0234;
   text-align: center;
 }
 .top p{
@@ -24,8 +21,7 @@ h3{
 } */
 
 nav {
-  background: rgb(38,33,113);
-  background: linear-gradient(270deg, rgba(38,33,113,1) 0%, rgba(53,48,132,1) 90%);
+  background:#3D0152;
   padding: 0.25rem;
   display: flex;
   justify-content: space-between;
@@ -46,6 +42,8 @@ nav {
 
 .nav-links a {
   text-decoration: none;
+ font-weight:medium;
+ font-size: small;
   color: #ebeaea;
 }
 
@@ -74,7 +72,7 @@ nav {
     padding:10px ;
     top:110px;
     background: rgb(38,33,113);
-background: radial-gradient(circle, rgba(38,33,113,1) 0%, rgba(88,84,157,1) 90%);
+    background: radial-gradient(circle, rgba(38,33,113,1) 0%, rgba(88,84,157,1) 90%);
     flex-direction: column;
     color: #01112c;
     width: 90%;

@@ -79,4 +79,7 @@ export class HomeComponent implements OnInit {
     //window.redirect();
     window.location.href=whatsappUrl;
   }
+  allsales(){
+
+  }
 }

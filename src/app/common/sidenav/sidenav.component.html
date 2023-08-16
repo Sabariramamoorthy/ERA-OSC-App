@@ -7,15 +7,14 @@
     <div class="logo">
       <h3>OSC</h3>
     </div>
-    <ul class="nav-links" [ngClass]="{'active': showMenu}" [hidden]="!showMenu">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/product-upload">Upload Product</a></li>
-      <li><a routerLink="/product-Views">Products</a></li>
-      <li><a routerLink="/add-category">Add Manufacture/Category</a></li>
-      <li><a routerLink="#">Home</a></li>
-      <li><a routerLink="#">About</a></li>
-      <li><a routerLink="#">Services</a></li>
-      <li><a routerLink="#">Contact</a></li>
+    <ul class="nav-links" [ngClass]="{'active': showMenu}">
+      <li><a routerLink="/home">HOME</a></li>
+      <li><a routerLink="/product-upload">BRANDS</a></li>
+      <li><a routerLink="/product-Views">SERVICES</a></li>
+      <li><a routerLink="/add-category">ORDER</a></li>
+      <li><a routerLink="#">TRACKING</a></li>
+      <li><a routerLink="#">CONTACT</a></li>
+      <li><a routerLink="#">ABOUT US</a></li>
     </ul>
     <div class="burger" (click)="toggleMenu()">
       <div class="line1"></div>

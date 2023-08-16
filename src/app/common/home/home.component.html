@@ -5,71 +5,147 @@
 
   <!-- <button class="close-btn" (click)="toggleSideNav()">&times;</button> -->
 
-  <app-photo-carousel></app-photo-carousel>
+  <diV style="background-color: #F8F8F8;padding: 10px;">
+    <app-photo-carousel></app-photo-carousel>
+    <hr>
+    <div class="seeall">
+      <a (click)="allsales()">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+    <h3>Top Sales</h3>
+
+    <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
+      <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
+
+        <img class="card-img" [src]="P.ProductImages">
+        <p class="category">{{P.ProductCatergory}}</p>
+        <button (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> ORDER</button>
+        <a>{{P.ProductName.split('-')[0]}}</a>
+        <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
+
+        <div *ngIf="P.ProductIsOffer =='Yes'">
+          <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
+          <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
+          <sub>{{P.ProductOfferDiscount}}% </sub>
+        </div>
+
+      </div>
+    </div>
+  </diV>
+
   <hr>
   <div class="content">
     <h3>Shop By Category</h3>
-    <div class="row p-3 gap-3">
-      <div class="col-lg-2-brand p-2" *ngFor="let B of Brand">
+    <div class="row p-2 gap-2">
+      <!-- <div class="col-lg-2-brand p-2" *ngFor="let B of Brand">
         <p (click)="clickCategory()">{{B.CategoryName |uppercase}}</p>
+      </div> -->
+      <div class="col-lg-3">
+        <div class="card" >
+          <img src="./assets/C4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
       </div>
+
+      <div class="col-lg-3">
+        <div class="card" >
+          <img src="./assets/C4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card" >
+          <img src="./assets/C4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card" >
+          <img src="./assets/C4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <hr>
     <h3>How It's Work</h3>
     <div class="work row gap-3">
-      <div class="col-lg-3" >
+      <div class="col-lg-3">
         <span>
           <i class="bi bi-handbag"></i>
           Choose Your Product
         </span>
       </div>
 
-      <div class="col-lg-3" >
-      <span>
-        <i class="bi bi-whatsapp"></i>
-        Order On Whatsapp
-      </span></div>
+      <div class="col-lg-3">
+        <span>
+          <i class="bi bi-whatsapp"></i>
+          Order On Whatsapp
+        </span>
+      </div>
 
-      <div class="col-lg-3 " >
-      <span>
-        <i class="bi bi-ui-checks"></i>
-        Fill Your Address
-      </span></div>
+      <div class="col-lg-3 ">
+        <span>
+          <i class="bi bi-ui-checks"></i>
+          Fill Your Address
+        </span>
+      </div>
 
-      <div class="col-lg-3 " >
-      <span>
-        <i class="bi bi-credit-card-2-front"></i>
-        Process the Payment & Upload the Screenshoot
-      </span></div>
+      <div class="col-lg-3 ">
+        <span>
+          <i class="bi bi-credit-card-2-front"></i>
+          Process the Payment & Upload the Screenshoot
+        </span>
+      </div>
 
-      <div class="col-lg-3" >
-      <span>
-        <i class="bi bi-chat-left-text"></i>
-        You Will Get Order Confirmation Message
-      </span></div>
+      <div class="col-lg-3">
+        <span>
+          <i class="bi bi-chat-left-text"></i>
+          You Will Get Order Confirmation Message
+        </span>
+      </div>
 
-      <div class="col-lg-3" >
-      <span>
-        <i class="bi bi-truck"></i>
-        You Will Deliver Your Order
-      </span></div>
+      <div class="col-lg-3">
+        <span>
+          <i class="bi bi-truck"></i>
+          You Will Deliver Your Order
+        </span>
+      </div>
 
     </div>
-    <hr>
-    <h3>PRODUCT</h3>
+    <diV style="background-color: #F8F8F8;padding: 10px;">
+      <hr>
+    <h3>New Arrivals</h3>
     <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
       <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
         <img class="card-img" [src]="P.ProductImages">
         <p class="category">{{P.ProductCatergory}}</p>
+        <button (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> ORDER</button>
         <a>{{P.ProductName.split('-')[0]}}</a>
         <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
+
         <div *ngIf="P.ProductIsOffer =='Yes'">
           <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
           <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
           <sub>{{P.ProductOfferDiscount}}% </sub>
         </div>
-        <p class="order" (click)=" sendmessage(P)" ><i class="bi bi-whatsapp"></i>ORDER ON WHATSAPP</p>
+
       </div>
     </div>
+    </diV>
+    
   </div>
 </div>
