@@ -5,23 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class CustomStorageService {
 
-  private storage: { [key: string]: any } = {};
 
   constructor() { }
 
   setItem(key: string, value: any): void {
-    this.storage[key] = value;
+    localStorage[key] = JSON.stringify(value);
   }
 
   getItem(key: string): any {
-    return this.storage[key] || null;
+    return JSON.parse( localStorage[key]) || null;
   }
 
   removeItem(key: string): void {
-    delete this.storage[key];
+    localStorage.removeItem(key);
   }
 
   clear(): void {
-    this.storage = {};
+    localStorage.clear;
   }
 }

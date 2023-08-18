@@ -92,6 +92,8 @@ export class ProductPostComponent {
     const compressPromises: Promise<void>[] = [];
     let files = event.target.files;
     if (files) {
+      this.compressedImage=[];
+      this.compressedBlob=[];
       this.ProductImages=[...files]
       this.ProductImages.forEach(element => {
       const ImageCompressPromise = this._compress.compressImage(element, 50, 50);
@@ -158,6 +160,7 @@ export class ProductPostComponent {
         if (this._db.writeUserData(dataInsert) == Constant.flag.true) {
           window.alert(errorMessage.signup.success)
           this.ProductForm.reset();
+          this.ProductImage=[];
           this.PreviewFlag=false;
           this.isuploading=false;
         }
@@ -170,6 +173,8 @@ export class ProductPostComponent {
   async preView() {
     this.PreviewFlag=true;
     this.ProductData = this.ProductForm.value as Product
+    console.log(this.ProductImage );
+    ;
     this.ProductImage=this.compressedImage[0];
     //console.log(this.ProductData);
   }
