@@ -40,7 +40,41 @@ img{
     box-shadow: none;
 }
 @media only screen and (max-width: 600px) {
- 
+
+    .carousel-caption {
+        all: unset;
+        position: absolute;
+        right: 0%;
+        top:1.25rem;
+        /* bottom: 1.25rem; */
+        left:15%;
+        padding-top: 0.25rem;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: left
+    }
+
+    .carousel-caption h5{
+        text-align: left;
+        width: 50%;
+        line-height:1.5;
+        font-size: small;
+    }
+    .carousel-caption p{
+        display: none;visibility:hidden;
+    }
+    .carousel-caption button{
+        text-align: left;
+        font-size: xx-small;
+        padding: 5px;
+        border-radius: 10px;
+        border: none;
+        font-weight: 500;
+        margin: 2px;
+        color: #e50088;
+        outline: none;
+        box-shadow: none;
+    }
  
       
   }

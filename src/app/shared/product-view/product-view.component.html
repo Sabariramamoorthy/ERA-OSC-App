@@ -1,5 +1,6 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-<div class="container" [hidden]="isLoading">
+<!-- <div class="container" [hidden]="isLoading">
+
     <div class="row" *ngIf="ProductData !=null">
         <div class="form-header text-center">
             <h3>
@@ -56,5 +57,42 @@
 
         </div>
 
+    </div>
+</div> -->
+
+
+
+
+<div class="container py-4 my-4 mx-auto d-flex flex-column" *ngIf="ProductData !=null">
+    <div class="header">
+        <div class="row r1">
+            <div class="col-md-9 abc">
+                <h1>{{ProductData.ProductName.split('-')[0]}}</h1>
+            </div>
+            <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+            <p class="text-right para">Based on {{ProductData.ProductOrderCount}} Orders</p>
+        </div>
+    </div>
+    <div class="container-body mt-4">
+        <div class="row r3">
+            <div class="col-md-5 p-0 klo">
+                <ul>
+                    <li>{{ProductData.ProductBrand}}</li>
+                    <li>{{ProductData.ProductCatergory}}</li>
+                    <li>{{ProductData.ProductDetails}}</li>
+                    <li>{{ProductData.ProductOtherDetails}}</li>
+                    <li>{{ProductData.ProductPrice}}</li>>
+                </ul>
+            </div>
+            <div class="col-md-7"> <img  [srcset]="ProductData.ProductImages" width="90%" height="95%"> </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column mt-5">
+        <div class="row r4">
+            <div class="col-md-2 myt des"><a href="#">Description</a></div>
+            <div class="col-md-2 myt "><a href="#">Review</a></div>
+            <div class="col-md-2 mio offset-md-4"><a href="#">ADD TO CART</a></div>
+            <div class="col-md-2 myt "><button type="button" class="btn btn-outline-warning"><a href="#">BUY NOW</a></button></div>
+        </div>
     </div>
 </div>

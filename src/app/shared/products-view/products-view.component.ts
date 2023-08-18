@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataGet } from 'src/app/models/file-upload.model';
+
 import { Constant } from 'src/Config/Constant';
+import { DataGet } from 'src/app/models/file-upload.model';
 import { Product } from 'src/app/models/signin-signup.model';
+import { CustomStorageService } from 'src/app/services/custom-storage.service';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 
 @Component({
@@ -11,8 +13,15 @@ import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 })
 export class ProductsViewComponent implements OnInit {
   ProductDetails !: Product[];
+  showMenu: boolean = true;
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+    console.log(this.showMenu);
+    
+  }
   isLoading: boolean = true;
-  constructor(private _db:FirebaseDataService){}
+  constructor( private customStorageService: CustomStorageService,private _db:FirebaseDataService){}
   ngOnInit(): void { 
     let dataUser : DataGet =
     {
@@ -33,6 +42,9 @@ export class ProductsViewComponent implements OnInit {
         console.error(error);
       }
     );
+    //this.ProductDetails = this.customStorageService.getItem(Constant.localStorage.Product)
+    console.log( this.ProductDetails);
+    
     setTimeout(() => {
       this.isLoading = false; // Set to false when data loading is complete
     }, 3000); // Simulating 2 seconds of loading time

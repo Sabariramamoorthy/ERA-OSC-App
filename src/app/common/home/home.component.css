@@ -9,8 +9,8 @@
   flex-grow: 1;
   background-color: #ffffff;
   margin-top: 15px;
-
 }
+
 hr{
   border: 2px solid #20003c;
 }
@@ -27,21 +27,26 @@ h3 {
   padding: 15px;
   margin: 5px;
   margin-left: 15px;
+  border-radius: 5px;
+  text-align: left;
   /* border-radius: 10px; */
  }
 
  .work span{
   font-size: small;
   padding: 5px;
-  color: #020d60;
+  color: #20003c;
 
  }
  .work i{
   font-size: small;
-  color:  rgb(5, 3, 103);
+  color:  rgb(8, 1, 44);
   font-weight: bold;
+  border-radius: 5px;
  }
 
+
+ 
 
 .col-lg-2 {
   flex: 0 0 auto;
@@ -58,6 +63,25 @@ h3 {
   border-radius: 5px;
 }
 
+.card {
+  flex-direction: row;
+}
+
+.card-title{
+  font-size: small;
+  color: rgb(5, 1, 32);
+  padding: 5px;
+  border: 2.5px solid white;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+}
+.card-text{
+  font-size: x-small;
+  text-align: center;
+  font-weight: 500;
+  padding: 5px;
+}
 .seeall{
   float: right;
   margin-right: 5px;
@@ -85,6 +109,7 @@ background: linear-gradient(125deg, rgba(103,131,87,1) 0%, rgba(250,255,233,1) 1
   color:#1e0048 ;
 
 }
+
 
 .col-lg-2 a {
   text-align: left;
@@ -137,30 +162,38 @@ background: linear-gradient(125deg, rgba(103,131,87,1) 0%, rgba(250,255,233,1) 1
 .col-lg-2 button{
   background:#651379;
   padding: 5px;
-  float: right;
+  width: 100%;
   font-size: xx-small;
-  margin: 5px;
   border: none;
   font-weight: 500;
   text-align: center;
-  border-radius: 5px;
   color: #ffffff;
 }
 p i{
   margin-right: 5px;
   color: #ffffff;
 }
-.card-img {
-  width: 100%;
- text-align: center;
- border-radius: 10px;
-}
+
 
 .col-lg-3{
-  width: 22.500%;
+  flex: 0 0 auto;
+  margin-left: 15px;
+  width: 20.500%;
 }
 .card-img-top {
   width: 100%
+}
+
+.discount-badge {
+  position: absolute;
+  margin: 3px;
+  background-color: #9207b5;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  width: 2.5%;
+  font-size: xx-small;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -185,6 +218,19 @@ p i{
    text-align: center;
    border-radius: 10px;
   }
+
+  .discount-badge {
+    position: absolute;
+    margin: 3px;
+    background-color: #9207b5;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    width: 10%;
+    font-size: xx-small;
+    border-radius: 4px;
+  }
+
 
   .col-lg-2-brand img {
     margin: 0px;
@@ -224,6 +270,11 @@ p i{
     background: #FFFFFF;
   }
   .col-lg-3{
-    width: 95.500%;
+    width: 95%;
   }
+  .work{
+    padding: 15px;
+    margin: 2px;
+    /* border-radius: 10px; */
+   }
 }
