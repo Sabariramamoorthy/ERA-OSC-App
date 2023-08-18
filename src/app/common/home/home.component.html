@@ -16,7 +16,10 @@
     <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
       <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
         <span  *ngIf="P.ProductIsOffer =='Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
+        
           <img class="card-img" [src]="P.ProductImages">
+        
+          
           <button class="order" (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
           <p class="category">{{P.ProductCatergory}}</p>
           

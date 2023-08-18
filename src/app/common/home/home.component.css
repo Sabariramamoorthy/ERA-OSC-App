@@ -195,6 +195,13 @@ p i{
   font-size: xx-small;
   border-radius: 4px;
 }
+.card-img {
+  width: 100%;
+ text-align: center;
+ border-radius: 2px;
+ max-height: 200px;
+ object-fit: cover;
+}
 
 @media screen and (max-width: 768px) {
   .corner-div {
@@ -211,12 +218,6 @@ p i{
     flex: 0 0 auto;
     margin-left: 5px;
     width: 45.555%
-  }
-
-  .card-img {
-    width: 100%;
-   text-align: center;
-   border-radius: 2px;
   }
 
   .discount-badge {

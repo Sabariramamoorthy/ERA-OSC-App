@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
   }
   sendmessage(product:Product){
     const phoneNumber = '+919042350714'; // Replace with the desired phone number
-   const message = `Hi Online Shopping Cart \n I wish to Buy:*${product.ProductName.split('-')[0]}* \n *Price*:${product.ProductPrice} \n *ProductURL*:https://myfood-app-11272.web.app/product-View/${product.ProductName}`;
+   const message = `Hi Online Shopping Cart \n I wish to Buy:*${product.ProductName.split('-')[0]}* \n *Price*:${product.ProductPrice} \n *ProductURL*:https://myfood-app-11272.web.app/product-View/${product.ProductName.replaceAll(' ','%20')}`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     console.log(message);
     
