@@ -76,9 +76,7 @@ export class ProductPostComponent {
       }
     );
 
-     let now = new Date();
-     this.dateNow = formatDate(now, Constant.dateFormat.string, Constant.dateFormat.lan, Constant.dateFormat.zone)
-     }
+          }
 
   get f() {
     return this.ProductForm.controls;
@@ -126,6 +124,8 @@ export class ProductPostComponent {
  
   Upload(){
     this.isuploading=true;
+    let now = new Date();
+    this.dateNow = formatDate(now, Constant.dateFormat.string, Constant.dateFormat.lan, Constant.dateFormat.zone)
     this.ProductData.ProductUploadDate=this.dateNow;
     this.ProductData.ProductName= `${this.ProductData.ProductName}-${this.dateNow.split(" ")[0].replaceAll('-','')}${this.dateNow.split(" ")[1].replaceAll(':','')}`
     const FileUploadPromise: Promise<string>[] = [];
