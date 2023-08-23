@@ -2,8 +2,8 @@
   position: absolute;
   left: 0px;
   background: #3D0152;
-  width:300px;
-  padding: 13px 0 0 45px;
+  width:200px;
+  padding: 13px 0 0 10px;
   height: 100vh;
   border-right: 1px solid #eee;
   transition: transform 0.3s ease-in-out;
@@ -12,24 +12,21 @@
   overflow: hidden;
   overflow-y: auto;
   margin-bottom: 20px;
-  scrollbar-face-color: #3D0152;
-
 }
 
 .burger {
   left: 0px;
-  position: relative;
+  border-radius: 0px 0px 15px;
   cursor: pointer;
   float: left;
-  height: 100vh;
+  height:30px;
   background: #3D0152;
-  width:30px;
+  width:70px;
 }
 
 .burger i {
-  width: 50px;
-  height: 10px;
   color: #ffffff;
+  padding: 2px;
 }
 
 .close-btn {
@@ -43,18 +40,14 @@
 }
 
 #sidebar h6 {
-  left: 15px;
-  top: 30px;
+  top: 0px;
   position: absolute;
   color: #ffffff;
   border: none;
-  padding: 5px;
-  width: 275px;
+  width: 125px;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
 }
-
-
 
 summary {
   font-weight: 400;
@@ -63,23 +56,29 @@ summary {
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  font-size: 13px;
 }
 
 details {
   position: relative;
   left: 5px;
-  top: 45px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+
 }
 
 .links {
-  text-align: justify;
+  text-align: left;
+  margin-left: 5px;
 }
 
 .links a {
   color: #ffffff;
-  padding: 20px;
   text-decoration: none;
   font-size: small;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  border-bottom: 0.5px solid #ffffff;
 }
 .links br{
     padding: 20px;
@@ -87,7 +86,8 @@ details {
 
 .links a:hover {
     color: #ffffff;
-    padding: 20px;
+    padding: 5px;
     text-decoration: none;
     font-weight: 600;
   }
+ 

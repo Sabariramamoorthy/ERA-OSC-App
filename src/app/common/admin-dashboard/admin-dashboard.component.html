@@ -1,7 +1,6 @@
 <div id="sidebar" [hidden]="showMenu" [ngClass]="{'active': showMenu}">
   <h6>Dashboard</h6>
   <button class="close-btn" (click)="toggleMenu()"><i class="bi bi-x-octagon"></i></button>
-<br>
   <details open>
     <summary>Content</summary>
     <div class="links">
@@ -14,7 +13,7 @@
         <a routerLink="/add-category">Terms</a>
     </div>
   </details>
-  <br>
+ 
   <details>
     <summary>Customer</summary>
     <div class="links">
@@ -25,8 +24,7 @@
         <a routerLink="/add-category">Basket</a>
     </div>
   </details>
-
-  <br>
+ 
   <details>
     <summary>Order</summary>
     <div class="links">
@@ -37,8 +35,8 @@
         <a routerLink="/add-category">Order-Manufacture</a>
     </div>
   </details>
+ 
 
-  <br>
   <details>
     <summary>Shipping</summary>
     <div class="links">
@@ -48,7 +46,7 @@
     </div>
   </details>
 
-  <br>
+ 
   <details>
     <summary>Product</summary>
     <div class="links">
@@ -67,8 +65,7 @@
         <a routerLink="/add-category">Manufacture Products</a>
     </div>
   </details>
-
-  <br>
+ 
   <details>
     <summary>Transaction</summary>
     <div class="links">
@@ -84,9 +81,9 @@
     </div>
   </details>
 
-<br>
+
 <br>
 </div>
 <div class="burger">
-  <p class="ms-1" (click)="toggleMenu()"><i class="bi bi-houses-fill"></i></p>
+  <p class="text-center" (click)="toggleMenu()"><i class="bi bi-menu-down"></i></p>
 </div>

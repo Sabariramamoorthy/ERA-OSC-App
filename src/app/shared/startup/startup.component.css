@@ -1,0 +1,28 @@
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  flex-wrap: wrap;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .loading-spinner p {
+    margin-top: -250px;
+  font-size: xx-large;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;  flex-wrap: wrap;
+        flex-direction: column;
+        transition: transform 0.3s ease-in-out;
+      }
+    .loading-spinner p {
+        margin-top: -70px;
+      font-size: medium;
+      }
+  }

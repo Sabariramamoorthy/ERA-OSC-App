@@ -17,6 +17,7 @@ import { HomeComponent } from './common/home/home.component';
 import { SidenavComponent } from './common/sidenav/sidenav.component';
 import { PhotoCarouselComponent } from './shared/photo-carousel/photo-carousel.component';
 import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboard.component';
+import { StartupComponent } from './shared/startup/startup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboar
     HomeComponent,
     SidenavComponent,
     PhotoCarouselComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    StartupComponent
   ],
   imports: [
     BrowserModule,
