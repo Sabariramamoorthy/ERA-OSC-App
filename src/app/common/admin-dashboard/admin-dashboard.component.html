@@ -1,0 +1,92 @@
+<div id="sidebar" [hidden]="showMenu" [ngClass]="{'active': showMenu}">
+  <h6>Dashboard</h6>
+  <button class="close-btn" (click)="toggleMenu()"><i class="bi bi-x-octagon"></i></button>
+<br>
+  <details open>
+    <summary>Content</summary>
+    <div class="links">
+        <a routerLink="/product-upload">Home</a>
+        <br>
+        <a routerLink="/product-Views">About Us</a>
+        <br>
+        <a routerLink="/add-category">Contact Info</a>
+        <br>
+        <a routerLink="/add-category">Terms</a>
+    </div>
+  </details>
+  <br>
+  <details>
+    <summary>Customer</summary>
+    <div class="links">
+        <a routerLink="/product-upload">Log</a>
+        <br>
+        <a routerLink="/product-Views">Annivesary</a>
+        <br>
+        <a routerLink="/add-category">Basket</a>
+    </div>
+  </details>
+
+  <br>
+  <details>
+    <summary>Order</summary>
+    <div class="links">
+        <a routerLink="/product-upload">Orders</a>
+        <br>
+        <a routerLink="/product-Views">Return</a>
+        <br>
+        <a routerLink="/add-category">Order-Manufacture</a>
+    </div>
+  </details>
+
+  <br>
+  <details>
+    <summary>Shipping</summary>
+    <div class="links">
+        <a routerLink="/product-upload">By Order</a>
+        <br>
+        <a routerLink="/add-category">By Manufacture</a>
+    </div>
+  </details>
+
+  <br>
+  <details>
+    <summary>Product</summary>
+    <div class="links">
+        <a routerLink="/product-upload">Add Category</a>
+        <br>
+        <a routerLink="/product-Views">Add Manufacture</a>
+        <br>
+        <a routerLink="/product-Views">Add Headings</a>
+        <br>
+        <a routerLink="/add-category">Upload</a>
+        <br>
+        <a routerLink="/add-category">Edit</a>
+        <br>
+        <a routerLink="/add-category">All Products</a>
+        <br>
+        <a routerLink="/add-category">Manufacture Products</a>
+    </div>
+  </details>
+
+  <br>
+  <details>
+    <summary>Transaction</summary>
+    <div class="links">
+        <a routerLink="/product-upload">By Order</a>
+        <br>
+        <a routerLink="/product-Views">By Product</a>
+        <br>
+        <a routerLink="/product-Views">By Manufacture</a>
+        <br>
+        <a routerLink="/add-category">By Customer</a>
+        <br>
+        <a routerLink="/add-category">By Payment Mode</a>
+    </div>
+  </details>
+
+<br>
+<br>
+</div>
+<div class="burger">
+  <p class="ms-1" (click)="toggleMenu()"><i class="bi bi-houses-fill"></i></p>
+</div>

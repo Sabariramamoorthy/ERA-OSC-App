@@ -24,7 +24,7 @@ img{
     font-size: medium;
     width: 50%;
     padding: 5px;
-    line-height: 2.2;
+    line-height: 3;
     margin: 5px;
 }
 .carousel-caption button{
@@ -56,7 +56,7 @@ img{
 
     .carousel-caption h5{
         text-align: left;
-        width: 50%;
+        width: 70%;
         line-height:1.5;
         font-size: small;
     }

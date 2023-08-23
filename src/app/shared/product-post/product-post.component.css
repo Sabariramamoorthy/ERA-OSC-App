@@ -1,11 +1,3 @@
-:root {
-    --inputText: #0029a3;
-    --inputOutline: #01afff;
-    --inputBorder: #000000;
-    --inputPlaceholder: #021c6d;
-    --cardBackground: #e1e8e6;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;500;500&display=swap');
 
 .container {
@@ -17,28 +9,17 @@
 
 input:focus,
 textarea:focus,
-select:focus,
-option:focus {
-    color: #0029a3;
-    font-weight: 500;
-    outline: none;
-    box-shadow: none;
-}
-
-option:hover {
-    color: #0029a3;
-    font-weight: 500;
-    outline: none;
-    box-shadow: none;
+input:checked {
+  outline: 3px solid #6942c8;
+  box-shadow: none;
+  color: #444DDF;
+  font-weight: 500;
 }
 
 input::placeholder,
-select::selection,
 option,
-select::placeholder,
 option::selection,
 input::target-text,
-select,
 textarea,
 textarea::placeholder {
     color: #0029a3;
@@ -52,16 +33,15 @@ input ::after {
 input,
 textarea,
 select {
-    /* outline: 2px solid #0029a3; */
-    color: #0029a3;
-    font-weight: 500;
-    box-shadow: -3px -3px 5px #babaff;
+  outline: 2px solid #444ddf;
+  color: #7a44df;
+  font-weight: 500;
+  font-size: small;
 }
 
 label,
 p,
 h3 {
-    /* outline: 2px solid #0029a3; */
     color: #0029a3;
     font-weight: 500;
     margin-top: 10px;
@@ -69,16 +49,16 @@ h3 {
 }
 
 .card {
-    background-color: #fbfffe;
+    background-color: #ffffff;
     border-radius: 25px;
     color: #0029a3;
     outline: none;
     border: none;
-    box-shadow: -7px -7px 2px #babaff;
+    /* box-shadow: -7px -7px 2px #babaff; */
 }
 
 .card-body {
-    background-color: #fbfffe;
+    background-color: #ffffff;
     border-radius: 25px;
     color: #0029a3;
     outline: none;
@@ -86,7 +66,12 @@ h3 {
 }
 
 .card h3 {
-    color: #0029a3;
+    color: #010003;
+    border-left: 5px solid #700FEB;
+    text-align: left;
+    padding: 5px;
+    font-size: medium;
+    font-weight: 500;
 }
 
 .card input[type="submit"] {
@@ -116,12 +101,12 @@ input[type="button"] {
 }
 
 .error {
-    background-color: #0029a3;
+    background-color: #520166;
     margin-top: 10px;
     padding: 5px;
     color: white;
     border-radius: 10px;
-    font-size: small;
+    font-size: x-small;
     font-weight: 500;
 }
 
@@ -134,12 +119,8 @@ input[type="button"] {
 
 
     input::placeholder,
-    select::selection,
-    option,
     select::placeholder,
-    option::selection,
     input::target-text,
-    select,
     textarea,
     textarea::placeholder {
         color: #0029a3;
@@ -155,8 +136,7 @@ input[type="button"] {
 
 
     input:focus,
-    textarea:focus,
-    select:focus {
+    textarea:focus{
         outline: 1.5px solid #00ac69;
         box-shadow: none;
         color: #0029a3;
@@ -164,8 +144,7 @@ input[type="button"] {
     }
 
     input,
-    textarea,
-    select {
+    textarea {
         outline: 1px solid #0029a3;
         color: #0029a3;
         font-weight: 500;

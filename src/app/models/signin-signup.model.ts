@@ -30,14 +30,15 @@ export interface SignIn {
     ProductUploadDate:  string, 
 
     ProductBrand: string,
+    ProductBrandPhonenumber: string,
     ProductStock: string,
     ProductOrderCount: string,
 
     ProductIsOffer: string,
     ProductOfferPrice: string,
     ProductOfferDiscount: string,
-
-
+    
+    ProductHeading:string,
     
 }
 
@@ -49,11 +50,13 @@ export interface Manufacture {
 export interface Category {
   BrandName:string,
   CategoryName: string,
+  CategoryPhoneNUmber: string,
 }
 
 export interface ConfigData{
   Category:Category[],
-  Manufacture:Manufacture[]
+  Manufacture:Manufacture[],
+  Heading:Headings[]
 }
 
 export interface BusinessData{
@@ -61,7 +64,10 @@ export interface BusinessData{
   ProductTable:Product[]
 
 }
-  
+export interface Headings{
+  Heading:string,
+  SubHeading:string
+}
 
  
   

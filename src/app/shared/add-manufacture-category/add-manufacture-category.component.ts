@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataGet, DataInsert } from 'src/app/models/file-upload.model';
 import { Constant } from 'src/Config/Constant';
 import { errorMessage } from 'src/Config/errorMessage';
-import { Category, ConfigData, Manufacture, Product } from 'src/app/models/signin-signup.model';
+import { Category, ConfigData, Headings, Manufacture, Product } from 'src/app/models/signin-signup.model';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 
 @Component({
@@ -11,15 +11,26 @@ import { FirebaseDataService } from 'src/app/services/firebase-data.service';
   styleUrls: ['./add-manufacture-category.component.css']
 })
 export class AddManufactureCategoryComponent implements OnInit {
-  isuploading :boolean =true;
+  isuploading: boolean = true;
+
   brandName !: string;
   categoryName !: string;
+  categoryPhonenumber!: string;
+
   manufactureName !: string;
   manufactureNumber !: string;
+
+  headingName !: string;
+  subheadingname !:string;
+
   categoryError: string = '';
   manfactureError: string = '';
+  headingerror:string='';
+
+
   ManfactureDetails: Manufacture[] = []
   CategoryDetails: Category[] = []
+  HeadingDetails: Headings[] = []
 
 
   isuploadBrand: boolean = true;
@@ -27,6 +38,9 @@ export class AddManufactureCategoryComponent implements OnInit {
 
   isuploadManfacture: boolean = true;
   isDeleteManfacture: boolean = true;
+
+  isheadingadded:boolean=true;
+  isheadingDelete:boolean=true;
 
   configdetails !: ConfigData;
   constructor(private _db: FirebaseDataService) { }
@@ -43,23 +57,26 @@ export class AddManufactureCategoryComponent implements OnInit {
       (value) => {
         this.configdetails = value as ConfigData
 
-        if( this.configdetails?.Category !=null)
-        {
+        if (this.configdetails?.Category != null) {
           this.CategoryDetails = this.configdetails.Category;
           //this. CategorypageChanged({ page: this.CategorycurrentPage });
         }
-       // this.CategorytotalItems=this.CategoryDetails.length;
+        // this.CategorytotalItems=this.CategoryDetails.length;
 
 
-        if( this.configdetails?.Manufacture !=null)
-        {
-          this.ManfactureDetails = this.configdetails.Manufacture; 
+        if (this.configdetails?.Manufacture != null) {
+          this.ManfactureDetails = this.configdetails.Manufacture;
           //this.ManfacturepageChanged({ page: this.ManfacturecurrentPage });
-        }        
-       // this.ManfacturetotalItems=this.ManfactureDetails.length;
+        }
+        // this.ManfacturetotalItems=this.ManfactureDetails.length;
 
-        console.log(this.CategoryDetails,this.ManfactureDetails);
-        
+        if (this.configdetails?.Heading != null) {
+          this.HeadingDetails = this.configdetails.Heading;
+          //this.ManfacturepageChanged({ page: this.ManfacturecurrentPage });
+        }
+
+        console.log(this.CategoryDetails, this.ManfactureDetails,this.HeadingDetails);
+
       },
       (error) => {
         console.error(error);
@@ -92,7 +109,43 @@ export class AddManufactureCategoryComponent implements OnInit {
     this.ManfactureDetails = this.ManfactureDetails.slice(startIndex, endIndex);
   }
 
- 
+
+  addHeading() {
+console.log("sales");
+
+    if (this.headingName != null && this.subheadingname != null) {
+      if (this.HeadingDetails.find((m) => m.Heading === this.headingName
+        && m.SubHeading === this.subheadingname) == undefined) {
+        this.isheadingadded = false;
+
+        this.headingerror = '';
+        this.HeadingDetails.push({
+          Heading: this.headingName,
+          SubHeading: this.subheadingname
+        })
+      }
+      else {
+        this.headingerror = "Existing Heading"
+      }
+    }
+  }
+
+  UploadHeading() {
+    let dataInsert: DataInsert =
+    {
+      basePath: Constant.database.baseName,
+      tableName: Constant.database.ConfigData,
+      itemName: "Heading",
+      insertData: this.HeadingDetails
+    }
+    if (this._db.writeUserData(dataInsert)) {
+      window.alert(errorMessage.signup.success)
+      //location.reload();
+    }
+  }
+
+
+
 
   addManufacture() {
 
@@ -134,7 +187,8 @@ export class AddManufactureCategoryComponent implements OnInit {
         this.categoryError = '';
         this.CategoryDetails.push({
           BrandName: this.brandName,
-          CategoryName: this.categoryName
+          CategoryName: this.categoryName,
+          CategoryPhoneNUmber: this.categoryPhonenumber
         })
         //console.log(this.CategoryDetails);
 
@@ -160,17 +214,23 @@ export class AddManufactureCategoryComponent implements OnInit {
     }
   }
 
-  onCheckboxChange(event: any, index: number, type: string, v1: string, v2: string): void {
+  onCheckboxChange(event: any, index: number, type: string, v1: string, v2: string, v3: string = ''): void {
     if (event.target.checked) {
       if (type == "Manfacture") {
         this.isDeleteManfacture = false;
         this.indexManfacture.push(index);
         this.deleteM.push({ ManufactureName: v1, ManufacturetNumber: v2 })
       }
+      else if('Heading')
+      {
+      this.isheadingDelete=false;
+      this.indexHeading.push(index);
+      this.deleteH.push({ Heading: v1, SubHeading: v2 })
+      }
       else {
         this.isDeleteBrand = false;
         this.indexCategory.push(index);
-        this.deleteC.push({ BrandName: v1, CategoryName: v2 })
+        this.deleteC.push({ BrandName: v1, CategoryName: v2, CategoryPhoneNUmber: v3 })
       }
     }
     else {
@@ -186,6 +246,20 @@ export class AddManufactureCategoryComponent implements OnInit {
 
         this.indexManfacture.length == 0 ? this.isDeleteManfacture = true : this.isDeleteManfacture = false
       }
+      else if('Heading')
+      {
+      this.isheadingDelete=false;
+      const ind = this.indexHeading.findIndex(item => item == index);
+        if (ind !== -1) {
+          this.indexHeading.splice(ind, 1);
+          this.deleteH.splice(ind, 1);
+        }
+
+        //console.log("this.indexManfacture",this.indexManfacture);
+
+        this.indexHeading.length == 0 ? this.isheadingDelete = true : this.isheadingDelete = false
+      }
+
       else {
         this.isDeleteBrand = false;
         const ind = this.indexCategory.findIndex(item => item == index);
@@ -202,23 +276,24 @@ export class AddManufactureCategoryComponent implements OnInit {
   }
   indexManfacture: number[] = [];
   indexCategory: number[] = [];
-
+  indexHeading: number[] = [];
 
   deleteC: Category[] = [];
   deleteM: Manufacture[] = [];
+  deleteH: Headings[] = [];
 
   deleteBrand() {
     console.log(this.deleteC);
-    
+
     if (this.deleteC.length > 0) {
       this.deleteC.forEach((element) => {
         const ind = this.CategoryDetails.findIndex(item => item.BrandName == element.BrandName && item.CategoryName == element.CategoryName);
-        console.log("ind:",ind);
+        console.log("ind:", ind);
         if (ind !== -1) {
           this.CategoryDetails.splice(ind, 1);
         }
       })
-      this.deleteC=[];
+      this.deleteC = [];
       this.isuploadBrand = false;
     }
   }
@@ -230,8 +305,21 @@ export class AddManufactureCategoryComponent implements OnInit {
           this.ManfactureDetails.splice(ind, 1);
         }
       })
-      this.deleteM=[];
+      this.deleteM = [];
       this.isuploadManfacture = false;
+    }
+  }
+
+  deleteHeading() {
+    if (this.deleteH.length > 0) {
+      this.deleteH.forEach((element) => {
+        const ind = this.HeadingDetails.findIndex(item => item.Heading == element.Heading && item.SubHeading == element.SubHeading);
+        if (ind !== -1) {
+          this.HeadingDetails.splice(ind, 1);
+        }
+      })
+      this.deleteH = [];
+      this.isheadingadded = false;
     }
   }
 }

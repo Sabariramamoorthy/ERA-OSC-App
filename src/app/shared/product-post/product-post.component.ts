@@ -18,13 +18,13 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 })
 
 export class ProductPostComponent {
-  isuploading :boolean =false;
+  isuploading: boolean = false;
   ProductForm = new FormGroup({
     ProductName: new FormControl('', [Validators.required, Validators.minLength(8)]),
     ProductPrice: new FormControl('', [Validators.required]),
     ProductBrand: new FormControl('', [Validators.required]),
     ProductCatergory: new FormControl('', [Validators.required]),
-    ProductManufacture:new FormControl('', [Validators.required]),
+    ProductManufacture: new FormControl('', [Validators.required]),
     ProductShipping: new FormControl('', [Validators.required]),
     ProductDetails: new FormControl('', [Validators.required]),
     ProductOtherDetails: new FormControl('', [Validators.required]),
@@ -32,33 +32,34 @@ export class ProductPostComponent {
     ProductIsOffer: new FormControl('', [Validators.required]),
     ProductOfferPrice: new FormControl('', [Validators.required]),
     ProductOfferDiscount: new FormControl('', [Validators.required]),
-    ProductImages:  new FormControl('', [Validators.required]),  
+    ProductImages: new FormControl('', [Validators.required]),
   });
 
-  
+
 
   ProductImages: any[] = [];
-  ProductImage !: any ;
+  ProductImage !: any;
   signInData !: SignIn;
-  ProductData !:Product;
+  ProductData !: Product;
 
-  FormFlag:boolean=true;
-  PreviewFlag:boolean=false;
+  FormFlag: boolean = true;
+  PreviewFlag: boolean = false;
   ManfactureDetails: Manufacture[] = []
   CategoryDetails: Category[] = []
-  configdetails !:ConfigData;
+  configdetails !: ConfigData;
   dateNow: any = Date.now();
-
+  Catergorysuggestions: string[] = []
+  Brandsuggestions:string[]=[]
+  Manufacturesuggestions:string[]=[]
 
   constructor(private _localstorage: LocalstorageService,
-     private _db: FirebaseDataService,
-     private _compress:CompressFileService, 
-     private _router:Router,
-     private _fileService:FirebaseFileService,
-     private location:Location) 
-     {
-     this.ProductForm.invalid
-     let dataUser : DataGet =
+    private _db: FirebaseDataService,
+    private _compress: CompressFileService,
+    private _router: Router,
+    private _fileService: FirebaseFileService,
+    private location: Location) {
+    this.ProductForm.invalid
+    let dataUser: DataGet =
     {
       basePath: Constant.database.baseName,
       tableName: Constant.database.ConfigData,
@@ -68,114 +69,139 @@ export class ProductPostComponent {
     this._db.getAll(dataUser).then(
       (value) => {
         this.configdetails = value as ConfigData
-        this.CategoryDetails=this.configdetails.Category;
-        this.ManfactureDetails=this.configdetails.Manufacture;    
+        this.CategoryDetails = this.configdetails.Category;
+        this.ManfactureDetails = this.configdetails.Manufacture;
+
+        this.CategoryDetails.forEach((element) => {
+            this.Brandsuggestions.push(element.BrandName);
+        })
+        this.Brandsuggestions = this.Brandsuggestions.filter((value, index, self) => {
+          return self.indexOf(value) === index;
+        });
+
+        this.CategoryDetails.forEach((element) => {
+          this.Catergorysuggestions.push(element.CategoryName);
+      })
+      this.Catergorysuggestions = this.Catergorysuggestions.filter((value, index, self) => {
+        return self.indexOf(value) === index;
+      });
+
+      console.log( this.Brandsuggestions, this.Catergorysuggestions);
+
+      this.ManfactureDetails.forEach((element) => {
+        this.Manufacturesuggestions.push(element.ManufactureName);
+    })
+    this.Manufacturesuggestions = this.Manufacturesuggestions.filter((value, index, self) => {
+      return self.indexOf(value) === index;
+    });
+
+
       },
       (error) => {
         console.error(error);
       }
     );
 
-          }
 
+
+  }
   get f() {
     return this.ProductForm.controls;
   }
 
 
-  compressedImage :any[]=[];
-  compressedBlob :any[]=[];
+  compressedImage: any[] = [];
+  compressedBlob: any[] = [];
   async detectFiles(event: any) {
-    
+
     const compressPromises: Promise<void>[] = [];
     let files = event.target.files;
     if (files) {
-      this.compressedImage=[];
-      this.compressedBlob=[];
-      this.ProductImages=[...files]
+      this.compressedImage = [];
+      this.compressedBlob = [];
+      this.ProductImages = [...files]
       this.ProductImages.forEach(element => {
-      const ImageCompressPromise = this._compress.compressImage(element, 50, 50);
-      ImageCompressPromise.then((value: imageCompress) => {
-        this.compressedImage.push(value.compressedData) ;
-        this.compressedBlob.push(value.compressedBlob) ;
-      })
-      compressPromises.push(ImageCompressPromise);
+        const ImageCompressPromise = this._compress.compressImage(element, 50, 50);
+        ImageCompressPromise.then((value: imageCompress) => {
+          this.compressedImage.push(value.compressedData);
+          this.compressedBlob.push(value.compressedBlob);
+        })
+        compressPromises.push(ImageCompressPromise);
       });
-    //console.log("FormFlag", this.FormFlag);
+      //console.log("FormFlag", this.FormFlag);
 
-    Promise.all(compressPromises).then((value) => {
-      this.FormFlag=false;
-      //console.log(" FormFlag:", this.FormFlag);  
-      //console.log(this.compressedImage);
-    });
-      
-      }
+      Promise.all(compressPromises).then((value) => {
+        this.FormFlag = false;
+        //console.log(" FormFlag:", this.FormFlag);  
+        //console.log(this.compressedImage);
+      });
+
     }
-  
-  clickcount :number=1;
-  scrollPreview(){
-      this.ProductImage=this.compressedImage[this.clickcount];
-      this.clickcount ++;
-      if(this.clickcount >=this.compressedImage.length)
-      {
-        this.clickcount=0;
-      }
   }
- 
-  Upload(){
-    this.isuploading=true;
+
+  clickcount: number = 1;
+  scrollPreview() {
+    this.ProductImage = this.compressedImage[this.clickcount];
+    this.clickcount++;
+    if (this.clickcount >= this.compressedImage.length) {
+      this.clickcount = 0;
+    }
+  }
+
+  Upload() {
+    this.isuploading = true;
     let now = new Date();
     this.dateNow = formatDate(now, Constant.dateFormat.string, Constant.dateFormat.lan, Constant.dateFormat.zone)
-    this.ProductData.ProductUploadDate=this.dateNow;
-    this.ProductData.ProductName= `${this.ProductData.ProductName}-${this.dateNow.split(" ")[0].replaceAll('-','')}${this.dateNow.split(" ")[1].replaceAll(':','')}`
+    this.ProductData.ProductUploadDate = this.dateNow;
+    this.ProductData.ProductName = `${this.ProductData.ProductName}-${this.dateNow.split(" ")[0].replaceAll('-', '')}${this.dateNow.split(" ")[1].replaceAll(':', '')}`
     const FileUploadPromise: Promise<string>[] = [];
 
     this.compressedBlob.forEach((item, index) => {
       //console.log(item);
-      
+
       let ProductImageinstance = {
         BasePath: Constant.database.baseName,
         pageName: this.ProductData.ProductCatergory,
-        fileName:`${this.ProductData.ProductName}-${index}.png`,
+        fileName: `${this.ProductData.ProductName}-${index}.png`,
         file: item//file
       } as Fileupload;
       const ProductImagePromise = this._fileService.uploadFile(ProductImageinstance);
       FileUploadPromise.push(ProductImagePromise);
-      });
+    });
 
 
-      Promise.all(FileUploadPromise).then((content) => {
+    Promise.all(FileUploadPromise).then((content) => {
 
-        
-        //console.log(content);
-        this.ProductData.ProductImages=content.toString();
-        this.ProductData.ProductOrderCount=Constant.flag.null;
-        let dataInsert: DataInsert =
-        {
-          basePath: Constant.database.baseName,
-          tableName: Constant.database.productData,
-          itemName:this.ProductData.ProductName,
-          insertData: this.ProductData
-        }
-        if (this._db.writeUserData(dataInsert) == Constant.flag.true) {
-          window.alert(errorMessage.signup.success)
-          this.ProductForm.reset();
-          this.ProductImage=[];
-          this.PreviewFlag=false;
-          this.isuploading=false;
-        }
 
-      })
+      //console.log(content);
+      this.ProductData.ProductImages = content.toString();
+      this.ProductData.ProductOrderCount = Constant.flag.null;
+      let dataInsert: DataInsert =
+      {
+        basePath: Constant.database.baseName,
+        tableName: Constant.database.productData,
+        itemName: this.ProductData.ProductName,
+        insertData: this.ProductData
+      }
+      if (this._db.writeUserData(dataInsert) == Constant.flag.true) {
+        window.alert(errorMessage.signup.success)
+        this.ProductForm.reset();
+        this.ProductImage = [];
+        this.PreviewFlag = false;
+        this.isuploading = false;
+      }
 
-    
-   
+    })
+
+
+
   }
   async preView() {
-    this.PreviewFlag=true;
+    this.PreviewFlag = true;
     this.ProductData = this.ProductForm.value as Product
-    console.log(this.ProductImage );
+    console.log(this.ProductImage);
     ;
-    this.ProductImage=this.compressedImage[0];
+    this.ProductImage = this.compressedImage[0];
     //console.log(this.ProductData);
   }
 

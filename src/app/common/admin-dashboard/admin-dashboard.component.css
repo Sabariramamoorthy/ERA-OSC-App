@@ -1,0 +1,93 @@
+#sidebar {
+  position: absolute;
+  left: 0px;
+  background: #3D0152;
+  width:300px;
+  padding: 13px 0 0 45px;
+  height: 100vh;
+  border-right: 1px solid #eee;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  scrollbar-face-color: #3D0152;
+
+}
+
+.burger {
+  left: 0px;
+  position: relative;
+  cursor: pointer;
+  float: left;
+  height: 100vh;
+  background: #3D0152;
+  width:30px;
+}
+
+.burger i {
+  width: 50px;
+  height: 10px;
+  color: #ffffff;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: #ffffff;
+  top: 2px;
+  right: 15px;
+  font-size: 12px;
+  position: absolute;
+  border: none;
+}
+
+#sidebar h6 {
+  left: 15px;
+  top: 30px;
+  position: absolute;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  width: 275px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+
+summary {
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+details {
+  position: relative;
+  left: 5px;
+  top: 45px;
+}
+
+.links {
+  text-align: justify;
+}
+
+.links a {
+  color: #ffffff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: small;
+}
+.links br{
+    padding: 20px;
+}
+
+.links a:hover {
+    color: #ffffff;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 600;
+  }

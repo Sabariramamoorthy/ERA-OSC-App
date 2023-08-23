@@ -5,6 +5,7 @@ import { ProductsViewComponent } from './shared/products-view/products-view.comp
 import { ProductViewComponent } from './shared/product-view/product-view.component';
 import { AddManufactureCategoryComponent } from './shared/add-manufacture-category/add-manufacture-category.component';
 import { HomeComponent } from './common/home/home.component';
+import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   }
   ,
   {
+    path: 'admin-login', component: AdminDashboardComponent
+  },
+
+  {
     path:'home',component:HomeComponent
   },
   {
@@ -28,7 +33,7 @@ const routes: Routes = [
     redirectTo: "/home",
     pathMatch: 'full'
   },
-
+ 
 ];
 
 @NgModule({

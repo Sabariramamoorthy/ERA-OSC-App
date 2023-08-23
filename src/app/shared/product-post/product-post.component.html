@@ -1,250 +1,292 @@
 <app-loading-spinner *ngIf="isuploading"></app-loading-spinner>
-<div class="container" *ngIf="isuploading ==false" >
-    <section>
-         <div class="p-1">
-                <div class="card">
-                    <div class="card-body">
-                        <form [formGroup]="ProductForm" (ngSubmit)="preView()">
-                            <div class="form-header text-center">
-                                <h3>UPLOAD PRODUCT</h3>
-                            </div>
-                            <div class="md-form p-3">
-                                <input formControlName="ProductName" id="ProductName" type="text"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter The Product Name">
-                                <div *ngIf="f['ProductName'].touched && f['ProductName'].invalid" class="error">
-                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['required']">*
-                                        Product Name is required.</div>
-                                    <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['minlength']">*
-                                        Product Name should be Min 8 character.</div>
-                                </div>
-                            </div>
+<div class="container" *ngIf="isuploading ==false">
+  <section>
+    <div class="p-1">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="ProductForm" (ngSubmit)="preView()">
+            <div class="form-header text-center">
+              <h3>UPLOAD PRODUCT</h3>
+            </div>
+            <div class="md-form p-3">
+              <input formControlName="ProductName" id="ProductName" type="text"
+                class="form-control rounded-2 hover-shadow border-5 border-light" placeholder="Enter The Product Name">
+              <div *ngIf="f['ProductName'].touched && f['ProductName'].invalid" class="error">
+                <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['required']">*
+                  Product Name is required.</div>
+                <div *ngIf="f['ProductName'].errors && f['ProductName'].errors['minlength']">*
+                  Product Name should be Min 8 character.</div>
+              </div>
+            </div>
 
-                            <div class="md-form p-3">
-                                <input formControlName="ProductPrice" id="ProductPrice" type="number"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Product Price">
-                                <div *ngIf="f['ProductPrice'].touched && f['ProductPrice'].invalid" class="error">
-                                    <div *ngIf="f['ProductPrice'].errors && f['ProductPrice'].errors['required']">*
-                                        Product Price is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3 shadow-inner">
-                                <select formControlName="ProductBrand" id="ProductBrand"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    id="ProductBrand">
-                                    <option hidden value="" selected disabled >Select
-                                        Product Brand</option>
-                                    <option *ngFor="let l of CategoryDetails" [value]="l.BrandName">{{l.BrandName}}</option>
-                                </select>
-                                <div *ngIf="f['ProductBrand'].touched && f['ProductBrand'].invalid"
-                                    class="error">
-                                    <div
-                                        *ngIf="f['ProductBrand'].errors && f['ProductBrand'].errors['required']">
-                                        * Product Brand is required.</div>
-                                </div>
-                            </div>
-
-
-                            <div class="md-form p-3 shadow-inner">
-                                <select formControlName="ProductCatergory" id="ProductCatergory"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    id="ProductCatergory">
-                                    <option hidden value="" selected disabled >Select
-                                        Product Catergory</option>
-                                    <option *ngFor="let l of CategoryDetails" [value]="l.CategoryName">{{l.CategoryName}}</option>
-                                </select>
-                                <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid"
-                                    class="error">
-                                    <div
-                                        *ngIf="f['ProductCatergory'].errors && f['ProductCatergory'].errors['required']">
-                                        * Product Catergory is required.</div>
-                                </div>
-                            </div>
-
-
-                            <div class="md-form p-3 shadow-inner">
-                                <select formControlName="ProductManufacture" id="ProductManufacture"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    id="ProductManufacture">
-                                    <option hidden value="" selected disabled >Select
-                                        Product Manufacture</option>
-                                    <option *ngFor="let l of ManfactureDetails" [value]="l.ManufactureName">{{l.ManufactureName}}</option>
-                                </select>
-                                <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid"
-                                    class="error">
-                                    <div
-                                        *ngIf="f['ProductManufacture'].errors && f['ProductManufacture'].errors['required']">
-                                        * Product Manufacture is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input formControlName="ProductShipping" id="ProductShipping" type="text"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter The Product Shipping Amount">
-                                <div *ngIf="f['ProductShipping'].touched && f['ProductShipping'].invalid" class="error">
-                                    <div *ngIf="f['ProductShipping'].errors && f['ProductShipping'].errors['required']">
-                                        * Product Shipping is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <textarea rows="3" formControlName="ProductDetails" id="ProductDetails"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter The Product Details">
-                                </textarea>
-                                <div *ngIf="f['ProductDetails'].touched && f['ProductDetails'].invalid" class="error">
-                                    <div *ngIf="f['ProductDetails'].errors && f['ProductDetails'].errors['required']">*
-                                        Product Details is required.</div>
-
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <textarea rows="3" formControlName="ProductOtherDetails" id="ProductOtherDetails"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter The Product Other Details">
-                                </textarea>
-                                <div *ngIf="f['ProductOtherDetails'].touched && f['ProductOtherDetails'].invalid"
-                                    class="error">
-                                    <div
-                                        *ngIf="f['ProductOtherDetails'].errors && f['ProductOtherDetails'].errors['required']">
-                                        * Other Product Details is required.</div>
-
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input formControlName="ProductStock" id="ProductStock" type="number"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Product Stock">
-                                <div *ngIf="f['ProductStock'].touched && f['ProductStock'].invalid" class="error">
-                                    <div *ngIf="f['ProductStock'].errors && f['ProductStock'].errors['required']">*
-                                        Product Stock is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3 shadow-inner">
-                                <select formControlName="ProductIsOffer" id="ProductIsOffer"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    id="ProductIsOffer">
-                                    <option hidden value="" selected disabled >Select
-                                        Product Offer</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <div *ngIf="f['ProductIsOffer'].touched && f['ProductIsOffer'].invalid"
-                                    class="error">
-                                    <div
-                                        *ngIf="f['ProductIsOffer'].errors && f['ProductIsOffer'].errors['required']">
-                                        * Product Offer is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input formControlName="ProductOfferPrice" id="ProductOfferPrice" type="number"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Product Offer Price">
-                                <div *ngIf="f['ProductOfferPrice'].touched && f['ProductOfferPrice'].invalid" class="error">
-                                    <div *ngIf="f['ProductOfferPrice'].errors && f['ProductOfferPrice'].errors['required']">*
-                                        Product Offer Price is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="md-form p-3">
-                                <input formControlName="ProductOfferDiscount" id="ProductOfferDiscount" type="number"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light"
-                                    placeholder="Enter Your Product Discount Percentage">
-                                <div *ngIf="f['ProductOfferDiscount'].touched && f['ProductOfferDiscount'].invalid" class="error">
-                                    <div *ngIf="f['ProductOfferDiscount'].errors && f['ProductOfferDiscount'].errors['required']">*
-                                        Product Offer Discount Percentage is required.</div>
-                                </div>
-                            </div>
-                            <div class="md-form p-3">
-                                <input formControlName="ProductImages" id="ProductImages" type="file"
-                                    (change)="detectFiles($event)" accept="image/png, image/gif, image/jpeg, image/jpg"
-                                    class="form-control rounded-2 hover-shadow border-5 border-light" multiple>
-                                <br />
-                                <label>Upload Product Images</label>
-
-                                <div *ngIf="f['ProductImages'].touched && f['ProductImages'].invalid" class="error">
-                                    <div *ngIf="f['ProductImages'].errors && f['ProductImages'].errors['required']">
-                                        *
-                                        Product Image is required.</div>
-                                </div>
-                            </div>
-
-                            <div class="text-center md-form">
-                                <input class="btn btn-light w-25" [disabled]="FormFlag" type="submit" value="Preview"
-                                    (click)="preView()">
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
+            <div class="md-form p-3">
+              <input formControlName="ProductPrice" id="ProductPrice" type="number"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter Your Product Price">
+              <div *ngIf="f['ProductPrice'].touched && f['ProductPrice'].invalid" class="error">
+                <div *ngIf="f['ProductPrice'].errors && f['ProductPrice'].errors['required']">*
+                  Product Price is required.</div>
+              </div>
+            </div>
 
             
-        </div>
-        
-            <div class="mb-4 p-1" *ngIf="PreviewFlag == true">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-header text-center">
-                            <h3>PRODUCT PREVIEW</h3>
-                        </div>
-                        <img  class="form-control previewImage" alt="Product Photo Preview"
-                            [src]="ProductImage" (click)="scrollPreview()">
-                        <div>
-                            <h3>
-                                {{ProductData.ProductName.split('-')[0]}}
-                            </h3>
-                            <p>
-                                <strong>Brand: </strong> {{ProductData.ProductBrand}}
-                            </p>
-                            <p>
-                                <strong>Catergory: </strong> {{ProductData.ProductCatergory}}
-                            </p>
-                            <p>
-                                <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
-                            </p>
-                            <p>
-                                <strong>Details: </strong>{{ProductData.ProductDetails}}
-                            </p>
-                            <p>
-                                <strong>Other Details: </strong>{{ProductData.ProductOtherDetails}}
-                            </p>
-                            <p>
-                                <strong>Stock: </strong>{{ProductData.ProductStock}}
-                            </p>
-                            <p>
-                                <strong>Offer: </strong>{{ProductData.ProductIsOffer}}
-                            </p>
-                            <p>
-                                <strong>Offer Price: </strong>{{ProductData.ProductOfferPrice}}
-                            </p>
-                            <p>
-                                <strong>Offer Discount: </strong>{{ProductData.ProductOfferDiscount}}
-                            </p>
 
-                            <p>
-                                <strong>Price: </strong>{{ProductData.ProductPrice}}
-                            </p>
-                            <p>
-                                <strong>Shipping: </strong> {{ProductData.ProductShipping}}
-                            </p>
-                            <div class="text-center md-form">
-                                <input class="btn btn-light w-25" [disabled]="FormFlag" type="button" value="Upload"
-                                    (click)="Upload()">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+            <div class="md-form p-3">
+              <input formControlName="ProductShipping" id="ProductShipping" type="text"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter The Product Shipping Amount">
+              <div *ngIf="f['ProductShipping'].touched && f['ProductShipping'].invalid" class="error">
+                <div *ngIf="f['ProductShipping'].errors && f['ProductShipping'].errors['required']">
+                  * Product Shipping is required.</div>
+              </div>
             </div>
-           
-    </section>
+            <!-- <div class="md-form p-3 shadow-inner">
+              <select formControlName="ProductBrand" id="ProductBrand"
+                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductBrand">
+                <option hidden value="" selected disabled>Select
+                  Product Brand</option>
+                <option *ngFor="let l of CategoryDetails" [value]="l.BrandName">{{l.BrandName}}</option>
+              </select>
+              <div *ngIf="f['ProductBrand'].touched && f['ProductBrand'].invalid" class="error">
+                <div *ngIf="f['ProductBrand'].errors && f['ProductBrand'].errors['required']">
+                  * Product Brand is required.</div>
+              </div>
+            </div> -->
+
+            <div class="md-form p-3 shadow-inner">
+                <input 
+                type="text" 
+                list="suggestions" 
+                placeholder="Select Product Brand"   
+                formControlName="ProductBrand" 
+                id="ProductBrand"
+                class="form-control rounded-2 hover-shadow border-5 border-light">
+                <datalist id="suggestions">
+                  <option *ngFor="let suggestion of Brandsuggestions" [value]="suggestion"></option>
+                </datalist>
+                <div *ngIf="f['ProductBrand'].touched && f['ProductBrand'].invalid" class="error">
+                    <div *ngIf="f['ProductBrand'].errors && f['ProductBrand'].errors['required']">
+                      * Product Brand is required.</div>
+                  </div>
+              </div>
+
+<!-- 
+            <div class="md-form p-3 shadow-inner">
+              <select formControlName="ProductCatergory" id="ProductCatergory"
+                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductCatergory">
+                <option hidden value="" selected disabled>Select
+                  Product Catergory</option>
+                <option *ngFor="let l of CategoryDetails" [value]="l.CategoryName">{{l.CategoryName}}</option>
+              </select>
+              <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid" class="error">
+                <div *ngIf="f['ProductCatergory'].errors && f['ProductCatergory'].errors['required']">
+                  * Product Catergory is required.</div>
+              </div>
+            </div> -->
+
+            <div class="md-form p-3 shadow-inner">
+                <input 
+                type="text" 
+                list="suggestion" 
+                placeholder="Select Product Catergory"   
+                formControlName="ProductCatergory" 
+                id="ProductCatergory"
+                class="form-control rounded-2 hover-shadow border-5 border-light">
+                <datalist id="suggestion">
+                  <option *ngFor="let sug of Catergorysuggestions" [value]="sug"></option>
+                </datalist>
+                <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid" class="error">
+                    <div *ngIf="f['ProductCatergory'].errors && f['ProductCatergory'].errors['required']">
+                      * Product Catergory is required.</div>
+                  </div>
+              </div>
+
+
+          
+              <div class="md-form p-3 shadow-inner">
+                <input 
+                type="text" 
+                list="suggest" 
+                placeholder="Select Product Manufacture"   
+                formControlName="ProductManufacture" 
+                id="ProductManufacture"
+                class="form-control rounded-2 hover-shadow border-5 border-light">
+                <datalist id="suggest">
+                  <option *ngFor="let sug of Manufacturesuggestions" [value]="sug"></option>
+                </datalist>
+                <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid" class="error">
+                    <div *ngIf="f['ProductManufacture'].errors && f['ProductManufacture'].errors['required']">
+                      * Product Manufacture is required.</div>
+                  </div>
+              </div>
+
+
+
+            <!-- <div class="md-form p-3 shadow-inner">
+              <select formControlName="ProductManufacture" id="ProductManufacture"
+                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductManufacture">
+                <option hidden value="" selected disabled>Select
+                  Product Manufacture</option>
+                <option *ngFor="let l of ManfactureDetails" [value]="l.ManufactureName">{{l.ManufactureName}}</option>
+              </select>
+              <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid" class="error">
+                <div *ngIf="f['ProductManufacture'].errors && f['ProductManufacture'].errors['required']">
+                  * Product Manufacture is required.</div>
+              </div>
+            </div> -->
+
+
+
+
+
+            <div class="md-form p-3">
+              <textarea rows="3" formControlName="ProductDetails" id="ProductDetails"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter The Product Details">
+                                </textarea>
+              <div *ngIf="f['ProductDetails'].touched && f['ProductDetails'].invalid" class="error">
+                <div *ngIf="f['ProductDetails'].errors && f['ProductDetails'].errors['required']">*
+                  Product Details is required.</div>
+
+              </div>
+            </div>
+
+            <div class="md-form p-3">
+              <textarea rows="3" formControlName="ProductOtherDetails" id="ProductOtherDetails"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter The Product Other Details">
+                                </textarea>
+              <div *ngIf="f['ProductOtherDetails'].touched && f['ProductOtherDetails'].invalid" class="error">
+                <div *ngIf="f['ProductOtherDetails'].errors && f['ProductOtherDetails'].errors['required']">
+                  * Other Product Details is required.</div>
+
+              </div>
+            </div>
+
+            <div class="md-form p-3">
+              <input formControlName="ProductStock" id="ProductStock" type="number"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter Your Product Stock">
+              <div *ngIf="f['ProductStock'].touched && f['ProductStock'].invalid" class="error">
+                <div *ngIf="f['ProductStock'].errors && f['ProductStock'].errors['required']">*
+                  Product Stock is required.</div>
+              </div>
+            </div>
+
+            <div class="md-form p-3 shadow-inner">
+              <select formControlName="ProductIsOffer" id="ProductIsOffer"
+                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductIsOffer">
+                <option hidden value="" selected disabled>Select
+                  Product Offer</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div *ngIf="f['ProductIsOffer'].touched && f['ProductIsOffer'].invalid" class="error">
+                <div *ngIf="f['ProductIsOffer'].errors && f['ProductIsOffer'].errors['required']">
+                  * Product Offer is required.</div>
+              </div>
+            </div>
+
+            <div class="md-form p-3">
+              <input formControlName="ProductOfferPrice" id="ProductOfferPrice" type="number"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter Your Product Offer Price">
+              <div *ngIf="f['ProductOfferPrice'].touched && f['ProductOfferPrice'].invalid" class="error">
+                <div *ngIf="f['ProductOfferPrice'].errors && f['ProductOfferPrice'].errors['required']">*
+                  Product Offer Price is required.</div>
+              </div>
+            </div>
+
+            <div class="md-form p-3">
+              <input formControlName="ProductOfferDiscount" id="ProductOfferDiscount" type="number"
+                class="form-control rounded-2 hover-shadow border-5 border-light"
+                placeholder="Enter Your Product Discount Percentage">
+              <div *ngIf="f['ProductOfferDiscount'].touched && f['ProductOfferDiscount'].invalid" class="error">
+                <div *ngIf="f['ProductOfferDiscount'].errors && f['ProductOfferDiscount'].errors['required']">*
+                  Product Offer Discount Percentage is required.</div>
+              </div>
+            </div>
+            <div class="md-form p-3">
+              <input formControlName="ProductImages" id="ProductImages" type="file" (change)="detectFiles($event)"
+                accept="image/png, image/gif, image/jpeg, image/jpg"
+                class="form-control rounded-2 hover-shadow border-5 border-light" multiple>
+              <br />
+              <label>Upload Product Images</label>
+
+              <div *ngIf="f['ProductImages'].touched && f['ProductImages'].invalid" class="error">
+                <div *ngIf="f['ProductImages'].errors && f['ProductImages'].errors['required']">
+                  *
+                  Product Image is required.</div>
+              </div>
+            </div>
+
+            <div class="text-center md-form">
+              <input class="btn btn-light w-25" [disabled]="FormFlag" type="submit" value="Preview" (click)="preView()">
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="mb-4 p-1" *ngIf="PreviewFlag == true">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-header text-center">
+            <h3>PRODUCT PREVIEW</h3>
+          </div>
+          <img class="form-control previewImage" alt="Product Photo Preview" [src]="ProductImage"
+            (click)="scrollPreview()">
+          <div>
+            <h3>
+              {{ProductData.ProductName.split('-')[0]}}
+            </h3>
+            <p>
+              <strong>Brand: </strong> {{ProductData.ProductBrand}}
+            </p>
+            <p>
+              <strong>Catergory: </strong> {{ProductData.ProductCatergory}}
+            </p>
+            <p>
+              <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
+            </p>
+            <p>
+              <strong>Details: </strong>{{ProductData.ProductDetails}}
+            </p>
+            <p>
+              <strong>Other Details: </strong>{{ProductData.ProductOtherDetails}}
+            </p>
+            <p>
+              <strong>Stock: </strong>{{ProductData.ProductStock}}
+            </p>
+            <p>
+              <strong>Offer: </strong>{{ProductData.ProductIsOffer}}
+            </p>
+            <p>
+              <strong>Offer Price: </strong>{{ProductData.ProductOfferPrice}}
+            </p>
+            <p>
+              <strong>Offer Discount: </strong>{{ProductData.ProductOfferDiscount}}
+            </p>
+
+            <p>
+              <strong>Price: </strong>{{ProductData.ProductPrice}}
+            </p>
+            <p>
+              <strong>Shipping: </strong> {{ProductData.ProductShipping}}
+            </p>
+            <div class="text-center md-form">
+              <input class="btn btn-light w-25" [disabled]="FormFlag" type="button" value="Upload" (click)="Upload()">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
 
 </div>

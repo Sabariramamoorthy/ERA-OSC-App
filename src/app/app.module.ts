@@ -16,6 +16,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { HomeComponent } from './common/home/home.component';
 import { SidenavComponent } from './common/sidenav/sidenav.component';
 import { PhotoCarouselComponent } from './shared/photo-carousel/photo-carousel.component';
+import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PhotoCarouselComponent } from './shared/photo-carousel/photo-carousel.c
     LoadingSpinnerComponent,
     HomeComponent,
     SidenavComponent,
-    PhotoCarouselComponent
+    PhotoCarouselComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
