@@ -18,6 +18,9 @@ import { SidenavComponent } from './common/sidenav/sidenav.component';
 import { PhotoCarouselComponent } from './shared/photo-carousel/photo-carousel.component';
 import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboard.component';
 import { StartupComponent } from './shared/startup/startup.component';
+import { ThemeToggleComponent } from './support/theme-toggle/theme-toggle.component';
+import { TermsConditionComponent } from './common/terms-condition/terms-condition.component';
+import { CategoryshoppingComponent } from './common/categoryshopping/categoryshopping.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { StartupComponent } from './shared/startup/startup.component';
     SidenavComponent,
     PhotoCarouselComponent,
     AdminDashboardComponent,
-    StartupComponent
+    StartupComponent,
+    ThemeToggleComponent,
+    TermsConditionComponent,
+    CategoryshoppingComponent
   ],
   imports: [
     BrowserModule,

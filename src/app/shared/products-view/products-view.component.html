@@ -72,67 +72,25 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 <div [hidden]="isLoading">
 
-<div id="sidebar" [hidden]="showMenu" [ngClass]="{'active': showMenu}">
-  <button class="close-button" (click)="toggleMenu()">x</button>
-	<h3>CART</h3>
-    <div id="cart">
-    	<span class="empty">No items in cart.</span>       
-    </div>
-    
-    <h3>CATEGORIES</h3>
-    <div class="checklist categories">
-    	<ul>
-        	<li><a ><span></span>New Arivals</a></li>
-            <li><a ><span></span>Accesories</a></li>
-            <li><a ><span></span>Bags</a></li>
-            <li><a ><span></span>Dressed</a></li>
-            <li><a ><span></span>Jackets</a></li>
-            <li><a ><span></span>jewelry</a></li>
-            <li><a ><span></span>Shoes</a></li>
-            <li><a ><span></span>Shirts</a></li>
-            <li><a ><span></span>Sweaters</a></li>
-            <li><a ><span></span>T-shirts</a></li>
-        </ul>
-    </div>
+  <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
+    <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
+      <span  *ngIf="P.ProductIsOffer =='Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
+      
+        <img class="card-img" [src]="P.ProductImages">
+        <button class="order" (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
+        <p class="category">{{P.ProductCatergory}}</p>
+        
+        <a>{{P.ProductName.split('-')[0]}}</a>
+        <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
 
-    
-     <h3>PRICE RANGE</h3>
-     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/price-range.png" alt="" />
-</div>
-
-<div class="burger ms-2" >
-  <p (click)="toggleMenu()">>>> Filters</p>
-</div>
-
-
-  <div class="row p-3 gap-3">
-    <div class="col-lg-2" *ngFor="let P of ProductDetails">
-      <div class="card">
-        <img class="card-img p-2" [src]="P.ProductImages" [alt]="P.ProductName.split('-')[0]">
-        <div class="discount-badge">{{P.ProductOfferDiscount}}%</div>
-        <div class="card-body">
-          <h4 class="card-title">{{P.ProductName.split('-')[0]}}</h4>
-          <h6 class="card-subtitle mb-2 text-muted">{{P.ProductCatergory}}</h6>
-          <div class="buy d-flex justify-content-between align-items-center">
-            <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
-
-            <div *ngIf="P.ProductIsOffer =='Yes'">
-              <span > {{P.ProductOfferPrice | currency:'INR'}}</span>
-              <span >  <s>{{P.ProductPrice | currency:'INR'}}</s></span>
-            </div>
-             <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-          </div>
+        <div *ngIf="P.ProductIsOffer =='Yes'">
+          <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
+          <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
         </div>
-      </div>
     </div>
   </div>
 
-
-
 </div>
-<!-- <div id="grid-selector">       
-       Showing 1–9 of 48 results 
-</div> -->
 
     
     

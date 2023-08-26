@@ -1,0 +1,18 @@
+<div [ngClass]=" theme =='light' ? 'theme_light': 'theme_dark '">
+    
+    <div class="center_theme" >
+        <p>Choose Your Theme</p>
+        <div class="btn-group">
+            <button class="dark" (click)="onclick('dark')"><i class="bi bi-moon"></i>Dark</button>
+            <button class="light" (click)="onclick('light')" >Light<i class="bi bi-sun"></i></button>
+        </div>
+     
+    </div>
+
+    <div class="container">
+        <p>Subscribe for  Whatsapp Update & Notification</p>
+            <button type="button" ><i class="bi bi-bell"></i></button>
+      </div>
+</div>
+
+

@@ -106,8 +106,8 @@ input ::after {
   background-color: #6942c8;
   padding: 2.5px;
   color: white;
-  border-radius: 10px;
-  font-size: small;
+  border-radius: 0px 10px 10px 0px ;
+  font-size: x-small;
   font-weight: 500;
 }
 

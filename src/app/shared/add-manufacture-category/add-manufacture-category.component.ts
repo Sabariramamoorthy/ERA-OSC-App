@@ -75,7 +75,7 @@ export class AddManufactureCategoryComponent implements OnInit {
           //this.ManfacturepageChanged({ page: this.ManfacturecurrentPage });
         }
 
-        console.log(this.CategoryDetails, this.ManfactureDetails,this.HeadingDetails);
+        console.log(this.configdetails);
 
       },
       (error) => {

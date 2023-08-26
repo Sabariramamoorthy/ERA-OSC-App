@@ -18,7 +18,7 @@ export class FirebaseDataService {
   
      writeUserData(input: DataInsert): any {
       let result: string = Constant.flag.true;
-      //console.log("dataInsert");
+      console.log("dataInsert",input);
       this.db.database.ref(`/${input.basePath}/${input.tableName}/${input.itemName}`)
         .set(input.insertData).catch((error) => {
           console.log(error);

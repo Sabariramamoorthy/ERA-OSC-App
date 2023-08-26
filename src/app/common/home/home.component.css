@@ -45,7 +45,78 @@ h3 {
   border-radius: 5px;
  }
 
+ details div {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 1.5em;
+  font-size: small;
+}
+h6{
+  text-align: left;
+  padding:5px;
+  margin: 5px;
+  font-size: large;
+  color:#000101;
+  border-left: 5px solid #700FEB;
+  margin-bottom: 10px;
+}
+h6 span{
+  font-size: xx-small;
+}
+details div > * + * {
+  margin-top: 1.5em;
 
+}
+
+details + details {
+  margin-top: .5rem;
+}
+
+summary {
+  list-style: none;
+  font-size: small;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  border: 2px solid #320175 ;
+  padding: .75em 1em;
+  cursor: pointer;
+  position: relative;
+  padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
+summary:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: .75rem;
+  content: "↓";
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #000;
+  color: #FFF;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+details[open] summary {
+  background-color: #ffffff;
+}
+
+details[open] summary:before {
+  content: "↑";
+}
+
+summary:hover {
+  background-color: #ffffff;
+}
  
 
 .col-lg-2 {
@@ -82,11 +153,13 @@ h3 {
   font-weight: 500;
   padding: 5px;
 }
-.seeall{
+.seeall a{
   float: right;
   margin-right: 5px;
   font-weight:normal;
   font-size: small;
+  text-decoration: none;
+  color:#1e0048 ;
 }
 .seeall a:hover{
   font-weight: 500;

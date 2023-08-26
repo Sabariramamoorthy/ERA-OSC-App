@@ -10,10 +10,12 @@ import { ProductPostComponent } from './shared/product-post/product-post.compone
 })
 export class AppComponent implements OnInit {
 
-  title = 'ONline Shopping Cart';
+  title = 'Online Shopping Cart';
   Show:boolean=true;
+  startup:boolean=true;
   ngOnInit(): void {
     setTimeout(() => {
+      this.startup=false;
       this.Show = false; 
     }, 6000);
   }
