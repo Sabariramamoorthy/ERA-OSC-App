@@ -8,6 +8,11 @@ import { HomeComponent } from './common/home/home.component';
 import { AdminDashboardComponent } from './common/admin-dashboard/admin-dashboard.component';
 import { TermsConditionComponent } from './common/terms-condition/terms-condition.component';
 import { CategoryshoppingComponent } from './common/categoryshopping/categoryshopping.component';
+import { WorkTermsComponent } from './support/work-terms/work-terms.component';
+import { FootersComponent } from './common/footers/footers.component';
+import { AboutusComponent } from './common/aboutus/aboutus.component';
+import { ContactusComponent } from './common/contactus/contactus.component';
+import { TrackingComponent } from './common/tracking/tracking.component';
 
 const routes: Routes = [
   {
@@ -28,7 +33,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'terms', component: TermsConditionComponent
+    path: 'faq', component: TermsConditionComponent
+  },
+
+  {
+    path: 'terms', component: WorkTermsComponent
   },
 
   {
@@ -42,6 +51,21 @@ const routes: Routes = [
     path: '',
     redirectTo: "/home",
     pathMatch: 'full'
+  },
+
+  {
+    path: 'footer', component: FootersComponent
+  },
+
+  {
+    path: 'aboutus', component: AboutusComponent
+  },
+
+  {
+    path:'contactus',component:ContactusComponent
+  },
+  {
+    path:'tracking',component:TrackingComponent
   },
  
 ];

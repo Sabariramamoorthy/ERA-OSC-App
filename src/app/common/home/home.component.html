@@ -1,232 +1,78 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 <div class="container" [hidden]="isLoading">
-  <!-- <button class="open-btn" (click)="toggleSideNav()">&#9776;</button>
-     -->
-
-  <!-- <button class="close-btn" (click)="toggleSideNav()">&times;</button> -->
-
-  <diV style="background-color: #F8F8F8;padding: 10px;">
+  <div style="background-color: #F8F8F8; padding: 10px;">
     <app-photo-carousel></app-photo-carousel>
     <hr>
     <div class="seeall">
-      <a [routerLink]="['/product-Views','Top Sales']">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', TopsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
     </div>
-    <h3>Top Sales</h3>
-
-    <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
-      <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
-        <span  *ngIf="P.ProductIsOffer =='Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
-        
-          <img class="card-img" [src]="P.ProductImages">
-          <button class="order" (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
-          <p class="category">{{P.ProductCatergory}}</p>
-          
-          <a>{{P.ProductName.split('-')[0]}}</a>
-          <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
-  
-          <div *ngIf="P.ProductIsOffer =='Yes'">
-            <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
-            <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
-          </div>
-      </div>
-    </div>
-  </diV>
-
-  <hr>
-  <div class="seeall">
-    <a [routerLink]="['/category','all']">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    <h3>{{ TopsalesH.Heading }}
+      <span>{{ TopsalesH.SubHeading }}</span>
+    </h3>
+    <app-product-cards [products]="Topsales"></app-product-cards>
   </div>
-  <div class="content">
-    <h3>Shop By Category</h3>
-    <div class="row p-2 gap-2 w-100" style="align-content: space-evenly;">
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;background-color: #FDC6B2;border: none;">
-          <img src="./assets/C2.png" class="card-img-top w-25" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">GOWNS</h5>
-            <p class="card-text">100+ Collections</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;background-color: #CABBD6;border: none;">
-          <img src="./assets/C3.png" class="card-img-top w-25" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">MOBILE ACCESSORIES</h5>
-            <p class="card-text">100+ Collections</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3" >
-        <div class="card" style="width: 18rem;background-color: #C6C6D6;border: none;">
-          <img src="./assets/C4.png" class="card-img-top w-25" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">WATHCES</h5>
-            <p class="card-text">100+ Collections</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3" >
-        <div class="card" style="width: 18rem;background-color: #FBCE91;border: none;">
-          <img src="./assets/C1.png" class="card-img-top w-25" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">KURTIS</h5>
-            <p class="card-text">100+ Collections</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <hr>
-  <div class="seeall">
-    <a  routerLink="/terms">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
-  </div>
-  <!-- <h3>How It's Work</h3>
-  <div class="work row gap-3">
-    <div class="col-lg-3">
-      <span>
-        <i class="bi bi-handbag"></i>
-        Choose Your Product
-      </span>
-    </div>
-
-    <div class="col-lg-3">
-      <span>
-        <i class="bi bi-whatsapp"></i>
-        Order On Whatsapp
-      </span>
-    </div>
-
-    <div class="col-lg-3 ">
-      <span>
-        <i class="bi bi-ui-checks"></i>
-        Fill Your Address
-      </span>
-    </div>
-
-    <div class="col-lg-3 ">
-      <span>
-        <i class="bi bi-credit-card-2-front"></i>
-        Process the Payment & Upload the Screenshoot
-      </span>
-    </div>
-
-    <div class="col-lg-3">
-      <span>
-        <i class="bi bi-chat-left-text"></i>
-        You Will Get Order Confirmation Message
-      </span>
-    </div>
-
-    <div class="col-lg-3">
-      <span>
-        <i class="bi bi-truck"></i>
-        You Will Deliver Your Order
-      </span>
-    </div>
-
-  </div> -->
-<div>
-  <h6>How It's Work<span>(Steps to Order)</span></h6>
-  <details>
-      <summary>
-          Choose Your Product
-      </summary>
-      <div>
-      Choose your product based on your wish desire
-      </div>
-    </details>
-    <details>
-      <summary>
-        Place the Order
-      </summary>
-      <div>
-        Place your order directly or through Whatsapp
-      </div>
-    </details>
-    <details>
-      <summary>
-          Fill Your Address
-      </summary>
-      <div>
-        Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a
-          href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-          target="_blank">flow content</a>, which is basically everything.
-      </div>
-    </details>
-    <details>
-      <summary>
-          Process the Payment
-      </summary>
-      <div>
-          Process the Payment & Upload the Screenshoot</div>
-    </details>
-    <details>
-      <summary>
-          Order Confirmation Message
-      </summary>
-      <div>
-          You Will Get Order Confirmation Message</div>
-    </details>
-    <details>
-      <summary>
-          Deliver Your Order
-      </summary>
-      <div>
-          We Will Deliver Your Order</div>
-    </details>
-</div>
-  
-
-  <diV style="background-color: #F8F8F8;padding: 10px;">
+  <div>
     <hr>
     <div class="seeall">
-      <a  [routerLink]="['/product-Views','Top Sales']">New Arrivals<i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/category','all']">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
     </div>
-    <h3>New Arrivals</h3>
-    <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
-      <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
-        <span  *ngIf="P.ProductIsOffer =='Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
-          <img class="card-img" [src]="P.ProductImages">
-          <button class="order" (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
-          <p class="category">{{P.ProductCatergory}}</p>
-          
-          <a>{{P.ProductName.split('-')[0]}}</a>
-          <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
-  
-          <div *ngIf="P.ProductIsOffer =='Yes'">
-            <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
-            <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
-          </div>
-      </div>
-    </div>
-  </diV>
+    <app-catergory></app-catergory>
+  </div>
 
-  <diV style="background-color: #ffffff;padding: 10px;">
+  <div>
     <hr>
     <div class="seeall">
-      <a  routerLink="/terms">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a routerLink="/terms">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
     </div>
-    <h3>Happy Customers</h3>
-    <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">
-      <div class="col-lg-2 p-2" *ngFor="let P of ProductDetails">
-        <span  *ngIf="P.ProductIsOffer =='Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
-          <img class="card-img" [src]="P.ProductImages">
-          <button class="order" (click)=" sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
-          <p class="category">{{P.ProductCatergory}}</p>
-          
-          <a>{{P.ProductName.split('-')[0]}}</a>
-          <p *ngIf="P.ProductIsOffer =='No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
-  
-          <div *ngIf="P.ProductIsOffer =='Yes'">
-            <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
-            <span class="priceoffer-offer"> {{P.ProductOfferPrice | currency:'INR'}}</span>
-          </div>
-      </div>
+    <h3>How It's Work<span>(Steps to Order)</span></h3>
+    <app-work-terms [page]=false></app-work-terms>
+  </div>
+
+  <div>
+    <hr>
+    <div class="seeall">
+      <a [routerLink]="['/product-Views', SplsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
     </div>
-  </diV>
+    <h3>{{ SplsalesH.Heading }}
+      <span>{{ SplsalesH.SubHeading }}</span>
+    </h3>
+    <app-product-cards [products]="Splsales"></app-product-cards>
+  </div>
+
+  <div>
+    <hr>
+    <div class="seeall">
+      <a [routerLink]="['/product-Views', NewsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+    <h3>{{ NewsalesH.Heading }}
+      <span>{{ NewsalesH.SubHeading }}</span>
+    </h3>
+    <app-product-cards [products]="Newsales"></app-product-cards>
+  </div>
+
+  <div>
+    <hr>
+    <div class="seeall">
+      <a [routerLink]="['/product-Views', OffersalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+    <h3>{{ OffersalesH.Heading }}
+      <span>{{ OffersalesH.SubHeading }}</span>
+    </h3>
+    <app-product-cards [products]="Offersales"></app-product-cards>
+  </div>
+
+  <div>
+    <hr>
+    <div class="seeall">
+      <a [routerLink]="['/product-Views', RestocksalesG.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+    <h3>{{ RestocksalesG.Heading }}
+      <span>{{ RestocksalesG.SubHeading }}</span>
+    </h3>
+    <app-product-cards [products]="Restocksales"></app-product-cards>
+  </div>
 </div>
+<app-footers [hidden]="isLoading">
+
+</app-footers>

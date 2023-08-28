@@ -1,0 +1,36 @@
+footer{
+    background-color:#2A0234;  
+    max-height: 100px;
+    padding: 5px;
+}
+i{
+    background-color:#2A0234;  
+    color: white;
+    margin: 5px;
+    padding: 3px;
+    max-width: 15px;
+    max-height: 25px;
+}
+.copyright{
+    padding: 5px; 
+    color: #ffffff;
+    font-size: x-small;
+}
+.copyright a{
+    padding: 5px; 
+    color: #ffffff;
+    font-size: x-small;
+    text-decoration: none;
+}
+
+.service{
+    padding: 2px; 
+    color: #ffffff;
+    font-size: x-small;
+}
+.service a{
+    padding: 2px; 
+    color: #ffffff;
+    font-size: x-small;
+    text-decoration: none;
+}

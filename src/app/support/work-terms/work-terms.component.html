@@ -1,0 +1,25 @@
+ 
+<div class="faq">
+    <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
+    <details *ngFor="let step of steps">
+        <summary>
+            {{step.title}}
+        </summary>
+        <div>
+            {{step.description}}
+        </div>
+      </details>
+</div>
+
+<div *ngIf="page" class="faq"><h6>Terms & Conditions<span>(by Online Shopping Cart)</span></h6>
+<details *ngFor="let term of terms">
+    <summary>
+        {{term.section}}
+    </summary>
+    <div>
+        {{term.content}}
+    </div>
+  </details>
+  </div>
+
+  <app-footers *ngIf="page"></app-footers>

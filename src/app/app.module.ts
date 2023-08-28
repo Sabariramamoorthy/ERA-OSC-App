@@ -21,6 +21,13 @@ import { StartupComponent } from './shared/startup/startup.component';
 import { ThemeToggleComponent } from './support/theme-toggle/theme-toggle.component';
 import { TermsConditionComponent } from './common/terms-condition/terms-condition.component';
 import { CategoryshoppingComponent } from './common/categoryshopping/categoryshopping.component';
+import { ProductCardsComponent } from './support/product-cards/product-cards.component';
+import { CatergoryComponent } from './support/catergory/catergory.component';
+import { WorkTermsComponent } from './support/work-terms/work-terms.component';
+import { AboutusComponent } from './common/aboutus/aboutus.component';
+import { ContactusComponent } from './common/contactus/contactus.component';
+import { FootersComponent } from './common/footers/footers.component';
+import { TrackingComponent } from './common/tracking/tracking.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,14 @@ import { CategoryshoppingComponent } from './common/categoryshopping/categorysho
     StartupComponent,
     ThemeToggleComponent,
     TermsConditionComponent,
-    CategoryshoppingComponent
+    CategoryshoppingComponent,
+    ProductCardsComponent,
+    CatergoryComponent,
+    WorkTermsComponent,
+    AboutusComponent,
+    ContactusComponent,
+    FootersComponent,
+    TrackingComponent
   ],
   imports: [
     BrowserModule,

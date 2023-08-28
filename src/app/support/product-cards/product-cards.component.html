@@ -1,0 +1,15 @@
+<div class="row p-3 gap-3" *ngIf="products.length > 0" style="background-color: #F8F8F8;padding: 10px;">
+    <div class="col-lg-2 p-2" *ngFor="let P of products">
+      <span *ngIf="P.ProductIsOffer === 'Yes'" class="discount-badge">{{P.ProductOfferDiscount}}%</span>
+      <img class="card-img" [src]="P.ProductImages">
+      <button class="order" (click)="sendmessage(P)"><i class="bi bi-whatsapp"></i> Order On Whatsapp</button>
+      <p class="category">{{P.ProductCatergory}}</p>
+      <a>{{P.ProductName.split('-')[0]}}</a>
+      <p *ngIf="P.ProductIsOffer === 'No'" class="price">{{P.ProductPrice | currency:'INR'}}</p>
+      <div *ngIf="P.ProductIsOffer === 'Yes'">
+        <span class="priceoffer">{{P.ProductPrice | currency:'INR'}}</span>
+        <span class="priceoffer-offer">{{P.ProductOfferPrice | currency:'INR'}}</span>
+      </div>
+    </div>
+  </div>
+  

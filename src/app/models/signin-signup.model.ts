@@ -39,6 +39,7 @@ export interface SignIn {
     ProductOfferDiscount: string,
     
     ProductHeading:string,
+    ProductOrderType:string,
     
 }
 

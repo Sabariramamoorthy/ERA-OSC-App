@@ -40,18 +40,7 @@
                   * Product Shipping is required.</div>
               </div>
             </div>
-            <!-- <div class="md-form p-3 shadow-inner">
-              <select formControlName="ProductBrand" id="ProductBrand"
-                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductBrand">
-                <option hidden value="" selected disabled>Select
-                  Product Brand</option>
-                <option *ngFor="let l of CategoryDetails" [value]="l.BrandName">{{l.BrandName}}</option>
-              </select>
-              <div *ngIf="f['ProductBrand'].touched && f['ProductBrand'].invalid" class="error">
-                <div *ngIf="f['ProductBrand'].errors && f['ProductBrand'].errors['required']">
-                  * Product Brand is required.</div>
-              </div>
-            </div> -->
+       
 
             <div class="md-form p-3 shadow-inner">
                 <input 
@@ -70,19 +59,7 @@
                   </div>
               </div>
 
-<!-- 
-            <div class="md-form p-3 shadow-inner">
-              <select formControlName="ProductCatergory" id="ProductCatergory"
-                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductCatergory">
-                <option hidden value="" selected disabled>Select
-                  Product Catergory</option>
-                <option *ngFor="let l of CategoryDetails" [value]="l.CategoryName">{{l.CategoryName}}</option>
-              </select>
-              <div *ngIf="f['ProductCatergory'].touched && f['ProductCatergory'].invalid" class="error">
-                <div *ngIf="f['ProductCatergory'].errors && f['ProductCatergory'].errors['required']">
-                  * Product Catergory is required.</div>
-              </div>
-            </div> -->
+
 
             <div class="md-form p-3 shadow-inner">
                 <input 
@@ -122,18 +99,39 @@
 
 
 
-            <!-- <div class="md-form p-3 shadow-inner">
-              <select formControlName="ProductManufacture" id="ProductManufacture"
-                class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductManufacture">
-                <option hidden value="" selected disabled>Select
-                  Product Manufacture</option>
-                <option *ngFor="let l of ManfactureDetails" [value]="l.ManufactureName">{{l.ManufactureName}}</option>
-              </select>
-              <div *ngIf="f['ProductManufacture'].touched && f['ProductManufacture'].invalid" class="error">
-                <div *ngIf="f['ProductManufacture'].errors && f['ProductManufacture'].errors['required']">
-                  * Product Manufacture is required.</div>
+              <div class="md-form p-3 shadow-inner">
+                <input 
+                type="text" 
+                list="HeadingSuggestion" 
+                placeholder="Select Product Heading"   
+                formControlName="ProductHeading" 
+                id="ProductHeading"
+                class="form-control rounded-2 hover-shadow border-5 border-light">
+                <datalist id="HeadingSuggestion">
+                  <option *ngFor="let sug of Headingsuggestions" [value]="sug"></option>
+                </datalist>
+                <div *ngIf="f['ProductHeading'].touched && f['ProductHeading'].invalid" class="error">
+                    <div *ngIf="f['ProductHeading'].errors && f['ProductHeading'].errors['required']">
+                      * Product Heading is required.</div>
+                  </div>
               </div>
-            </div> -->
+
+              <div class="md-form p-3 shadow-inner">
+                <input 
+                type="text" 
+                list="OrderTypesuggestion" 
+                placeholder="Select Product Order Type"   
+                formControlName="ProductOrderType" 
+                id="ProductOrderType"
+                class="form-control rounded-2 hover-shadow border-5 border-light">
+                <datalist id="OrderTypesuggestion">
+                  <option *ngFor="let sug of OrderTypesuggestions" [value]="sug"></option>
+                </datalist>
+                <div *ngIf="f['ProductOrderType'].touched && f['ProductOrderType'].invalid" class="error">
+                    <div *ngIf="f['ProductOrderType'].errors && f['ProductOrderType'].errors['required']">
+                      * Product Order Type is required.</div>
+                  </div>
+              </div>
 
 
 
@@ -173,7 +171,7 @@
               </div>
             </div>
 
-            <div class="md-form p-3 shadow-inner">
+            <!-- <div class="md-form p-3 shadow-inner">
               <select formControlName="ProductIsOffer" id="ProductIsOffer"
                 class="form-control rounded-2 hover-shadow border-5 border-light" id="ProductIsOffer">
                 <option hidden value="" selected disabled>Select
@@ -185,8 +183,27 @@
                 <div *ngIf="f['ProductIsOffer'].errors && f['ProductIsOffer'].errors['required']">
                   * Product Offer is required.</div>
               </div>
+            </div> -->
+
+            <div class="md-form p-3 shadow-inner">
+              <input 
+              type="text" 
+              list="Offersuggestion" 
+              placeholder="Select Product Offer"   
+              formControlName="ProductIsOffer" 
+              id="ProductIsOffer"
+              class="form-control rounded-2 hover-shadow border-5 border-light">
+              <datalist id="Offersuggestion">
+                <option *ngFor="let sug of Offersuggestions" [value]="sug"></option>
+              </datalist>
+              <div *ngIf="f['ProductIsOffer'].touched && f['ProductIsOffer'].invalid" class="error">
+                  <div *ngIf="f['ProductIsOffer'].errors && f['ProductIsOffer'].errors['required']">
+                    *  Product Offer is required.</div>
+                </div>
             </div>
 
+
+<!-- 
             <div class="md-form p-3">
               <input formControlName="ProductOfferPrice" id="ProductOfferPrice" type="number"
                 class="form-control rounded-2 hover-shadow border-5 border-light"
@@ -195,7 +212,7 @@
                 <div *ngIf="f['ProductOfferPrice'].errors && f['ProductOfferPrice'].errors['required']">*
                   Product Offer Price is required.</div>
               </div>
-            </div>
+            </div> -->
 
             <div class="md-form p-3">
               <input formControlName="ProductOfferDiscount" id="ProductOfferDiscount" type="number"
@@ -251,6 +268,12 @@
             </p>
             <p>
               <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
+            </p>
+            <p>
+              <strong>Heading: </strong>{{ProductData.ProductHeading}}
+            </p>
+            <p>
+              <strong>OrderType: </strong>{{ProductData.ProductOrderType}}
             </p>
             <p>
               <strong>Details: </strong>{{ProductData.ProductDetails}}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataGet } from 'src/app/models/file-upload.model';
 import { Constant } from 'src/Config/Constant';
-import { BusinessData, Category, Product } from 'src/app/models/signin-signup.model';
+import { BusinessData, Category, Headings, Product } from 'src/app/models/signin-signup.model';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 import { CustomStorageService } from 'src/app/services/custom-storage.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -12,73 +12,106 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isLoading: boolean = true;
-  showSideNav: boolean = false;
+  isLoading = true;
+  showSideNav = false;
   ProductDetails: Product[] = [];
   Brand: Category[] = [];
 
 
- 
-  constructor(private _db: FirebaseDataService, private customStorageService: CustomStorageService,private sanitizer: DomSanitizer) { }
+  Topsales:Product[]=[];
+  Splsales:Product[]=[];
+  Newsales:Product[]=[];
+  Offersales:Product[]=[];
+  Restocksales:Product[]=[];
+
+  TopsalesH: Headings = { Heading: '', SubHeading: '' };
+  SplsalesH:Headings= { Heading: '', SubHeading: '' };
+  NewsalesH:Headings= { Heading: '', SubHeading: '' };
+  OffersalesH:Headings= { Heading: '', SubHeading: '' };
+  RestocksalesG:Headings= { Heading: '', SubHeading: '' };
+
+
+  Headings:Headings[] =[]
+
+  constructor(
+    private _db: FirebaseDataService,
+    private customStorageService: CustomStorageService,
+    private sanitizer: DomSanitizer
+  ) {}
+
   ngOnInit(): void {
-    let dataUser: DataGet =
-    {
+    this.fetchData();
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
+  }
+
+  fetchData() {
+    const dataUser: DataGet = {
       basePath: Constant.database.baseName,
       tableName: Constant.database.productData,
-      itemName: ""
-    }
+      itemName: ''
+    };
     this._db.getAlldata(dataUser).then(
       (value) => {
         this.ProductDetails = (Object.keys(value.ProductTable).map(key => (value.ProductTable[key])) as Product[]).sort((a, b) => {
           return <any>new Date(b.ProductUploadDate) - <any>new Date(a.ProductUploadDate)
         });
 
-        this.Brand = (Object.keys(value.ConfigtTable.Category).map(key => (value.ConfigtTable.Category[key])));
-        this.customStorageService.setItem(Constant.localStorage.Product, this.ProductDetails);
-        this.customStorageService.setItem(Constant.localStorage.Manufacture,
-          (Object.keys(value.ConfigtTable.Manufacture).
-            map(key => (value.ConfigtTable.Manufacture[key]))));
-        this.customStorageService.setItem(Constant.localStorage.Brand, this.Brand);
+        this.Headings= value.ConfigtTable;
 
-        //console.log(this.customStorageService.getItem(Constant.localStorage.Manufacture));
-        console.log(this.ProductDetails, this.Brand);
+        this.customStorageService.clear();
+        this.customStorageService.setItem(
+          Constant.localStorage.Product,
+          this.ProductDetails
+        );
+        this.customStorageService.setItem(
+          Constant.localStorage.configTable,
+          value.ConfigtTable
+        );
 
+        
+
+        
+        this.Headings= value.ConfigtTable.Heading;
+        this.TopsalesH =this.Headings[0];
+        this.SplsalesH=this.Headings[1];
+        this. NewsalesH=this.Headings[2];
+        this. OffersalesH=this.Headings[3];
+        this.RestocksalesG=this.Headings[4];
+
+        this.Topsales = this.filterHedaings( this.TopsalesH.Heading);
+        this.Splsales=this.filterHedaings( this.SplsalesH.Heading);
+        this.Newsales=this.filterHedaings( this. NewsalesH.Heading);
+        this.Offersales=this.filterHedaings(this. OffersalesH.Heading);
+        this.Restocksales=this.filterHedaings(this.RestocksalesG.Heading);
+
+        
 
       },
       (error) => {
         console.error(error);
       }
     );
-
-
-
-    setTimeout(() => {
-      this.isLoading = false; // Set to false when data loading is complete
-    }, 3000);
   }
 
 
-  clickCategory(){
-    console.log("category");
-    
-  }
+filterHedaings(filter:string):any{
+return this.ProductDetails.filter(item => item.ProductHeading === filter);
+}
   toggleSideNav() {
     this.showSideNav = !this.showSideNav;
   }
-  sendmessage(product:Product){
-    const phoneNumber = '+919042350714'; // Replace with the desired phone number
-   const message = `Hi Online Shopping Cart \n I wish to Buy:*${product.ProductName.split('-')[0]}* \n *Price*:${product.ProductPrice} \n *ProductURL*:https://myfood-app-11272.web.app/product-View/${product.ProductName.replaceAll(' ','%20')}`;
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    console.log(message);
-    
-    //this._router.navigateByUrl('/uploading-gif') https://myfood-app-11272.web.app/product-View/Women%20Watches-08122023042238
-    // Sanitize the URL
+
+  sendmessage(product: Product) {
+    const phoneNumber = '+919042350714';
+    const message = `Hi Online Shopping Cart \n I wish to Buy: *${product.ProductName.split('-')[0]}* \n *Price*: ${product.ProductPrice} \n *ProductURL*: https://myfood-app-11272.web.app/product-View/${product.ProductName.replaceAll(' ', '%20')}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
     const safeUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(whatsappUrl);
 
-    // Open the WhatsApp message link in a new window
-    //window.redirect();
-    window.location.href=whatsappUrl;
+    window.location.href = whatsappUrl;
   }
-  allsales(){
-  }
+
+
 }

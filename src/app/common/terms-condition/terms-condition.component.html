@@ -1,97 +1,13 @@
-<div class="row p-3 gap-5">
-    <div class="col-lg-5">
-        <h6>FAQ <span>(Frequently Asked Question)</span></h6>
-        <details open>
-            <summary>
-              How do you create an accordion?
-            </summary>
-            <div>
-              Easy! As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and
-              <code>&lt;summary&gt;</code> natively.
-            </div>
-          </details>
-          <details>
-            <summary>
-              What if I have to support IE11 or older browsers?
-            </summary>
-            <div>
-              No worries. The fallback for these elements is quite good. They will display as open. You won't get the
-              open/close mechanism, but you won't lose any content either.
-            </div>
-          </details>
-          <details>
-            <summary>
-              What type of content can I have inside one of these?
-            </summary>
-            <div>
-              Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a
-                href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-                target="_blank">flow content</a>, which is basically everything.
-            </div>
-          </details>
-          <details>
-            <summary>
-              How does it work?
-            </summary>
-            <div>
-              The <code>&lt;details&gt;</code> element encapsulates the <code>&lt;summary&gt;</code> element. The
-              <code>&lt;summary&gt;</code> becomes the 'label' for the <code>&lt;details&gt;</code> and acts like a button.
-              When clicked, the attribute <code>open</code> is added to the <code>&lt;details&gt;</code> element, making it
-              display. You can therefore style the open and closed states seperately if you'd like.
-            </div>
-          </details>
-      
+<div class="faq">
+  <h6>FAQ <span>(Frequently Asked Question)</span></h6>
+  <details *ngFor="let f of faqDeatils">
+    <summary>
+      {{f.Question}}
+    </summary>
+    <div>
+      {{f.Answer}}
     </div>
-    <div class="col-lg-5">
-        <h6>How It's Work<span>(Steps to Order)</span></h6>
-        <details>
-            <summary>
-                Choose Your Product
-            </summary>
-            <div>
-            Choose your product based on your wish desire
-            </div>
-          </details>
-          <details>
-            <summary>
-              Place the Order
-            </summary>
-            <div>
-              Place your order directly or through Whatsapp
-            </div>
-          </details>
-          <details>
-            <summary>
-                Fill Your Address
-            </summary>
-            <div>
-              Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a
-                href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-                target="_blank">flow content</a>, which is basically everything.
-            </div>
-          </details>
-          <details>
-            <summary>
-                Process the Payment
-            </summary>
-            <div>
-                Process the Payment & Upload the Screenshoot</div>
-          </details>
-          <details>
-            <summary>
-                Order Confirmation Message
-            </summary>
-            <div>
-                You Will Get Order Confirmation Message</div>
-          </details>
-          <details>
-            <summary>
-                Deliver Your Order
-            </summary>
-            <div>
-                We Will Deliver Your Order</div>
-          </details>
-      
-    </div>
+  </details>
+  
 </div>
-    
+<app-footers></app-footers>
