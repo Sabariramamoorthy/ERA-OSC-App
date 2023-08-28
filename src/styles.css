@@ -14,6 +14,9 @@ body {
     min-height: 100%;
     padding: 0px;
 }
+hr{
+  border: none;
+}
 
 
 .footer {

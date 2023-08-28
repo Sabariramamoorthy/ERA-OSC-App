@@ -16,9 +16,6 @@ import { TrackingComponent } from './common/tracking/tracking.component';
 
 const routes: Routes = [
   {
-    path: 'product-upload', component: ProductPostComponent
-  },
-  {
     path: 'product-Views/:tag', component: ProductsViewComponent
   },
   {
@@ -66,6 +63,12 @@ const routes: Routes = [
   },
   {
     path:'tracking',component:TrackingComponent
+  },
+  {
+    path:'brand',component:CategoryshoppingComponent
+  },
+  {
+    path: 'uploadproduct', component: ProductPostComponent
   },
  
 ];

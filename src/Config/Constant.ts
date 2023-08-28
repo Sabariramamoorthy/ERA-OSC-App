@@ -307,7 +307,7 @@ export const aboutUs = {
     },
     email: "contact@yourwebsite.com",
     phone: "+123-456-7890",
-    customerServiceHours: "Monday - Friday, 9:00 AM - 6:00 PM (GMT)",
+    customerServiceHours: "Monday - Friday, 9:00 AM - 6:00 PM",
     socialMedia: {
       facebook: "facebook.com/yourwebsite",
       twitter: "@yourwebsite",
@@ -325,9 +325,7 @@ export const aboutUs = {
       responseTime: "We aim to respond to all inquiries within 24 hours."
     },
     partnerships: {
-      inquiries: "For partnership opportunities and collaborations, please email partnerships@yourwebsite.com.",
-      suppliers: "Interested in becoming a supplier? Contact suppliers@yourwebsite.com.",
-      manufacturers: "Manufacturers interested in partnering can reach out to manufacturers@yourwebsite.com."
+      inquiries: "For reselling opportunities ,Manufacturers paternship and collaborations, please email partnerships@yourwebsite.com."
     }
   };
   

@@ -1,2 +1,124 @@
-<p>contactus works!</p>
+<div class="p-3 m-2">
+  <h6>Contact Us <span>{{contact.companyName}}</span></h6>
+  <div class="row ">
+    <div class="col-lg-4">
+      <div class="row gap-2">
+        <details open>
+          <summary>
+            Address
+          </summary>
+          <div>
+            <p>{{contact.physicalAddress.street}}</p>
+            <p>{{contact.physicalAddress.city}}</p>
+            <p>{{contact.physicalAddress.state}}</p>
+            <p>{{contact.physicalAddress.postalCode}}</p>
+            <p>{{contact.physicalAddress.country}}</p>
+          </div>
+        </details>
+        <details open>
+          <summary>
+            Mailing Address
+          </summary>
+          <div>
+            <p>{{contact.mailingAddress.street}}</p>
+            <p>{{contact.mailingAddress.city}}</p>
+            <p>{{contact.mailingAddress.state}}</p>
+            <p>{{contact.mailingAddress.postalCode}}</p>
+            <p>{{contact.mailingAddress.country}}</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="row gap-2">
+        <details open>
+          <summary>
+            {{contact.customerServiceHours}}
+          </summary>
+          <div>
+            <p>{{contact.email}}</p>
+            <p>{{contact.phone}}</p>
+            <p>{{contact.email}}</p>
+            <p>{{contact.phone}}</p>
+            <p>{{contact.email}}</p>
+          </div>
+        </details>
+        <details open>
+          <summary>
+            Customer Support
+          </summary>
+          <div>
+            <ul>
+              <li>
+                {{contact.customerSupport.chat}}
+              </li>
+              <li>
+                {{contact.customerSupport.email}}
+              </li>
+              <li>
+                {{contact.customerSupport.phone}}
+              </li>
+              <li>
+                {{contact.customerSupport.responseTime}}
+              </li>
+            </ul>
+          </div>
+        </details>
+
+
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="row gap-2">
+
+        <details open>
+          <summary>
+            Social Media
+          </summary>
+          <div class="text-center">
+            <a><i class="bi bi-whatsapp"></i></a>
+            <a><i class="bi bi-facebook"></i></a>
+            <a><i class="bi bi-instagram"></i></a>
+            <a><i class="bi bi-telegram"></i></a>
+            <a><i class="bi bi-youtube"></i></a>
+          </div>
+        </details>
+        <details open>
+          <summary>
+            Partnerships
+          </summary>
+          <div style="padding: 18px;">
+            <p>
+              {{contact.partnerships.inquiries}}
+            </p>
+          </div>
+
+        </details>
+        <details open>
+          <summary>
+            Contact Us
+          </summary>
+          <div style="padding: 15px;">
+            <input class="form-control" type="text" placeholder="Enter Your Name">
+            <input class="form-control" type="number" placeholder="Enter Your Whatsapp Number">
+            <textarea rows="4" class="form-control" placeholder="Enter Your Query"></textarea>
+            <input class="w-100 form-control" type="button" value="Submit">
+          </div>
+
+        </details>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
 <app-footers></app-footers>

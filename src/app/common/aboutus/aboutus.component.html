@@ -1,2 +1,112 @@
-<h6></h6>
-<app-footers></app-footers>
+<div class="p-3 m-2">
+    <h6 >About Us</h6>
+    <div class="mt-3 row justify-content-center">
+          <details open>
+            <summary>
+           ONLINE SHOPPING CART
+            </summary>
+            <div>
+              <p>Since {{about.establishedYear}} {{about.companyName}} working hard.Founded by <b>{{about.founder}}</b></p>
+              
+            </div>
+          </details>
+          <hr>
+      <div class="col-lg-6">
+        <details open>
+            <summary>
+                Founder
+            </summary>
+            <div>
+              <p>{{about.founder}} <br><a>abirami@gmail.com</a></p>
+              <p>Bio</p>
+            </div>
+          </details>
+      </div>
+      <div class="col-lg-6">
+        <details open>
+            <summary>
+                Co Founder
+            </summary>
+            <div>
+              <p>John <br><a>abirami@gmail.com</a></p>
+              <p>Bio</p>
+            </div>
+          </details>
+      </div>
+
+      <hr>
+      
+      <div class="col-lg-6">
+        <details open>
+            <summary>
+                Mission 
+            </summary>
+            <div>
+              <p>{{about.mission}}</p>
+            </div>
+        </details>
+      </div>
+      <div class="col-lg-6">
+        <details open>
+            <summary>
+                Vision
+            </summary>
+            <div>
+                <p>{{about.vision}}</p>
+            </div>
+          </details>
+      </div>
+
+      <hr>
+  
+
+    <div class="col-lg-6">
+        <details open>
+            <summary>
+                Values 
+            </summary>
+            <div>
+              <li *ngFor="let v of about.values ">{{v}}</li>
+            </div>
+        </details>
+    </div>
+
+    <div class="col-lg-6">
+        <details open>
+            <summary>
+                Accomplishments
+            </summary>
+            <div>
+                <li *ngFor="let v of about.accomplishments ">{{v}}</li>
+            </div>
+          </details>
+    </div>
+      <hr>
+      <div class="col-lg-6">
+        <details open>
+            <summary>
+                Team 
+            </summary>
+            <div>
+              <li *ngFor="let v of about.team.employees ">{{v}}</li>
+            </div>
+        </details>
+    </div>
+
+    <div class="col-lg-6">
+        <details open>
+            <summary>
+                Contact
+            </summary>
+            <div>
+                <li >{{about.contact.email }}</li>
+                <li >{{about.contact.phone }}</li>
+                <li >{{about.contact.address }}</li>
+            </div>
+          </details>
+    </div>
+      <hr>
+    </div>
+</div> 
+
+<app-footers class="w-100"></app-footers>

@@ -70,6 +70,7 @@ export class HomeComponent implements OnInit {
           value.ConfigtTable
         );
 
+        console.log( value.ConfigtTable);
         
 
         
@@ -97,7 +98,7 @@ export class HomeComponent implements OnInit {
 
 
 filterHedaings(filter:string):any{
-return this.ProductDetails.filter(item => item.ProductHeading === filter);
+return this.ProductDetails.filter(item => item.ProductHeading === filter).slice(0,6);
 }
   toggleSideNav() {
     this.showSideNav = !this.showSideNav;

@@ -50,15 +50,11 @@
   <details>
     <summary>Product</summary>
     <div class="links">
-        <a routerLink="/product-upload">Add Category</a>
+        <a routerLink="/add-category">Add Category</a>
         <br>
-        <a routerLink="/product-Views">Add Manufacture</a>
+        <a routerLink="/uploadproduct">Upload</a>
         <br>
-        <a routerLink="/product-Views">Add Headings</a>
-        <br>
-        <a routerLink="/add-category">Upload</a>
-        <br>
-        <a routerLink="/add-category">Edit</a>
+        <a routerLink="/">Edit</a>
         <br>
         <a routerLink="/add-category">All Products</a>
         <br>
@@ -87,3 +83,4 @@
 <div class="burger">
   <p class="text-center" (click)="toggleMenu()"><i class="bi bi-menu-down"></i></p>
 </div>
+<router-outlet></router-outlet>

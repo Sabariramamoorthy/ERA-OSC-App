@@ -1,181 +1,11 @@
-.container {
-    margin: 0px;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 100px;
-  }
-  
-  .content {
-    flex-grow: 1;
-    background-color: #ffffff;
-    margin-top: 15px;
-  }
-  
-  hr{
-    border: 2px solid #20003c;
-  }
-  h3 {
-    text-align: left;
-    padding:5px;
-    margin: 5px;
-    font-size: large;
-    color:#000101;
-    border-left: 5px solid #700FEB;
-  }
-   
-   .work{
-    padding: 15px;
-    margin: 5px;
-    margin-left: 15px;
-    border-radius: 5px;
-    text-align: left;
-    /* border-radius: 10px; */
-   }
-  
-   .work span{
-    font-size: small;
-    padding: 5px;
-    color: #20003c;
-  
-   }
-   .work i{
-    font-size: small;
-    color:  rgb(8, 1, 44);
-    font-weight: bold;
-    border-radius: 5px;
-   }
-  
-   details div {
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    padding: 1.5em;
-    font-size: small;
-  }
-  h6{
-    text-align: left;
-    padding:5px;
-    margin: 5px;
-    font-size: large;
-    color:#000101;
-    border-left: 5px solid #700FEB;
-    margin-bottom: 10px;
-  }
-  h6 span{
-    font-size: xx-small;
-  }
-  details div > * + * {
-    margin-top: 1.5em;
-  
-  }
-  
-  details + details {
-    margin-top: .5rem;
-  }
-  
-  summary {
-    list-style: none;
-    font-size: small;
-  }
-  
-  summary::-webkit-details-marker {
-    display: none;
-  }
-  
-  summary {
-    border: 2px solid #320175 ;
-    padding: .75em 1em;
-    cursor: pointer;
-    position: relative;
-    padding-left: calc(1.75rem + .75rem + .75rem);
-  }
-  
-  summary:before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: .75rem;
-    content: "↓";
-    width: 1.75rem;
-    height: 1.75rem;
-    background-color: #000;
-    color: #FFF;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  
-  details[open] summary {
-    background-color: #ffffff;
-  }
-  
-  details[open] summary:before {
-    content: "↑";
-  }
-  
-  summary:hover {
-    background-color: #ffffff;
-  }
-   
+
   
   .col-lg-2 {
     flex: 0 0 auto;
-    margin-left: 15px;
-    width: 17.66666667%;
+    width: 15.66666667%;
     border-radius: 5px;
     background: #FFFFFF;
   }
-  
-  .col-lg-2-cat {
-    flex: 0 0 auto;
-    margin-left: 15px;
-    width: 17.66666667%;
-    border-radius: 5px;
-  }
-  
-  .card {
-    flex-direction: row;
-  }
-  
-  .card-title{
-    font-size: small;
-    color: rgb(5, 1, 32);
-    padding: 5px;
-    border: 2.5px solid white;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-  }
-  .card-text{
-    font-size: x-small;
-    text-align: center;
-    font-weight: 500;
-    padding: 5px;
-  }
-  .seeall a{
-    float: right;
-    margin-right: 5px;
-    font-weight:normal;
-    font-size: small;
-    text-decoration: none;
-    color:#1e0048 ;
-  }
-  .seeall a:hover{
-    font-weight: 500;
-    font-size: small;
-  }
-  
-  
-  .col-lg-2 .card {
-    min-height: 150px;
-    outline: none;
-    border: none;
-    background-color: none;
-    color:#1e0048 ;
-  
-  }
-  
   
   .col-lg-2 a {
     text-align: left;
@@ -239,17 +69,7 @@
     margin-right: 5px;
     color: #ffffff;
   }
-  
-  
-  .col-lg-3{
-    flex: 0 0 auto;
-    margin-left: 15px;
-    width: 20.500%;
-  }
-  .card-img-top {
-    width: 100%
-  }
-  
+
   .discount-badge {
     position: absolute;
     margin: 3px;
@@ -270,11 +90,7 @@
   }
   
   @media screen and (max-width: 768px) {
-    .corner-div {
-      display: none;
-      visibility: hidden;
-    }
-  
+    
     .row {
       align-content: space-evenly;
     }
@@ -336,13 +152,6 @@
       border-radius: 5px;
       background: #FFFFFF;
     }
-    .col-lg-3{
-      width: 95%;
-    }
-    .work{
-      padding: 15px;
-      margin: 2px;
-      /* border-radius: 10px; */
-     }
+    
   }
   
