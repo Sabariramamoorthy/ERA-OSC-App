@@ -1,70 +1,44 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-<!-- <div class="container" [hidden]="isLoading">
 
-    <div class="row" *ngIf="ProductData !=null">
-        <div class="form-header text-center">
-            <h3>
-                {{ProductData.ProductName.split('-')[0] |uppercase}}
-            </h3>
-        </div>
+<div class="p-3" [hidden]="isLoading" >
+    <div class="row p-4 m-3 gap-4">
         <div class="col-lg-4">
-
-            <img class="previewImage" alt="Product Photo Preview" [src]="ProductImage" (click)="scrollPreview()">
-
+            <span *ngIf="ProductData.ProductIsOffer === 'Yes'" class="discount-badge">{{ProductData.ProductOfferDiscount}}%</span>
+            <app-photo-carousel [photos]="photos"></app-photo-carousel> 
         </div>
-        <div class="col-lg-8">
-
-            <p>
-                <strong>Brand: </strong> {{ProductData.ProductBrand}}
-            </p>
-            <hr>
-            <p>
-                <strong>Catergory: </strong> {{ProductData.ProductCatergory}}
-            </p>
-            <hr>
-            <p>
-                <strong>Manufacture: </strong>{{ProductData.ProductManufacture}}
-            </p>
-            <hr>
-            <p>
-                <strong>Details: </strong>{{ProductData.ProductDetails}}
-            </p>
-            <hr>
-            <p>
-                <strong>Other Details: </strong>{{ProductData.ProductOtherDetails}}
-            </p>
-            <hr>
-            <p>
-                <strong>Stock: </strong>{{ProductData.ProductStock}}<br>
-                <strong class="Sstrong">Orders Count: </strong>{{ProductData.ProductOrderCount}}
-            </p>
-            <hr>
-            <p>
-                <strong>Offer: </strong>{{ProductData.ProductIsOffer}}<br>
-                <strong class="Sstrong">Offer Price: </strong>{{ProductData.ProductOfferPrice}}<br>
-                <strong class="Sstrong">Offer Discount: </strong>{{ProductData.ProductOfferDiscount}}
-            </p>
-            <hr>
-            <p>
-                <strong>Price: </strong>{{ProductData.ProductPrice}}<br>
-                <strong class="Sstrong">Shipping: </strong> {{ProductData.ProductShipping}}
-            </p>
-            <hr>
-            <div class="text-center md-form">
-                <input class="btn btn-light w-25" type="button" value="Update">
-                <input class="btn btn-light w-25" type="button" value="Delete">
+        <div class="col-lg-7">
+            <h3>{{ProductData.ProductName.split('-')[0] |uppercase}}</h3>
+            <label class="available">{{stock}}</label>
+      
+            <div class="mt-2 mb-1">
+                <a routerLink="/brand">{{ProductData.ProductBrand}}</a> 
+                <a [routerLink]="['/category',ProductData.ProductCatergory]" class="ms-2">{{ProductData.ProductCatergory}}</a> 
             </div>
+           
+
+            <p *ngIf="ProductData.ProductIsOffer === 'No'" class="price mt-2">{{ProductData.ProductPrice | currency:'INR'}}</p>
+            <div *ngIf="ProductData.ProductIsOffer === 'Yes'" class="mt-2 mb-1" >
+              <span class="priceoffer-offer">{{ProductData.ProductOfferPrice | currency:'INR'}}</span>
+              <span class="priceoffer">{{ProductData.ProductPrice | currency:'INR'}}</span>
+            </div>
+            <span class="shipping"> <b>{{ProductData.ProductShipping}} Shipping </b></span>
+            <br>
+           
+            <button class="mt-4 "><i class="bi bi-cart-check"></i></button>
+            <button class="mt-4 ms-2 wish"><i class="bi bi-heart"></i></button>
+            <button class="mt-4 ms-2 mb-1" (click)="share()"><i class="bi bi-share"></i></button>
+
+            <h6 class="mt-4 mb-3">Description</h6>
+            <p>{{ProductData.ProductDetails}}</p>
+            <h6 class="mt-4 mb-3">Additional Details</h6>
+            <p>{{ProductData.ProductOtherDetails}}</p>
+
+            
 
         </div>
 
     </div>
-</div> -->
-
-
-
-
-<div class="container py-4 my-4 mx-auto d-flex flex-column" *ngIf="ProductData !=null">
-    <div class="header">
+    <!-- <div class="header">
         <div class="row r1">
             <div class="col-md-9 abc">
                 <h1>{{ProductData.ProductName.split('-')[0]}}</h1>
@@ -94,5 +68,5 @@
             <div class="col-md-2 mio offset-md-4"><a href="#">ADD TO CART</a></div>
             <div class="col-md-2 myt "><button type="button" class="btn btn-outline-warning"><a href="#">BUY NOW</a></button></div>
         </div>
-    </div>
+    </div> -->
 </div>

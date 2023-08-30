@@ -1,7 +1,7 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 <div class="container" [hidden]="isLoading">
   <div style="background-color: #F8F8F8; padding: 10px;">
-    <app-photo-carousel></app-photo-carousel>
+    <app-photo-carousel [photos]="carosuelPhoto"></app-photo-carousel>
     <hr>
     <div class="seeall">
       <a [routerLink]="['/product-Views', TopsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>

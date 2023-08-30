@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataGet } from 'src/app/models/file-upload.model';
-import { Constant } from 'src/Config/Constant';
+import { CarsoulePhoto, Constant } from 'src/Config/Constant';
 import { BusinessData, Category, Headings, Product } from 'src/app/models/signin-signup.model';
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 import { CustomStorageService } from 'src/app/services/custom-storage.service';
@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   showSideNav = false;
   ProductDetails: Product[] = [];
   Brand: Category[] = [];
+
+  carosuelPhoto !:any[];
 
 
   Topsales:Product[]=[];
@@ -37,7 +39,10 @@ export class HomeComponent implements OnInit {
     private _db: FirebaseDataService,
     private customStorageService: CustomStorageService,
     private sanitizer: DomSanitizer
-  ) {}
+  )
+   {
+this.carosuelPhoto=CarsoulePhoto;
+  }
 
   ngOnInit(): void {
     this.fetchData();
@@ -70,7 +75,7 @@ export class HomeComponent implements OnInit {
           value.ConfigtTable
         );
 
-        console.log( value.ConfigtTable);
+        //console.log( value.ConfigtTable);
         
 
         
