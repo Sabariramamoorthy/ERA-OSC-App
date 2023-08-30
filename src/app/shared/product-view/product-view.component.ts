@@ -47,7 +47,7 @@ export class ProductViewComponent implements OnInit {
    
     this.shareData = {
       title: "Online Shopping Cart",
-      text: this.productName,
+      text: this.productName.split('-')[0],
       url: `https://myfood-app-11272.web.app/product-View/${this.ProductData.ProductName.replaceAll(' ', '%20')}`,
     };
     setTimeout(() => {
