@@ -5,6 +5,7 @@ import { BusinessData, Category, Headings, Product } from 'src/app/models/signin
 import { FirebaseDataService } from 'src/app/services/firebase-data.service';
 import { CustomStorageService } from 'src/app/services/custom-storage.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
   selector: 'app-home',
@@ -38,13 +39,20 @@ export class HomeComponent implements OnInit {
   constructor(
     private _db: FirebaseDataService,
     private customStorageService: CustomStorageService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private _session:LocalstorageService
   )
    {
-this.carosuelPhoto=CarsoulePhoto;
+  this.carosuelPhoto=CarsoulePhoto;
+  if(this._session.getData("loaded")){
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
+  }
   }
 
   ngOnInit(): void {
+    this._session.setData("loaded",true);
     this.fetchData();
     setTimeout(() => {
       this.isLoading = false;
@@ -75,7 +83,7 @@ this.carosuelPhoto=CarsoulePhoto;
           value.ConfigtTable
         );
 
-        //console.log( value.ConfigtTable);
+        console.log( this.ProductDetails);
         
 
         

@@ -3,13 +3,7 @@
     padding: 5px;
     margin-bottom: 25px;
 }
-details div {
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    padding: 1.5em;
-    font-size: small;
-color: #420099;}
+
 h6{
     text-align: left;
     padding:5px;
@@ -22,6 +16,14 @@ h6{
 h6 span{
     font-size: xx-small;
 }
+
+details div {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 1.5em;
+    font-size: small;
+color: #420099;}
 details div > * + * {
     margin-top: 1.5em;
 

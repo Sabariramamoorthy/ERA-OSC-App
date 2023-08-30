@@ -17,6 +17,9 @@ export class ProductViewComponent implements OnInit {
   ProductImage: any;
   productName !:string;
   photos :any[]=[]
+  RelatedProduct:any[]=[]
+  //RelatedBrand:any[]=[]
+
   stock!:string;
   shareData:any;
   clickcount: number = 1;
@@ -36,9 +39,12 @@ export class ProductViewComponent implements OnInit {
       })
     })
 
+  this.RelatedProduct=(this.customStorageService.getItem(Constant.localStorage.Product) as Product[]).filter((item) => item.ProductCatergory == this.ProductData.ProductCatergory).slice(0,6) as Product[];
+  //this.RelatedBrand=(this.customStorageService.getItem(Constant.localStorage.Product) as Product[]).filter((item) => item.ProductBrand == this.ProductData.ProductBrand).slice(0,6) as Product[];
+  
   
     this.stock=parseInt(this.ProductData.ProductStock)>0 ? 'Available':'Out of Stock'
-    console.log( this.ProductData);
+   
     this.shareData = {
       title: "Online Shopping Cart",
       text: this.productName,

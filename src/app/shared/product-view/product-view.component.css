@@ -1,63 +1,88 @@
+.container {
+  margin: 0px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  min-height: 100%;
+}
+
 h3 {
   text-align: left;
-  color:#000101;
+  color: #000101;
 }
-h6{
+
+h6 {
   text-align: left;
-  color:#ffffff;
-  background-color:#310680 ;
+  color: #000101;
+  background-color: #ffffff;
   padding: 5px;
-  border-radius: 5px;
-  
+  margin: 5PX;
+  border-left: 5px solid #700FEB;
+
 }
-hr{
+h6 span{
+  margin-left: 10px;
+  font-size: x-small;
+}
+
+hr {
   border: 2px solid #20003c;
 }
+
 .col-lg-7 {
-  padding: 5px;
+  padding: 15px;
   margin-top: 20px;
-  color:#000101;
+  color: #000101;
 }
-.available{
+
+.col-lg-4 {
+  padding: 15px;
+  margin-top: 20px;
+  color: #000101;
+}
+
+.available {
   color: #009919;
   padding: 2px;
   font-weight: 500;
   font-size: small;
 }
 
-a{
+a {
   font-size: medium;
   color: #3b0291;
   font-size: small;
 }
 
-.price{
+.price {
   font-weight: 600;
-  color:#010143 ;
+  color: #010143;
   margin: 0px;
   font-size: x-large;
 }
+
 .priceoffer {
   text-align: left;
   font-weight: 600;
-  color:#f33d37 ;
+  color: #f33d37;
   font-size: large;
   margin-left: 10px;
   text-decoration-line: line-through;
 }
 
-.priceoffer-offer{
+.priceoffer-offer {
   text-align: left;
   font-size: x-large;
   font-weight: 600;
-  color:#19013c ;
+  color: #19013c;
   text-decoration-line: none;
 }
 
-p{
+p {
   white-space: pre-line;
   font-size: large;
 }
+
 .discount-badge {
   position: absolute;
   margin: 10px;
@@ -71,11 +96,13 @@ p{
   font-size: small;
   border-radius: 4px;
 }
-.shipping{
+
+.shipping {
   text-decoration: none;
   font-size: small;
 }
-button{
+
+button {
   background-color: #5b03ad;
   color: white;
   padding: 3px;
@@ -86,16 +113,87 @@ button{
   font-weight: 500;
   border-radius: 5px;
 }
-.wish{
+
+.wish {
   width: 5%;
   background-color: #be37f3;
 }
+
+details div {
+  border:none ;
+  padding: 1.5em;
+  font-size: small;
+color: #420099;}
+details div > * + * {
+  margin-top: 1.5em;
+
+}
+
+details + details {
+  margin-top: .5rem;
+}
+
+summary {
+  list-style: none;
+  font-size: small;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  border: 2px solid #000000;
+  padding: .75em 1em;
+  cursor: pointer;
+  position: relative;
+  padding-left: calc(1.75rem + .75rem + .75rem);
+  font-size: large;
+  font-weight: 500;
+}
+
+summary:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: .75rem;
+  content: "↓";
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #5b03ad;
+  color: #FFF;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+details[open] summary {
+  background-color: #ffffff;
+}
+
+details[open] summary:before {
+  content: "↑";
+}
+
+summary:hover {
+  background-color: #ffffff;
+}
+
 @media screen and (max-width: 630px) {
-  
+
   .col-lg-7 {
     margin: 0px;
     margin-top: 2px;
     width: 100%;
+    padding: 25px;
+  }
+
+  .col-lg-4 {
+    margin: 0px;
+
+    width: 100%;
+    padding: 25px;
   }
 
   .discount-badge {
@@ -111,19 +209,14 @@ button{
     font-size: small;
     border-radius: 4px;
   }
-  h6{
-    text-align: center;
-    color:#ffffff;
-    background-color:#310680 ;
-    padding: 5px;
-    border-radius: 5px;
-    
-  }
-  p{
+
+
+  p {
     white-space: pre-line;
     font-size: medium;
   }
-  button{
+
+  button {
     background-color: #5b03ad;
     color: white;
     padding: 3px;
@@ -134,8 +227,33 @@ button{
     font-weight: 500;
     border-radius: 5px;
   }
-  .wish{
+
+  .wish {
     width: 15%;
     background-color: #be37f3;
   }
+
+  .row {
+    gap: .75rem !important;
+    padding: .25rem;
+    margin-bottom: .5rem;
+  }
+
+  p {
+    white-space: pre-line;
+    font-size: small;
+  }
+  summary {
+    border: 2px solid #000000;
+    padding: .75em 1em;
+    cursor: pointer;
+    position: relative;
+    padding-left: calc(1.75rem + .75rem + .75rem);
+    font-size: medium;
+    font-weight: 500;
+  }
+  h6 span{
+    font-size: x-small;
+  }
+  
 }
