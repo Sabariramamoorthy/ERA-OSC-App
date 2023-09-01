@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
           value.ConfigtTable
         );
 
-        console.log( this.ProductDetails);
+        console.log( value.ConfigtTable);
         
 
         

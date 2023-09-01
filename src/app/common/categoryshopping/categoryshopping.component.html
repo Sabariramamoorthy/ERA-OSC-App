@@ -1,2 +1,26 @@
-<p>categoryshopping works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2" *ngFor="let b of Brandsuggestions ">
+            <details open>
+                <summary>{{b}}</summary>
+                <div class="links" >
+                   <p *ngFor="let c of getcategory(b) " (click)="filterdata(b,c.CategoryName)" >{{c.CategoryName}}</p>
+                </div>
+              </details>
+        </div>
+        
+        
+    </div>
+
+ 
+     <app-loading-spinner
+     [spinner]="false"
+     [skelton]="true"
+     *ngIf="isLoading"
+   ></app-loading-spinner>
+   <app-product-cards
+     [products]="result"
+     [hidden]="isLoading"
+   ></app-product-cards>
+</div>
 <app-footers></app-footers>

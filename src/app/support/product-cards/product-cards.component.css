@@ -15,7 +15,7 @@
   }
   .category{
     text-align: left;
-    font-size:12px;
+    font-size:10px;
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -78,7 +78,7 @@
     padding: 3px;
     text-align: center;
     width: 2.5%;
-    font-size:12px;
+    font-size:10px;
     border-radius: 4px;
   }
   .card-img {
@@ -91,7 +91,7 @@
   }
   .shipping {
     text-decoration: none;
-    font-size:12px;
+    font-size:10px;
     color: #9207b5;
     font-weight: 500;
   }
@@ -117,7 +117,7 @@
       padding: 3px;
       text-align: center;
       width: 10%;
-      font-size:12px;
+      font-size:xx-small;
       border-radius: 4px;
     }
   
@@ -147,7 +147,7 @@
       text-align: center;
       padding: 0px;
       font-weight: 400;
-      font-size:12px;
+      font-size:10px;
       margin: 0px;
       cursor: pointer;
      }
