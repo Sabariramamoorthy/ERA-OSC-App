@@ -87,7 +87,7 @@ img{
     }
     .carousel-caption button{
         text-align: left;
-        font-size: xx-small;
+        font-size:12px;
         padding: 5px;
         border-radius: 10px;
         border: none;

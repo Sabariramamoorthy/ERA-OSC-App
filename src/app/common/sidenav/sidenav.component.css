@@ -66,7 +66,7 @@ nav {
 
   .top p{
     padding: 6px;
-    font-size: x-small;
+    font-size:12.5px;
     color: #ebeaea;
   }
   .nav-links {
@@ -91,11 +91,11 @@ nav {
   li {
     padding: 10px;
     color: #294776;
-    font-size: x-small;
+    font-size:12.5px;
   }
   .nav-links li a{
     color: white;
-    font-size: x-small;
+    font-size:12.5px;
   }
   .nav-links.active {
     display:block;
@@ -108,7 +108,7 @@ nav {
   }
   .top p{
   padding: 10px;
-  font-size: x-small;
+  font-size:12.5px;
   color: #ebeaea;
   }
 

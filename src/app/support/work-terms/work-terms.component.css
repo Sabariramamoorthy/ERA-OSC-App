@@ -20,7 +20,7 @@ h6{
     margin-bottom: 10px;
 }
 h6 span{
-    font-size: xx-small;
+    font-size:12px;
 }
 details div > * + * {
     margin-top: 1.5em;

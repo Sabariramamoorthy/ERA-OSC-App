@@ -1,22 +1,35 @@
-<div id="carouselBasicExample" class="carousel slide carousel-fade mt-3" data-mdb-ride="carousel">
-
+<div
+  id="carouselBasicExample"
+  class="carousel slide carousel-fade mt-3"
+  data-mdb-ride="carousel"
+>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="carousel-item" *ngFor="let photo of photos; let i = index" [class.active]="i === activeIndex">
-        <img [src]="photo.url"  [ngClass]=" loading ==false ? 'd-block w-100 loading': 'd-block w-100 '" [alt]="photo.title" loading="eager">
-        <div class="carousel-caption ">
-          <h5 *ngIf="photo.title !=null">{{photo.title |uppercase}}</h5>
-          <p *ngIf="photo.text !=null"> {{photo.text}}</p>
-          <button *ngIf="photo.button !=null">{{photo.button}}</button>
+      <div
+        class="carousel-item"
+        *ngFor="let photo of photos; let i = index"
+        [class.active]="i === activeIndex"
+      >
+        <img
+          [src]="photo.url"
+          [ngClass]="
+            loading == false ? 'd-block w-100 loading' : 'd-block w-100 '
+          "
+          [alt]="photo.title"
+          loading="eager"
+        />
+        <div class="carousel-caption">
+          <h5 *ngIf="photo.title != null">{{ photo.title | uppercase }}</h5>
+          <p *ngIf="photo.text != null">{{ photo.text }}</p>
+          <button *ngIf="photo.button != null">{{ photo.button }}</button>
         </div>
       </div>
     </div>
-
   </div>
-  <a class="carousel-control-prev" (click)="prevSlide()">
+  <span class="carousel-control-prev" (click)="prevSlide()">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </a>
-  <a class="carousel-control-next" (click)="nextSlide()">
+  </span>
+  <span class="carousel-control-next" (click)="nextSlide()">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </a>
+  </span>
 </div>

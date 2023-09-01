@@ -31,7 +31,7 @@ i {
 }
 
 h6 span {
-  font-size: xx-small;
+  font-size:12px;
 }
 
 h3 {
@@ -139,11 +139,12 @@ summary:hover {
       padding: 10px;
       margin-top: 10px;
       line-height: 20px;
+      font-weight: 400;
     }
  
     p {
         text-align: justify;
-        font-size: xx-small;
+        font-size:12px;
       }
 
       details div {
@@ -167,7 +168,7 @@ summary:hover {
       
       summary {
         list-style: none;
-        font-size: x-small;
+        font-size:12.5px;
       }
       summary:before {
         position: absolute;
