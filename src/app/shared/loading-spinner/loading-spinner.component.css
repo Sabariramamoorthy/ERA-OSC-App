@@ -47,7 +47,7 @@
     flex: 0 0 auto;
     width: 15.66666667%;
     border-radius: 5px;
-    background: #ffffff;
+    background: #e4dddd;
     margin-bottom: 10px;
     animation: loading-animation 1s infinite alternate;
     min-height: 200px;
@@ -67,6 +67,35 @@
     animation: loading-animation 1s infinite alternate;
   } */
   
+  /* flex: 0 0 auto;
+  width: 15.66666667%;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    #eee 0%,
+    #eee 40%,
+    #ddd 50%,
+    #ddd 55%
+    #eee 65%,
+    #eee 100%
+
+  );
+  margin-bottom: 10px;
+  background-size: 300%;
+  animation: loading-animation 1s infinite;
+  min-height: 200px;
+}
+
+@keyframes loading-animation {
+ from{
+    background-position: 100%;
+  }
+  to{
+    background-position: 0%;
+  }
+} */
+
+
   @keyframes loading-animation {
     0% {
       opacity: 0.4;

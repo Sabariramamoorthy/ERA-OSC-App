@@ -1,85 +1,141 @@
 <!--  <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
 <div class="container" [hidden]="isLoading"> -->
-  <div class="container">
-  <div style="background-color: #F8F8F8; padding: 10px;">
+<div class="container" [hidden]="false">
+  <div style="background-color: #f8f8f8; padding: 10px">
     <app-photo-carousel [photos]="carosuelPhoto"></app-photo-carousel>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/product-Views', TopsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', TopsalesH.Heading]"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
-    <h3>{{ TopsalesH.Heading }}
+    <h3>
+      {{ TopsalesH.Heading }}
       <span>{{ TopsalesH.SubHeading }}</span>
     </h3>
-    <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
-    <app-product-cards [hidden]="isLoading" [products]="Topsales"></app-product-cards>
+    <app-loading-spinner
+      [spinner]="false"
+      [skelton]="true"
+      *ngIf="isLoading"
+    ></app-loading-spinner>
+    <app-product-cards
+      [hidden]="isLoading"
+      [products]="Topsales"
+    ></app-product-cards>
   </div>
 
   <div>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/category','all']">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/category', 'all']"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
     <h3>Shop By Category</h3>
     <app-catergory></app-catergory>
   </div>
 
-  <div>
-    <hr>
+  <div style="background-color: rgb(248, 244, 252)">
+    <hr />
     <div class="seeall">
-      <a routerLink="/terms">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a routerLink="/terms"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
     <h3>How It's Work<span>(Steps to Order)</span></h3>
-    <app-work-terms [page]=false></app-work-terms>
+    <app-work-terms [page]="false"></app-work-terms>
   </div>
 
   <div>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/product-Views', SplsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', SplsalesH.Heading]"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
-    <h3>{{ SplsalesH.Heading }}
+    <h3>
+      {{ SplsalesH.Heading }}
       <span>{{ SplsalesH.SubHeading }}</span>
     </h3>
-     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
-    <app-product-cards [products]="Splsales" [hidden]="isLoading"></app-product-cards>
+    <app-loading-spinner
+      [spinner]="false"
+      [skelton]="true"
+      *ngIf="isLoading"
+    ></app-loading-spinner>
+    <app-product-cards
+      [products]="Splsales"
+      [hidden]="isLoading"
+    ></app-product-cards>
   </div>
 
   <div>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/product-Views', NewsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', NewsalesH.Heading]"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
-    <h3>{{ NewsalesH.Heading }}
+    <h3>
+      {{ NewsalesH.Heading }}
       <span>{{ NewsalesH.SubHeading }}</span>
     </h3>
-     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
-    <app-product-cards [products]="Newsales" [hidden]="isLoading"></app-product-cards>
+    <app-loading-spinner
+      [spinner]="false"
+      [skelton]="true"
+      *ngIf="isLoading"
+    ></app-loading-spinner>
+    <app-product-cards
+      [products]="Newsales"
+      [hidden]="isLoading"
+    ></app-product-cards>
   </div>
 
   <div>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/product-Views', OffersalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', OffersalesH.Heading]"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
-    <h3>{{ OffersalesH.Heading }}
+    <h3>
+      {{ OffersalesH.Heading }}
       <span>{{ OffersalesH.SubHeading }}</span>
     </h3>
-     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
-    <app-product-cards [products]="Offersales" [hidden]="isLoading"></app-product-cards>
+    <app-loading-spinner
+      [spinner]="false"
+      [skelton]="true"
+      *ngIf="isLoading"
+    ></app-loading-spinner>
+    <app-product-cards
+      [products]="Offersales"
+      [hidden]="isLoading"
+    ></app-product-cards>
   </div>
 
   <div>
-    <hr>
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/product-Views', RestocksalesG.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/product-Views', RestocksalesG.Heading]"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
-    <h3>{{ RestocksalesG.Heading }}
+    <h3>
+      {{ RestocksalesG.Heading }}
       <span>{{ RestocksalesG.SubHeading }}</span>
     </h3>
-     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
-    <app-product-cards [products]="Restocksales" [hidden]="isLoading"></app-product-cards>
+    <app-loading-spinner
+      [spinner]="false"
+      [skelton]="true"
+      *ngIf="isLoading"
+    ></app-loading-spinner>
+    <app-product-cards
+      [products]="Restocksales"
+      [hidden]="isLoading"
+    ></app-product-cards>
   </div>
 </div>
-<app-footers [hidden]="isLoading">
+<div style="background-color: rgb(248, 244, 252)">
+  <app-aboutus [ishome]="true"></app-aboutus>
+</div>
 
-</app-footers>
+<app-footers [hidden]="isLoading"> </app-footers>

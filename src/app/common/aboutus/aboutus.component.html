@@ -1,112 +1,174 @@
 <div class="p-3 m-2">
-    <h6 >About Us</h6>
-    <div class="mt-3 row justify-content-center">
-          <details open>
-            <summary>
-           ONLINE SHOPPING CART
-            </summary>
-            <div>
-              <p>Since {{about.establishedYear}} {{about.companyName}} working hard.Founded by <b>{{about.founder}}</b></p>
-              
-            </div>
-          </details>
-          <hr>
-      <div class="col-lg-6">
-        <details open>
-            <summary>
-                Founder
-            </summary>
-            <div>
-              <p>{{about.founder}} <br><a>abirami@gmail.com</a></p>
-              <p>Bio</p>
-            </div>
-          </details>
+  <div *ngIf="ishome" >
+    <h1>Online Shopping Cart</h1>
+    <p>
+      <b>
+        Welcome to Online Shopping Cart, your ultimate destination for fashion,
+        electronics, and personalized gifts that celebrate your unique style and
+        connections. At Online Shopping Cart, we pride ourselves on delivering a
+        shopping experience that combines the latest trends with the most
+        innovative tech and the personal touch of customizable gifts.</b
+      >
+    </p>
+    <hr />
+    <details open>
+      <summary>Fashion Forward Trends</summary>
+      <div>
+       <p>
+          At Online Shopping Cart, we grasp that online shopping extends beyond
+          mere transactions; it embodies the essence of your unique style and
+          individuality. Our collection of high-quality clothing, chic dresses,
+          comfortable loungewear, and the latest fashion accessories is
+          meticulously curated to keep you in tune with the most current fashion
+          trends and designs. Whether you seek to elevate your style with trendy
+          watches or showcase your fashion-forward sensibilities with our
+          selection of fashion-forward accessories, we have the perfect pieces
+          for every fashion-savvy individual.
+        </p>
       </div>
-      <div class="col-lg-6">
-        <details open>
-            <summary>
-                Co Founder
-            </summary>
-            <div>
-              <p>John <br><a>abirami@gmail.com</a></p>
-              <p>Bio</p>
-            </div>
-          </details>
+    </details>
+    <hr />
+    <details open>
+      <summary>Tech Innovation at Your Fingertips</summary>
+      <div>
+        <p >
+          Remaining connected and staying up-to-date with the most recent
+          advancements in technology is crucial in today's fast-paced
+          environment. Our electronics department serves as your portal to
+          innovation, offering a diverse array of cutting-edge technology,
+          including the latest smartwatches, innovative gadgets, and trendy
+          electronics, along with top-quality accessories to ensure you stay
+          connected and at the forefront of tech innovation
+        </p>
       </div>
+    </details>
 
-      <hr>
-      
+    <hr />
+    <details open>
+      <summary>Personalized Gifts - Express Your Love and Appreciation</summary>
+      <div>
+        <p >
+          What distinguishes us is our commitment to assisting you in crafting
+          treasured moments. Our assortment of personalized gifts empowers you
+          to infuse a personal essence into every event, conveying your
+          affection and gratitude in an unparalleled manner.
+        </p>
+      </div>
+    </details>
+
+    <hr />
+    <details open>
+      <summary>Join Us on This Shopping Adventure</summary>
+      <div>
+        <p >
+          Join us on this exciting shopping journey at Online Shopping Cart,
+          where fashion and technology converge, and the art of gifting becomes
+          an expression of love and individuality. Begin exploring now and
+          establish Online Shopping Cart as your ultimate destination for
+          fashion, tech, and personalized gifts. Come together with us to
+          celebrate your uniqueness and craft enduring memories that are both
+          stylish and meaningful. We extend our heartfelt gratitude for choosing
+          Online Shopping Cart as your shopping partner. We eagerly anticipate
+          the opportunity to provide you with the latest in fashion trends,
+          cutting-edge technology, and the most heartfelt, customizable
+          presents. Happy shopping!
+        </p>
+      </div>
+    </details>
+  </div>
+
+    <div class="mt-3 row justify-content-center" *ngIf="!ishome">
+      <h6>About Us</h6>
+      <details open>
+        <summary>ONLINE SHOPPING CART</summary>
+        <div>
+          <p>
+            Since {{ about.establishedYear }} {{ about.companyName }} working
+            hard.Founded by <b>{{ about.founder }}</b>
+          </p>
+        </div>
+      </details>
+      <hr />
       <div class="col-lg-6">
         <details open>
-            <summary>
-                Mission 
-            </summary>
-            <div>
-              <p>{{about.mission}}</p>
-            </div>
+          <summary>Founder</summary>
+          <div>
+            <p>{{ about.founder }} <br /><a>abirami@gmail.com</a></p>
+            <p>Bio</p>
+          </div>
         </details>
       </div>
       <div class="col-lg-6">
         <details open>
-            <summary>
-                Vision
-            </summary>
-            <div>
-                <p>{{about.vision}}</p>
-            </div>
-          </details>
+          <summary>Co Founder</summary>
+          <div>
+            <p>John <br /><a>abirami@gmail.com</a></p>
+            <p>Bio</p>
+          </div>
+        </details>
       </div>
 
-      <hr>
-  
+      <hr />
 
-    <div class="col-lg-6">
-        <details open>
-            <summary>
-                Values 
-            </summary>
-            <div>
-              <li *ngFor="let v of about.values ">{{v}}</li>
-            </div>
-        </details>
-    </div>
-
-    <div class="col-lg-6">
-        <details open>
-            <summary>
-                Accomplishments
-            </summary>
-            <div>
-                <li *ngFor="let v of about.accomplishments ">{{v}}</li>
-            </div>
-          </details>
-    </div>
-      <hr>
       <div class="col-lg-6">
         <details open>
-            <summary>
-                Team 
-            </summary>
-            <div>
-              <li *ngFor="let v of about.team.employees ">{{v}}</li>
-            </div>
+          <summary>Mission</summary>
+          <div>
+            <p>{{ about.mission }}</p>
+          </div>
         </details>
-    </div>
-
-    <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
         <details open>
-            <summary>
-                Contact
-            </summary>
-            <div>
-                <li >{{about.contact.email }}</li>
-                <li >{{about.contact.phone }}</li>
-                <li >{{about.contact.address }}</li>
-            </div>
-          </details>
-    </div>
-      <hr>
-    </div>
-</div> 
+          <summary>Vision</summary>
+          <div>
+            <p>{{ about.vision }}</p>
+          </div>
+        </details>
+      </div>
 
-<app-footers class="w-100"></app-footers>
+      <hr />
+
+      <div class="col-lg-6">
+        <details open>
+          <summary>Values</summary>
+          <div>
+            <li *ngFor="let v of about.values">{{ v }}</li>
+          </div>
+        </details>
+      </div>
+
+      <div class="col-lg-6">
+        <details open>
+          <summary>Accomplishments</summary>
+          <div>
+            <li *ngFor="let v of about.accomplishments">{{ v }}</li>
+          </div>
+        </details>
+      </div>
+      <hr />
+      <div class="col-lg-6">
+        <details open>
+          <summary>Team</summary>
+          <div>
+            <li *ngFor="let v of about.team.employees">{{ v }}</li>
+          </div>
+        </details>
+      </div>
+
+      <div class="col-lg-6">
+        <details open>
+          <summary>Contact</summary>
+          <div>
+            <li>{{ about.contact.email }}</li>
+            <li>{{ about.contact.phone }}</li>
+            <li>{{ about.contact.address }}</li>
+          </div>
+        </details>
+      </div>
+      <hr />
+    </div>
+  </div>
+
+  <app-footers class="w-100" *ngIf="!ishome"></app-footers>
+
