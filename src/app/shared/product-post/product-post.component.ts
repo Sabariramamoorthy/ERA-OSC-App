@@ -128,7 +128,7 @@ export class ProductPostComponent {
       const ProductImageinstance = {
         BasePath: Constant.database.baseName,
         pageName: this.ProductData.ProductCatergory,
-        fileName: `${this.ProductData.ProductName}-${index}.png`,
+        fileName: `${this.ProductData.ProductName}-${index}.webp`,
         file: this.compressedBlob[index]
       } as Fileupload;
       const ProductImagePromise = this._fileService.uploadFile(ProductImageinstance);

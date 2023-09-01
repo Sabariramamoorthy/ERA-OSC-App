@@ -1,4 +1,4 @@
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-loading-spinner [spinner]=true [skelton]=false *ngIf="isLoading"></app-loading-spinner>
 
 <div class="container " [hidden]="isLoading" >
     <div class="row gap-4">
@@ -21,7 +21,7 @@
               <span class="priceoffer-offer">{{ProductData.ProductOfferPrice | currency:'INR'}}</span>
               <span class="priceoffer">{{ProductData.ProductPrice | currency:'INR'}}</span>
             </div>
-            <span class="shipping"> <b>{{ProductData.ProductShipping}} Shipping </b></span>
+            <span class="shipping"> <strong>&#x20B9;</strong> <b> {{ProductData.ProductShipping}} Shipping </b></span>
             <br>
            
             <button class="mt-4 "><i class="bi bi-cart-check"></i></button>

@@ -44,11 +44,6 @@ export class HomeComponent implements OnInit {
   )
    {
   this.carosuelPhoto=CarsoulePhoto;
-  if(this._session.getData("loaded")){
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
-  }
   }
 
   ngOnInit(): void {

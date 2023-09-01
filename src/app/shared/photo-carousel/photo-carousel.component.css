@@ -1,5 +1,6 @@
 img{
     object-fit: cover;
+    transition: opacity 0.5s ease-in-out; 
 }
 .carousel-caption {
     all: unset;
@@ -39,6 +40,26 @@ img{
     outline: none;
     box-shadow: none;
 }
+
+.loading{
+    height: max-content;
+    width: 100%;
+    background-color: #dfdddd;
+    margin-bottom: 10px;
+    animation: loading-animation 1s infinite alternate;
+  } 
+  
+
+  @keyframes loading-animation {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
 
 @media only screen and (max-width: 600px) {
 

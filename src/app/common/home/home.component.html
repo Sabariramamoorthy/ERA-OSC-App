@@ -1,5 +1,6 @@
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-<div class="container" [hidden]="isLoading">
+<!--  <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+<div class="container" [hidden]="isLoading"> -->
+  <div class="container">
   <div style="background-color: #F8F8F8; padding: 10px;">
     <app-photo-carousel [photos]="carosuelPhoto"></app-photo-carousel>
     <hr>
@@ -9,7 +10,8 @@
     <h3>{{ TopsalesH.Heading }}
       <span>{{ TopsalesH.SubHeading }}</span>
     </h3>
-    <app-product-cards [products]="Topsales"></app-product-cards>
+    <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+    <app-product-cards [hidden]="isLoading" [products]="Topsales"></app-product-cards>
   </div>
 
   <div>
@@ -38,7 +40,8 @@
     <h3>{{ SplsalesH.Heading }}
       <span>{{ SplsalesH.SubHeading }}</span>
     </h3>
-    <app-product-cards [products]="Splsales"></app-product-cards>
+     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+    <app-product-cards [products]="Splsales" [hidden]="isLoading"></app-product-cards>
   </div>
 
   <div>
@@ -49,7 +52,8 @@
     <h3>{{ NewsalesH.Heading }}
       <span>{{ NewsalesH.SubHeading }}</span>
     </h3>
-    <app-product-cards [products]="Newsales"></app-product-cards>
+     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+    <app-product-cards [products]="Newsales" [hidden]="isLoading"></app-product-cards>
   </div>
 
   <div>
@@ -60,7 +64,8 @@
     <h3>{{ OffersalesH.Heading }}
       <span>{{ OffersalesH.SubHeading }}</span>
     </h3>
-    <app-product-cards [products]="Offersales"></app-product-cards>
+     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+    <app-product-cards [products]="Offersales" [hidden]="isLoading"></app-product-cards>
   </div>
 
   <div>
@@ -71,7 +76,8 @@
     <h3>{{ RestocksalesG.Heading }}
       <span>{{ RestocksalesG.SubHeading }}</span>
     </h3>
-    <app-product-cards [products]="Restocksales"></app-product-cards>
+     <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+    <app-product-cards [products]="Restocksales" [hidden]="isLoading"></app-product-cards>
   </div>
 </div>
 <app-footers [hidden]="isLoading">

@@ -69,7 +69,7 @@
 
 
 
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-loading-spinner [spinner]=true [skelton]=false *ngIf="isLoading"></app-loading-spinner>
 <div [hidden]="isLoading">
 
   <div class="row  p-3 gap-3" *ngIf="ProductDetails.length>0">

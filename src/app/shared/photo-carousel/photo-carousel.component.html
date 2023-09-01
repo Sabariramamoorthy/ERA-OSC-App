@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="carousel-item" *ngFor="let photo of photos; let i = index" [class.active]="i === activeIndex">
-        <img [src]="photo.url" class="d-block w-100" [alt]="photo.title">
+        <img [src]="photo.url"  [ngClass]=" loading ==false ? 'd-block w-100 loading': 'd-block w-100 '" [alt]="photo.title" loading="eager">
         <div class="carousel-caption ">
           <h5 *ngIf="photo.title !=null">{{photo.title |uppercase}}</h5>
           <p *ngIf="photo.text !=null"> {{photo.text}}</p>

@@ -89,6 +89,12 @@
    object-fit: cover;
    cursor: pointer;
   }
+  .shipping {
+    text-decoration: none;
+    font-size: xx-small;
+    color: #9207b5;
+    font-weight: 500;
+  }
   
   @media screen and (max-width: 768px) {
     
