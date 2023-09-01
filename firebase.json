@@ -14,7 +14,7 @@
     ],
     "headers": [
       {
-        "source": "**/*.{js,html,css,json,xml,ico,png}",
+        "source": "**/*.{js,html,css,json,xml,ico,png,webp,gif}",
         "headers": [
           {
             "key": "Cache-Control",

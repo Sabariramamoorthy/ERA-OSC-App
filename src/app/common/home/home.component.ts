@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit {
   Offersales:Product[]=[];
   Restocksales:Product[]=[];
 
-  TopsalesH: Headings = { Heading: '', SubHeading: '' };
-  SplsalesH:Headings= { Heading: '', SubHeading: '' };
-  NewsalesH:Headings= { Heading: '', SubHeading: '' };
-  OffersalesH:Headings= { Heading: '', SubHeading: '' };
-  RestocksalesG:Headings= { Heading: '', SubHeading: '' };
+  TopsalesH: Headings = { Heading: 'Top Sales', SubHeading: 'Of 2023' };
+  SplsalesH:Headings= { Heading: 'Special Sales', SubHeading: '' };
+  NewsalesH:Headings= { Heading: 'New Arrivals', SubHeading: 'Hot Collection' };
+  OffersalesH:Headings= { Heading: 'Offer Sales', SubHeading: ' Offers Upto 60% ' };
+  RestocksalesG:Headings= { Heading: 'Restock', SubHeading: 'Back to Live' };
 
 
   Headings:Headings[] =[]
