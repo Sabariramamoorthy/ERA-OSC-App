@@ -34,9 +34,8 @@ img{
     padding: 10px;
     border-radius: 10px;
     border: none;
-    font-weight: 500;
     margin: 10px;
-    color: #e50088;
+    color: #000000;
     outline: none;
     box-shadow: none;
 }
@@ -91,9 +90,8 @@ img{
         padding: 5px;
         border-radius: 10px;
         border: none;
-        font-weight: 500;
         margin: 2px;
-        color: #e50088;
+        color: #000000;
         outline: none;
         box-shadow: none;
     }

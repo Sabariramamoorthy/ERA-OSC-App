@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
 
 
   Headings:Headings[] =[]
+  lazy: string="lazy";
 
   constructor(
     private _db: FirebaseDataService,

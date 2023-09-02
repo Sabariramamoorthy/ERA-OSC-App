@@ -10,6 +10,7 @@ import { Product } from 'src/app/models/signin-signup.model';
 })
 export class ProductCardsComponent {
   @Input() products: Product[] = [];
+  @Input() load:string="eager";
   constructor(
     private sanitizer: DomSanitizer,
     private _router:Router

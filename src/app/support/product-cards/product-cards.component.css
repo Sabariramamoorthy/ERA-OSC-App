@@ -7,7 +7,7 @@
     background: #FFFFFF;
   }
   
-  .col-lg-2 a {
+  .productName {
     text-align: left;
     font-size: small;
     font-weight: 500;
@@ -25,7 +25,6 @@
   .price{
     text-align: left;
     font-size:12.5px;
-    font-weight: 500;
     margin: 0;
     padding: 0;
     margin-top: 2px;
@@ -34,9 +33,9 @@
   .priceoffer {
     text-align: left;
     margin-top: 2px;
-    color:#f33d37 ;
+    margin-right: 5px;
+    color:#6d0400 ;
     text-decoration-line: line-through;
-    font-weight: 500;
     font-size:12px;
   }
    sub{

@@ -88,7 +88,7 @@ input[type="button"] {
 
 .card input[type="submit"]:disabled {
     background-color: #f32637;
-    color: white;
+    color: white;#e50088
     font-weight: 500;
 }
 

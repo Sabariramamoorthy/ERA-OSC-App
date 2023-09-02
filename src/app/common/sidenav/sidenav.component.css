@@ -5,11 +5,10 @@
   background-color: #2A0234;
   text-align: center;
 }
-.top p{
-  padding: 6px;
+.top h1{
+  padding: 10px;
   font-size: smaller;
-  color: #ffffff;
-  font-weight: lighter;
+  color: #ebeaea;
 }
 h3{
   color: #ffffff;
@@ -64,7 +63,7 @@ nav {
 @media screen and (max-width: 768px) {
 
 
-  .top p{
+  .top h1{
     padding: 6px;
     font-size:12.5px;
     color: #ebeaea;

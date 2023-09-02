@@ -5,6 +5,15 @@
     <app-photo-carousel [photos]="carosuelPhoto"></app-photo-carousel>
     <hr />
     <div class="seeall">
+      <a [routerLink]="['/category', 'all']"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
+    </div>
+    <h3>Shop By Category</h3>
+    <app-catergory></app-catergory>
+  </div>
+    <hr />
+    <div class="seeall">
       <a [routerLink]="['/product-Views', TopsalesH.Heading]"
         >See All <i class="bi bi-arrow-right-circle-fill"></i
       ></a>
@@ -21,19 +30,12 @@
     <app-product-cards
       [hidden]="isLoading"
       [products]="Topsales"
+      [load]="lazy"
     ></app-product-cards>
   </div>
 
   <div>
-    <hr />
-    <div class="seeall">
-      <a [routerLink]="['/category', 'all']"
-        >See All <i class="bi bi-arrow-right-circle-fill"></i
-      ></a>
-    </div>
-    <h3>Shop By Category</h3>
-    <app-catergory></app-catergory>
-  </div>
+    
 
   <div style="background-color: rgb(248, 244, 252)">
     <hr />
@@ -65,6 +67,7 @@
     <app-product-cards
       [products]="Splsales"
       [hidden]="isLoading"
+      [load]="lazy"
     ></app-product-cards>
   </div>
 
@@ -87,6 +90,7 @@
     <app-product-cards
       [products]="Newsales"
       [hidden]="isLoading"
+      [load]="lazy"
     ></app-product-cards>
   </div>
 
@@ -109,6 +113,7 @@
     <app-product-cards
       [products]="Offersales"
       [hidden]="isLoading"
+      [load]="lazy"
     ></app-product-cards>
   </div>
 
@@ -131,6 +136,7 @@
     <app-product-cards
       [products]="Restocksales"
       [hidden]="isLoading"
+      [load]="lazy"
     ></app-product-cards>
   </div>
 </div>
