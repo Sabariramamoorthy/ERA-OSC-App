@@ -88,7 +88,7 @@ input[type="button"] {
 
 .card input[type="submit"]:disabled {
     background-color: #f32637;
-    color: white;#e50088
+    color: white;
     font-weight: 500;
 }
 
@@ -113,7 +113,6 @@ input[type="button"] {
 @media only screen and (max-width: 500px) {
 
     .container {
-        /* margin-top: -100px; */
         margin-bottom: 50px;
     }
 

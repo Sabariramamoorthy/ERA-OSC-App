@@ -14,7 +14,7 @@ img{
     color: #fff;
     text-align: left
 }
-.carousel-caption h5{
+.carousel-caption h3{
     text-align: left;
     width: 50%;
     line-height:1.5;
@@ -75,7 +75,7 @@ img{
         text-align: left
     }
 
-    .carousel-caption h5{
+    .carousel-caption h3{
         text-align: left;
         width: 70%;
         line-height:1.5;

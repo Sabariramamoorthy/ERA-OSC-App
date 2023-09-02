@@ -19,7 +19,7 @@
           loading="eager"
         />
         <div class="carousel-caption">
-          <h5 *ngIf="photo.title != null">{{ photo.title | uppercase }}</h5>
+          <h3 *ngIf="photo.title != null">{{ photo.title | uppercase }}</h3>
           <p *ngIf="photo.text != null">{{ photo.text }}</p>
           <button *ngIf="photo.button != null">{{ photo.button }}</button>
         </div>
