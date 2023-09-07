@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     this.fetchData();
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000);
+    }, 5000);
   }
 
   fetchData() {
