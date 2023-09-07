@@ -4,12 +4,12 @@ h6{
     margin: 5px;
     font-size: large;
     color:#000101;
-    border-left: 5px solid #700FEB;
+    border-left: 5px solid#012497;
     margin-bottom: 20px;
 }
 i{
-    background-color:#ffffff;  
-    color: #700FEB;
+    background-color:#efefef;  
+    color:#012497;
     margin: 5px;
     padding: 5px;
 }
@@ -30,7 +30,7 @@ details div {
     border-bottom: 2px solid #1d0261;
     padding: 1.5em;
     font-size: small;
-    color: #420099;}
+    color: #012497;}
 
 details div ul li{
     padding: 3px;
@@ -42,7 +42,7 @@ h6{
     margin: 5px;
     font-size: large;
     color:#000101;
-    border-left: 5px solid #700FEB;
+    border-left: 5px solid#012497;
     margin-bottom: 10px;
 }
 
@@ -105,7 +105,7 @@ input:focus,
 textarea:focus{
   outline: 3px solid #1d0261;
   box-shadow: none;
-  color: #420099;
+  color: #012497;
   font-weight: 500;
 }
 
@@ -113,8 +113,8 @@ textarea:focus{
 
 input,
 textarea {
-  outline: 2px solid  #420099;
-  color: #420099;
+  outline: 2px solid  #012497;
+  color: #012497;
   font-weight: 500;
   font-size:12.5px;
 }
@@ -124,16 +124,16 @@ input::placeholder,
 input::target-text,
 textarea,
 textarea::placeholder {
-  color:  #420099;
+  color:  #012497;
   font-weight: 500;
 }
 
 input ::after,textarea::after {
-  color:  #420099;
+  color:  #012497;
 }
 
 input[type="button"] {
-    background-color:  #420099;
+    background-color:  #012497;
     text-align: center;
     color: white;
     font-size:12px;
@@ -162,7 +162,7 @@ input[type="button"]:hover {
   select,
   textarea,
   textarea::placeholder {
-    color:  #420099;
+    color:  #012497;
     font-weight: 500;
     font-size: smaller;
   }
@@ -172,15 +172,15 @@ input[type="button"]:hover {
   select:focus {
     outline: 1.5px solid  #1d0261;
     box-shadow: none;
-    color:  #420099;
+    color:  #012497;
     font-weight: 500;
   }
 
   input,
   textarea,
   select {
-    outline: 1px solid  #420099;
-    color:  #420099;
+    outline: 1px solid  #012497;
+    color:  #012497;
     font-weight: 500;
     font-size: smaller;
   }

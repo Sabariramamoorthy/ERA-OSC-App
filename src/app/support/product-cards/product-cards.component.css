@@ -4,30 +4,37 @@
     flex: 0 0 auto;
     width: 15.66666667%;
     border-radius: 5px;
-    background: #FFFFFF;
+    background:#ffffff;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    height: 400px;
   }
   
   .productName {
     text-align: left;
-    font-size: small;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
+    width: 220px; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color:#351c1c ;
   }
   .category{
     text-align: left;
-    font-size:10px;
+    font-size:12px;
     font-weight: 400;
     margin: 0;
     padding: 0;
     margin-top: 2px;
-    color:#1c0136 ;
+    color:#2e0059 ;
   }
   .price{
     text-align: left;
-    font-size:12.5px;
+    font-size:14px;
     margin: 0;
     padding: 0;
     margin-top: 2px;
+    font-weight: 600;
     color:#010143 ;
   }
   .priceoffer {
@@ -46,52 +53,52 @@
    }
   .priceoffer-offer{
     text-align: left;
-    font-size:12.5px;
-    font-weight: 300;
+    font-size:14px;
     margin: 0;
     padding: 0;
     margin-top: 2px;
-    color:#19013c ;
+    font-weight: 600;
+    color:#010c55 ;
     text-decoration-line: none;
   }
   .col-lg-2 button{
-    background:#651379;
+    background-color:#39008f;
     padding: 5px;
     width: 100%;
-    font-size:10px;
+    font-size:12px;
     border: none;
     font-weight: 500;
     text-align: center;
-    color: #ffffff;
+    color:#FFFFFF;
   }
   p i{
     margin-right: 5px;
-    color: #ffffff;
+    color:#FFFFFF;
   }
 
   .discount-badge {
     position: absolute;
     margin: 3px;
-    background-color: #9207b5;
-    color: white;
+    background-color:#39008f;
+    color: #FFFFFF;
     padding: 3px;
     text-align: center;
     width: 2.5%;
-    font-size:10px;
+    font-size:12px;
     border-radius: 4px;
   }
   .card-img {
-    width: 100%;
+   width: 100%;
    text-align: center;
-   border-radius: 2px;
-   max-height: 200px;
+   min-height: 250px;
+   max-height: 250px;
    object-fit: cover;
    cursor: pointer;
   }
   .shipping {
     text-decoration: none;
-    font-size:10px;
-    color: #9207b5;
+    font-size:12px;
+    color: #39008f;
     font-weight: 500;
   }
   
@@ -105,60 +112,52 @@
       align-items: flex-start;
       flex: 0 0 auto;
       margin-left: 5px;
-      width: 45.555%
+      width: 45.555%;
+      height: 300px;
     }
+    .card-img {
+      width: 100%;
+      text-align: center;
+      min-height: 150px;
+      max-height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+     }
   
     .discount-badge {
       position: absolute;
       margin: 3px;
-      background-color: #9207b5;
-      color: white;
+      background-color:#39008f;
+       color: #FFFFFF;
       padding: 3px;
       text-align: center;
       width: 10%;
-      font-size:12px;
+      font-size:10px;
       border-radius: 4px;
     }
   
-  
-    .col-lg-2-brand img {
-      margin: 0px;
-      padding: 0px;
-      top: 0px;
-      object-fit: contain;  
-      width: 100px;
-      height: 100px;
-      float: right;
-      z-index: 9999;
-    }
     
-    .col-lg-2-brand {
-      flex: 0 0 auto;
-      margin-left: 15px;
-      width: 85.66666667%;
-      border-radius: 10px;
-      padding: 0px;
-      height: 100px;
+    .productName {
+      text-align: left;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px; /* Adjust the width as needed */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color:#351c1c ;
     }
-    
-    .col-lg-2-brand p {
-      color:#ffffff ;
-      text-align: center;
-      padding: 0px;
-      font-weight: 400;
+    .col-lg-2 button{
+      padding: 5px;
+      width: 100%;
       font-size:10px;
-      margin: 0px;
-      cursor: pointer;
-     }
-  
-     .col-lg-2-cat {
-      flex: 0 0 auto;
-      margin-left: 15px;
-      width: 90.66666667%;
-      border-radius: 5px;
-      background: #FFFFFF;
+      border: none;
+      font-weight: 500;
+      text-align: center;
+      background-color:#39008f;
+      color: #FFFFFF;
     }
-    
+
     .row .col-lg-2:nth-child(n+5) {
       display: none;
       }

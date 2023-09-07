@@ -330,7 +330,7 @@ export const aboutUs = {
   };
   
   export const CarsoulePhoto= [
-    { url: './assets/2hzr936q.png',
+    { url: './assets/banner_31_v1.webp',
     button:"Explore now !" ,
     title: "Unveiling 2023's Hottest Fashion Trends",
     text:"Welcome to ONLINE SHOPPIN CART, your destination for the freshest fashion finds." },

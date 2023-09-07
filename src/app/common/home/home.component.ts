@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     this.fetchData();
     setTimeout(() => {
       this.isLoading = false;
-    }, 5000);
+    }, 3000);
   }
 
   fetchData() {
@@ -61,29 +61,57 @@ export class HomeComponent implements OnInit {
       tableName: Constant.database.productData,
       itemName: ''
     };
-    this._db.getAlldata(dataUser).then(
-      (value) => {
-        this.ProductDetails = (Object.keys(value.ProductTable).map(key => (value.ProductTable[key])) as Product[]).sort((a, b) => {
-          return <any>new Date(b.ProductUploadDate) - <any>new Date(a.ProductUploadDate)
-        });
+    // this._db.getAlldata(dataUser).then(
+    //   (value) => {
+    //     this.ProductDetails = (Object.keys(value.ProductTable).map(key => (value.ProductTable[key])) as Product[]).sort((a, b) => {
+    //       return <any>new Date(b.ProductUploadDate) - <any>new Date(a.ProductUploadDate)
+    //     });
 
-        this.Headings= value.ConfigtTable;
+    //     this.Headings= value.ConfigtTable;
 
-        this.customStorageService.clear();
-        this.customStorageService.setItem(
-          Constant.localStorage.Product,
-          this.ProductDetails
-        );
-        this.customStorageService.setItem(
-          Constant.localStorage.configTable,
-          value.ConfigtTable
-        );
+    //     this.customStorageService.clear();
+    //     this.customStorageService.setItem(
+    //       Constant.localStorage.Product,
+    //       this.ProductDetails
+    //     );
+    //     this.customStorageService.setItem(
+    //       Constant.localStorage.configTable,
+    //       value.ConfigtTable
+    //     );
 
-        console.log( value.ConfigtTable);
+    //     console.log( value.ConfigtTable);
         
 
         
-        this.Headings= value.ConfigtTable.Heading;
+    //     this.Headings= value.ConfigtTable.Heading;
+    //     this.TopsalesH =this.Headings[0];
+    //     this.SplsalesH=this.Headings[1];
+    //     this. NewsalesH=this.Headings[2];
+    //     this. OffersalesH=this.Headings[3];
+    //     this.RestocksalesG=this.Headings[4];
+
+    //     this.Topsales = this.filterHedaings( this.TopsalesH.Heading);
+    //     this.Splsales=this.filterHedaings( this.SplsalesH.Heading);
+    //     this.Newsales=this.filterHedaings( this. NewsalesH.Heading);
+    //     this.Offersales=this.filterHedaings(this. OffersalesH.Heading);
+    //     this.Restocksales=this.filterHedaings(this.RestocksalesG.Heading);
+
+        
+
+    //   },
+    //   (error) => {
+    //     console.error(error);
+    //   }
+    // );
+
+
+    this.ProductDetails=this.customStorageService.getItem(
+      Constant.localStorage.Product
+    ) as Product[];
+
+        this.Headings=this.customStorageService.getItem(
+          Constant.localStorage.configTable
+        ).Heading;
         this.TopsalesH =this.Headings[0];
         this.SplsalesH=this.Headings[1];
         this. NewsalesH=this.Headings[2];
@@ -95,14 +123,6 @@ export class HomeComponent implements OnInit {
         this.Newsales=this.filterHedaings( this. NewsalesH.Heading);
         this.Offersales=this.filterHedaings(this. OffersalesH.Heading);
         this.Restocksales=this.filterHedaings(this.RestocksalesG.Heading);
-
-        
-
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
   }
 
 

@@ -48,12 +48,12 @@
         class="carousel-item"
         *ngFor="let photo of photos; let i = index"
         [class.active]="i === activeIndex"
-        style="background-color: #66137A;"
       >
+      
         <img
         [src]="photo.url"
         width="100%"
-        height=auto
+        height=100%
         [ngClass]="
           loading == false ? 'd-block w-100 loading' : 'd-block w-100 '
         "
@@ -68,10 +68,4 @@
       </div>
     </div>
   </div>
-  <span class="carousel-control-prev" (click)="prevSlide()">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </span>
-  <span class="carousel-control-next" (click)="nextSlide()">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </span>
 </div>
