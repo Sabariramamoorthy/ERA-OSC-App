@@ -159,5 +159,8 @@
       background: #FFFFFF;
     }
     
+    .row .col-lg-2:nth-child(n+5) {
+      display: none;
+      }
   }
   

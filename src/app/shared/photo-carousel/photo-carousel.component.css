@@ -1,5 +1,8 @@
 img{
-    object-fit: cover;
+    width: 100px;
+    height: 250px;
+    object-fit: contain;
+    object-position: 100%;
     transition: opacity 0.5s ease-in-out; 
 }
 .carousel-caption {
@@ -18,26 +21,25 @@ img{
     text-align: left;
     width: 50%;
     line-height:1.5;
-    font-size: xx-large;
+    font-size: large;
 }
 .carousel-caption p{
     text-align: left;
-    font-size: medium;
-    width: 50%;
+    font-size: 12px;
+    width: 30%;
     padding: 5px;
     line-height: 3;
-    margin: 5px;
+    margin: 0px;
 }
 .carousel-caption button{
     text-align: left;
     font-size: small;
     padding: 10px;
-    border-radius: 10px;
     border: none;
-    margin: 10px;
     color: #000000;
     outline: none;
     box-shadow: none;
+    font-weight: 500;
 }
 
 .loading{
@@ -65,36 +67,48 @@ img{
     .carousel-caption {
         all: unset;
         position: absolute;
-        right: 0%;
-        top:1.25rem;
-        /* bottom: 1.25rem; */
-        left:15%;
-        padding-top: 0.25rem;
-        padding-bottom: 1.25rem;
+        width: 100%;
+        bottom: .75rem;
         color: #fff;
-        text-align: left
+        text-align: left;
+        background-color: rgb(2, 1, 0,0.5);
     }
 
     .carousel-caption h3{
         text-align: left;
-        width: 70%;
+        width: 100%;
+        left: 2%;
         line-height:1.5;
         font-size: small;
+        margin-left: 10px;
+        margin-top: 10px;
+   
     }
     .carousel-caption p{
-        display: none;visibility:hidden;
+        text-align: left;
+        font-size: 12px;
+        width:90%;
+        line-height: 2;
+        margin-left: 10px;
     }
     .carousel-caption button{
-        text-align: left;
+        text-align: center;
         font-size:12px;
         padding: 5px;
-        border-radius: 10px;
         border: none;
-        margin: 2px;
+        margin-left: 10px;
         color: #000000;
         outline: none;
         box-shadow: none;
+        margin-bottom: 10px;
     }
  
+    img{
+        width: 100px;
+        height: 350px;
+        object-fit: contain;
+        object-position: 100%;
+        transition: opacity 0.5s ease-in-out; 
+    }
       
   }
