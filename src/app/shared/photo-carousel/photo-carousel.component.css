@@ -3,21 +3,25 @@ img {
   transition: opacity 0.5s ease-in-out;
 }
 .carousel-item {
-  min-height: 550px;
+  min-height: 600px;
 }
 .carousel-caption {
   all: unset;
   position: absolute;
-  padding: 1.25rem;
   margin-top: 10px;
-  width: 97%;
-  color: #03001e;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  color: #3D1552;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #FFF2FF;
+  border-radius: 0px 0px 50px 50px;
+
 }
 .carousel-caption h3 {
   text-align: center;
-  width: 100%;
+  margin: 10px;
+  border-radius: 0px 0px 50px 50px;
   line-height: 1.5;
   font-size: xx-large;
   font-weight: 500;
@@ -41,16 +45,16 @@ img {
   outline: none;
   box-shadow: none;
   font-weight: 500;
-  width: 25%;
-  background-color: #050f4d;
+  width: 15%;
+  background-color: #3D1552;
 }
 
 .loading {
-  height: max-content;
   width: 100%;
-  background-color: #dfdddd;
+  background-color: #050000;
   margin-bottom: 10px;
   animation: loading-animation 1s infinite alternate;
+  min-height: 550px;
 }
 
 @keyframes loading-animation {
@@ -66,41 +70,47 @@ img {
   .carousel-caption {
     all: unset;
     position: absolute;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 2px;
     width: 100%;
-    color: #030052;
-    text-align: center;
-
-    background-color: #ffffff;
+    color: #3D1552;
+    text-align: center; background-color: #FFF2FF;
+    border-radius: 0px 0px 50px 50px;
+  
   }
-
   .carousel-caption h3 {
     text-align: center;
-    width: 100%;
-    font-size: 16px;
-    margin-top: 30px;
+    margin: 10px;
+    border-radius: 0px 0px 50px 50px;
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: 500;
     border: 2px solid #050f4d;
   }
   .carousel-caption p {
     text-align: center;
     font-size: 12px;
     width: 100%;
-    line-height: 2;
+    padding: 5px;
+    line-height: 3;
+    margin: 0px;
+    font-weight: 500;
   }
   .carousel-caption button {
     text-align: center;
     font-size: 12px;
     padding: 5px;
     border: none;
-    width: 100%;
     color: #ffffff;
     outline: none;
     box-shadow: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #050f4d;
+    font-weight: 500;
+    width: 45%;
+    background-color: #3D1552;
   }
   .carousel-item {
-    min-height: 320px;
+    min-height: 350px;
   }
   img {
     object-fit: cover;

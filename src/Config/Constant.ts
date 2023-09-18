@@ -333,7 +333,7 @@ export const aboutUs = {
     { url: './assets/banner_31_v1.webp',
     button:"Explore now !" ,
     title: "Unveiling 2023's Hottest Fashion Trends",
-    text:"Welcome to ONLINE SHOPPIN CART, your destination for the freshest fashion finds." },
+    text:"Welcome to ONLINE SHOPPING CART, your destination for the freshest fashion finds." },
     { url: './assets/axfrfgqm.png',
      button:"Explore the future today" ,
      title: 'Discover the Future of Tech Accessories',text:" Elevate your style and functionality with cutting-edge gadgets." }

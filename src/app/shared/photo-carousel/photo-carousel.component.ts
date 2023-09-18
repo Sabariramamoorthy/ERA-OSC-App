@@ -12,7 +12,7 @@ export class PhotoCarouselComponent  {
     this.photos 
   }
  
-
+imageloading:boolean=true;
   activeIndex = 0;
 
   nextSlide() {
@@ -23,6 +23,12 @@ export class PhotoCarouselComponent  {
     this.activeIndex = (this.activeIndex - 1 + this.photos.length) % this.photos.length;
   }
 
-  
+  loaded(){
+    console.log(this.imageloading);
+    
+this.imageloading=false;
+console.log(this.imageloading);
+
+  }
 }
 

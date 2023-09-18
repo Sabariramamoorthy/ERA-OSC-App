@@ -1,47 +1,52 @@
-<!--  <app-loading-spinner [spinner]=false [skelton]=true *ngIf="isLoading"></app-loading-spinner>
+<!-- <app-loading-spinner [spinner]="true" [skelton]="false" *ngIf="isLoading"></app-loading-spinner>
 <div class="container" [hidden]="isLoading"> -->
 <div class="container" [hidden]="false">
   <div>
     <app-photo-carousel [photos]="carosuelPhoto"></app-photo-carousel>
 
-    <div class="add">
+    <!-- <div class="add">
       <marquee behavior="scroll" direction="left" scrollamount="5">
         Upgrade Your Style! Discover Trendy Clothing, Gadgets, Handbags, and Watches at Online Shopping Cart. Shop Now!
       </marquee>
-    </div>
-
+    </div> -->
+    <hr />
     <div class="seeall">
-      <a [routerLink]="['/category', 'all']">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a [routerLink]="['/category', 'all']"
+        >See All <i class="bi bi-arrow-right-circle-fill"></i
+      ></a>
     </div>
 
     <h3>Shop By Category</h3>
     <app-catergory></app-catergory>
   </div>
 
-  <div class="add">
-    <marquee behavior="scroll" direction="left" scrollamount="3">
-      Elevate Your Wardrobe and Tech Game with Online Shopping Cart. Fashion, Gadgets, and More - All in One Place!
-    </marquee>
-  </div>
+  <hr />
   <div class="seeall">
-    <a [routerLink]="['/product-Views', TopsalesH.Heading]">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+    <a [routerLink]="['/product-Views', TopsalesH.Heading]"
+      >See All <i class="bi bi-arrow-right-circle-fill"></i
+    ></a>
   </div>
   <h3>
     {{ TopsalesH.Heading }}
     <span>{{ TopsalesH.SubHeading }}</span>
   </h3>
-  <app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"></app-loading-spinner>
-  <app-product-cards [hidden]="isLoading" [products]="Topsales"></app-product-cards>
+  <app-loading-spinner
+    [spinner]="false"
+    [skelton]="true"
+    *ngIf="isLoading"
+  ></app-loading-spinner>
+  <app-product-cards
+    [hidden]="isLoading"
+    [products]="Topsales"
+  ></app-product-cards>
 
   <div>
-    <div class="add">
-      <marquee behavior="scroll" direction="left" scrollamount="5">
-        Time for a Change? Browse Online Shopping Cart for Stylish Clothing, Trendy Gadgets, Chic Handbags, and Luxury Watches
-      </marquee>
-    </div>
+    <hr />
     <div style="padding: 2px">
       <div class="seeall">
-        <a routerLink="/terms">See All <i class="bi bi-arrow-right-circle-fill"></i></a>
+        <a routerLink="/terms"
+          >See All <i class="bi bi-arrow-right-circle-fill"></i
+        ></a>
       </div>
       <h3>How It's Work<span>(Steps to Order)</span></h3>
       <app-work-terms [page]="false"></app-work-terms>
@@ -49,77 +54,99 @@
 
     <div class="add">
       <marquee behavior="scroll" direction="left" scrollamount="3">
-        Fashion Forward, Tech Savvy. Online Shopping Cart Has it All - Clothing, Gadgets, Handbags, and Watches.
+        Fashion Forward, Tech Savvy. Online Shopping Cart Has it All - Clothing,
+        Gadgets, Handbags, and Watches.
       </marquee>
     </div>
     <div style="padding: 2px">
       <div class="seeall">
-        <a [routerLink]="['/product-Views', SplsalesH.Heading]">See All <i
-            class="bi bi-arrow-right-circle-fill"></i></a>
+        <a [routerLink]="['/product-Views', SplsalesH.Heading]"
+          >See All <i class="bi bi-arrow-right-circle-fill"></i
+        ></a>
       </div>
       <h3>
         {{ SplsalesH.Heading }}
         <span>{{ SplsalesH.SubHeading }}</span>
       </h3>
-      <app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"></app-loading-spinner>
-      <app-product-cards [products]="Splsales" [hidden]="isLoading" [load]="lazy"></app-product-cards>
+      <app-loading-spinner
+        [spinner]="false"
+        [skelton]="true"
+        *ngIf="isLoading"
+      ></app-loading-spinner>
+      <app-product-cards
+        [products]="Splsales"
+        [hidden]="isLoading"
+        [load]="lazy"
+      ></app-product-cards>
     </div>
 
-    <div class="add">
-      <marquee behavior="scroll" direction="left" scrollamount="5">
-        Our One-Stop Shop for Fashion and Tech! Elevate Your Lifestyle with Online Shopping Cart
-      </marquee>
-    </div>
+    <hr />
     <div style="padding: 2px">
-      
       <div class="seeall">
-        <a [routerLink]="['/product-Views', NewsalesH.Heading]">See All <i
-            class="bi bi-arrow-right-circle-fill"></i></a>
+        <a [routerLink]="['/product-Views', NewsalesH.Heading]"
+          >See All <i class="bi bi-arrow-right-circle-fill"></i
+        ></a>
       </div>
       <h3>
         {{ NewsalesH.Heading }}
         <span>{{ NewsalesH.SubHeading }}</span>
       </h3>
-      <app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"></app-loading-spinner>
-      <app-product-cards [products]="Newsales" [hidden]="isLoading" [load]="lazy"></app-product-cards>
+      <app-loading-spinner
+        [spinner]="false"
+        [skelton]="true"
+        *ngIf="isLoading"
+      ></app-loading-spinner>
+      <app-product-cards
+        [products]="Newsales"
+        [hidden]="isLoading"
+        [load]="lazy"
+      ></app-product-cards>
     </div>
 
-    <div class="add">
-      <marquee behavior="scroll" direction="left" scrollamount="3">
-        Time to Shine! Explore Online Shopping Cart for Fashionable Clothing, Cutting-Edge Gadgets, Designer Handbags, and Luxury Watches.
-      </marquee>
-    </div>
+    <hr />
     <div style="padding: 2px">
-      
       <div class="seeall">
-        <a [routerLink]="['/product-Views', OffersalesH.Heading]">See All <i
-            class="bi bi-arrow-right-circle-fill"></i></a>
+        <a [routerLink]="['/product-Views', OffersalesH.Heading]"
+          >See All <i class="bi bi-arrow-right-circle-fill"></i
+        ></a>
       </div>
       <h3>
         {{ OffersalesH.Heading }}
         <span>{{ OffersalesH.SubHeading }}</span>
       </h3>
-      <app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"></app-loading-spinner>
-      <app-product-cards [products]="Offersales" [hidden]="isLoading" [load]="lazy"></app-product-cards>
+      <app-loading-spinner
+        [spinner]="false"
+        [skelton]="true"
+        *ngIf="isLoading"
+      ></app-loading-spinner>
+      <app-product-cards
+        [products]="Offersales"
+        [hidden]="isLoading"
+        [load]="lazy"
+      ></app-product-cards>
     </div>
 
-    <div class="add">
-      <marquee behavior="scroll" direction="left" scrollamount="5">
-        Revamp Your Closet and Tech Collection with Online Shopping Cart. Quality Meets Style!
-      </marquee>
-    </div>
+    <hr />
     <div style="padding: 2px">
-      
       <div class="seeall">
-        <a [routerLink]="['/product-Views', RestocksalesG.Heading]">See All <i
-            class="bi bi-arrow-right-circle-fill"></i></a>
+        <a [routerLink]="['/product-Views', RestocksalesG.Heading]"
+          >See All <i class="bi bi-arrow-right-circle-fill"></i
+        ></a>
       </div>
       <h3>
         {{ RestocksalesG.Heading }}
         <span>{{ RestocksalesG.SubHeading }}</span>
       </h3>
-      <app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"></app-loading-spinner>
-      <app-product-cards [products]="Restocksales" [hidden]="isLoading" [load]="lazy"></app-product-cards>
+      <app-loading-spinner
+        [spinner]="false"
+        [skelton]="true"
+        *ngIf="isLoading"
+      ></app-loading-spinner>
+      <app-product-cards
+        [products]="Restocksales"
+        [hidden]="isLoading"
+        [load]="lazy"
+      ></app-product-cards>
     </div>
   </div>
   <div style="padding: 2px">

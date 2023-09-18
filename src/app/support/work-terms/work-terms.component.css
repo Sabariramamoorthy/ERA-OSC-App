@@ -12,17 +12,22 @@ details div {
     border-right: 2px solid #000;
     border-bottom: 2px solid #000;
     padding: 1.5em;
-    font-size: small;
-color: #012497;}
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 150px;
+    color: #3d1552;
+    background-color: #fff9ff;
+}
 h6{
     text-align: left;
     padding:5px;
     margin: 5px;
     font-size: large;
-    color:#000101;
+    color:#000000;
     border-left: 5px solid #700FEB;
     margin-bottom: 10px;
 }
+
 h6 span{
     font-size:12px;
 }
@@ -31,7 +36,7 @@ details div > * + * {
 
 }
 
-details + details {
+details  {
     margin-top: .5rem;
 }
 
@@ -60,7 +65,7 @@ summary:before {
     content: "↓";
     width: 1.75rem;
     height: 1.75rem;
-    background-color: #000;
+    background-color: #510169;
     color: #FFF;
     display: inline-flex;
     justify-content: center;
@@ -69,15 +74,31 @@ summary:before {
 }
 
 details[open] summary {
-    background-color: #eee;
+    background-color: #ffecff;
 }
 
 details[open] summary:before {
     content: "↑";
+    background-color: #480187;
 }
 
 summary:hover {
-    background-color: #eee;
+    background-color: #ffecff;
 }
 
+
+@media only screen and (max-width: 600px) {
+    details div {
+        border-left: 2px solid #000;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        padding: 1.5em;
+        font-size: 12px;
+        font-weight: 500;
+        min-height: auto;
+        color: #3d1552;
+        background-color: #fff9ff;
+    }
+  }
+  
 

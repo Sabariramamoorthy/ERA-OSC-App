@@ -1,5 +1,5 @@
  
-<div class="faq-terms">
+<!-- <div class="faq-terms">
     <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
     <details *ngFor="let step of steps">
         <summary>
@@ -9,7 +9,26 @@
             {{step.description}}
         </div>
       </details>
+</div> -->
+
+
+<div class="faq-terms">
+    <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
+
+    <div class="row">
+        <details *ngFor="let step of steps" class="col-lg-2" open>
+            <summary>
+                {{step.title}}
+            </summary>
+            <div>
+                {{step.description}}
+            </div>
+          </details>
+    </div>
+    
 </div>
+
+
 
 <div *ngIf="page" class="faq"><h6>Terms & Conditions<span>(by Online Shopping Cart)</span></h6>
 <details *ngFor="let term of terms">

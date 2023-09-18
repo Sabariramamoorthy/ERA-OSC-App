@@ -2,7 +2,7 @@
 .top{
   margin: 0;
   min-height: 40px;
-  background-color:#1e034c;
+  background-color:#341146;
   text-align: center;
 }
 .top h1{
@@ -15,9 +15,9 @@ h2{
 }
 
 nav {
-  background:#26005e;
+  background:#3D1552;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   padding: 0.25rem;
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@ nav {
 .nav-links a {
   text-decoration: none;
   font-weight: 500;
- font-size: 16px;
+ font-size: 12px;
   color:  #FFFFFF;
 }
 
@@ -77,7 +77,7 @@ nav {
     right: 5px;
     padding:10px ;
     top:90px;
-    background-color: #050f4d;
+    background-color: #3D1552;
     flex-direction: column;
     color: #FFFFFF;
     width: 40%;
@@ -92,11 +92,11 @@ nav {
   li {
     padding: 10px;
     color: #FFFFFF;
-    font-size:12.5px;
+    font-size:12px;
   }
   .nav-links li a{
     color:  #FFFFFF;
-    font-size:12.5px;
+    font-size:12px;
   }
   .nav-links.active {
     display:block;

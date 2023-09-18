@@ -14,9 +14,8 @@
           [src]="photo.url"
           width="100%"
           height=auto
-          [ngClass]="
-            loading == false ? 'd-block w-100 loading' : 'd-block w-100 '
-          "
+          (load)="loaded()"
+          [ngClass]="imageloading == true ? 'd-block w-100 loading' : 'd-block w-100 '"
           [alt]="photo.title"
           loading="eager"
         />
@@ -47,16 +46,13 @@
       <div
         class="carousel-item"
         *ngFor="let photo of photos; let i = index"
-        [class.active]="i === activeIndex"
-      >
+        [class.active]="i === activeIndex">
       
         <img
         [src]="photo.url"
         width="100%"
         height=100%
-        [ngClass]="
-          loading == false ? 'd-block w-100 loading' : 'd-block w-100 '
-        "
+        [ngClass]="imageloading == true ? 'd-block w-100 loading' : 'd-block w-100 '"
         [alt]="photo.title"
         loading="eager"
         />

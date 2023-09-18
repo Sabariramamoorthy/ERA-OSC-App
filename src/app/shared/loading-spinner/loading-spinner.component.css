@@ -47,7 +47,7 @@
     flex: 0 0 auto;
     width: 15.66666667%;
     border-radius: 5px;
-    background: #e4dddd;
+    background: #e3e3e3;
     margin-bottom: 10px;
     animation: loading-animation 1s infinite alternate;
     min-height: 200px;
