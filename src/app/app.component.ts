@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ColorConst, Color } from 'src/Config/color';
-import { ProductPostComponent } from './shared/product-post/product-post.component';
 
 @Component({
   selector: 'app-root',
