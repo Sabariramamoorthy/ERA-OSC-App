@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.startup=false;
       this.Show = false; 
-    }, 1500);
+    }, 3000);
   }
  
 }

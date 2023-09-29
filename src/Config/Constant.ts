@@ -189,7 +189,7 @@ export const faqDetails = [
           description: "Select a secure payment method and complete the payment process. Your payment information will be encrypted for security."
         },
         {
-          title: "Order Confirmation Message",
+          title: "Confirmation Message",
           description: "After successfully placing the order and processing the payment, you'll receive an order confirmation message with details of your purchase."
         },
         {
@@ -330,7 +330,7 @@ export const aboutUs = {
   };
   
   export const CarsoulePhoto= [
-    { url: './assets/banner_31_v1.webp',
+    { url: './assets/banner_31_v1 copy1.jpg',
     button:"Explore now !" ,
     title: "Unveiling 2023's Hottest Fashion Trends",
     text:"Welcome to ONLINE SHOPPING CART, your destination for the freshest fashion finds." },

@@ -18,9 +18,6 @@ export class HomeComponent implements OnInit {
   ProductDetails: Product[] = [];
   Brand: Category[] = [];
 
-  carosuelPhoto !:any[];
-
-
   Topsales:Product[]=[];
   Splsales:Product[]=[];
   Newsales:Product[]=[];
@@ -43,16 +40,14 @@ export class HomeComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private _session:LocalstorageService
   )
-   {
-  this.carosuelPhoto=CarsoulePhoto;
-  }
+   {}
 
   ngOnInit(): void {
     this._session.setData("loaded",true);
     this.fetchData();
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000);
+    }, 2000);
   }
 
   fetchData() {

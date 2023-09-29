@@ -13,7 +13,7 @@ export class StartupComponent  implements OnInit {
     setTimeout(() => {
       this.name = true;
       this.Subname=false 
-    }, 1500);
+    }, 3100);
     setTimeout(() => {
       this.Subname = true;
       this.sale=false;

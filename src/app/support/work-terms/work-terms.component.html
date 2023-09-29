@@ -16,14 +16,14 @@
     <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
 
     <div class="row">
-        <details *ngFor="let step of steps" class="col-lg-2" open>
-            <summary>
+        <div *ngFor="let step of steps" class="col-lg-2">
+            <p class="worktitle">
                 {{step.title}}
-            </summary>
-            <div>
+            </p>
+            <p class="workdesc">
                 {{step.description}}
-            </div>
-          </details>
+            </p>
+        </div>
     </div>
     
 </div>

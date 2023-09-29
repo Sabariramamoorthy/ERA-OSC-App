@@ -5,24 +5,95 @@
     height: 100vh;  flex-wrap: wrap;
     flex-direction: column;
     transition: transform 0.3s ease-in-out;
+    background-color: #efefef;
+    
   }
 
-  .loading-spinner p {
-    margin-top: -250px;
-  font-size: xx-large;
-  }
 
   @media only screen and (max-width: 500px) {
     .loading-spinner {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;  flex-wrap: wrap;
+        min-height: 90vh;
+      height: 100%;  flex-wrap: wrap;
         flex-direction: column;
         transition: transform 0.3s ease-in-out;
       }
-    .loading-spinner p {
-        margin-top: -70px;
-      font-size: medium;
+      marquee{
+        font-size: 60pt;
+        text-align: center;
+        color: #270061;
       }
   }
+
+
+  /* @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+ 
+
+  svg {
+     background-color: #efefef;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     max-height: 100vh; width:100%;
+     transition: transform 0.3s ease-in-out;
+     font: 10.5em 'Montserrat';
+      margin: 0 auto;
+  }
+  
+  .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .text-copy:nth-child(1){
+    stroke: #39164d;
+    animation-delay: -1;
+  }
+  
+  .text-copy:nth-child(2){
+    stroke: #540084;
+    animation-delay: -2s;
+  }
+  
+  .text-copy:nth-child(3){
+    stroke: #6800bd;
+    animation-delay: -3s;
+  }
+  
+  .text-copy:nth-child(4){
+    stroke: #7100bd;
+    animation-delay: -4s;
+  }
+  
+  .text-copy:nth-child(5){
+    stroke: #9031fd;
+    animation-delay: -5s;
+  }
+  
+  @keyframes stroke-offset{
+    100% {stroke-dashoffset: -35%;}
+  }
+
+  @media only screen and (max-width: 500px) {
+    svg {
+      background-color: #efefef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      height: 100%; width:100%;
+      transition: transform 0.3s ease-in-out;
+      font: 10.5em 'Montserrat';
+       margin: 0 auto;
+   }
+  
+   
+  }  */

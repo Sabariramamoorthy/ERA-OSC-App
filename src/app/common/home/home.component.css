@@ -5,6 +5,7 @@
   margin-bottom: 10px;
   padding: 10px 20px;
 }
+
 .seeall a {
   float: right;
   margin-right: 5px;
@@ -13,16 +14,18 @@
   text-decoration: none;
   color: #1e0048;
 }
+
 .add {
   display: none;
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden;
+  /* Hide overflowing content */
   white-space: nowrap;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 100%;
   padding: 3px;
   font-size: smaller;
-  background-color:#ffffff;
+  background-color: #ffffff;
   color: #1e0048;
 }
 
@@ -42,11 +45,57 @@ h3 {
   border-left: 5px solid#39008f;
   margin-bottom: 10px;
 }
+
 h3 span {
   font-size: small;
-  color:#39008f;
+  color: #39008f;
   font-weight: 600;
 }
+
+.bannerhero {
+  background-image: url('/assets/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+.bannercontent {
+  margin-top: 5.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 0.25rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.bannercontent h2 {
+  font-size: 40pt;
+}
+
+.bannercontent h4 {
+  font-size: 20pt;
+}
+
+.bannercontent p {
+  font-size: 12pt;
+}
+
+.bannercontent button {
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  margin: 10px;
+  width: 35%;
+  color: #000000;
+  font-weight: 600;
+  outline: none;
+  box-shadow: none;
+}
+
+
 
 @media screen and (max-width: 768px) {
   h6 {
@@ -58,18 +107,63 @@ h3 span {
     border-left: 5px solid#39008f;
     margin-bottom: 10px;
   }
+
   h6 span {
     font-size: 12px;
   }
+
   .add {
-    overflow: hidden; /* Hide overflowing content */
+    overflow: hidden;
+    /* Hide overflowing content */
     white-space: nowrap;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 100%;
     padding: 2px;
     font-size: xx-small;
-    background-color:#230058;
+    background-color: #230058;
     color: #FFFFFF;
   }
+
+  .bannerhero {
+    background-image: url('/assets/bannrmobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 500px;
+    padding: 30px;
+  }
+
+  .bannercontent {
+    margin-top: 8.25rem;
+    padding-top: 0.25rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+
+  .bannercontent h2 {
+    font-size: 30pt;
+  }
+
+  .bannercontent h4 {
+    font-size: 12pt;
+  }
+
+  .bannercontent p {
+    font-size: 12px;
+  }
+
+  .bannercontent button {
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+    margin: 5px;
+    width: 55%;
+    color: #000000;
+    font-weight: 600;
+    outline: none;
+    box-shadow: none;
+  }
+
 }

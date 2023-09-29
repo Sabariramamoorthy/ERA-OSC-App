@@ -19,7 +19,10 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  
+  .row{
+    justify-content: space-evenly;
+
+  }
   
   @media only screen and (max-width: 600px) {
  

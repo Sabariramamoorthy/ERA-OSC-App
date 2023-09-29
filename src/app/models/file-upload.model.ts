@@ -13,6 +13,14 @@ export interface DataGet
   itemName:string
 }
 
+export interface DataUpdate
+{
+  basePath:string,
+  tableName:string,
+  itemName:string,
+  insertData:any
+}
+
 export interface imageCompress
 {
    compressedData:any;
@@ -37,11 +45,3 @@ export class Fileupload
   }
 }
 
-
-export interface DataUpdate
-{
-  basePath:string,
-  tableName:string,
-  itemName:string,
-  insertData:any
-}
