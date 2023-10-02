@@ -1,16 +1,20 @@
 h1 {
-  font-size: x-large;
+  font-size: 24px;
   color: #1a013c;
   text-align: center;
+  font-weight: 600;
 }
 
 p {
   text-align: center;
-  font-size: small;
+  font-size: 14px;
 }
 b {
   padding: 10px;
   margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 2;
 }
 
 
@@ -128,24 +132,19 @@ summary:hover {
         padding: 0.25rem;
         margin-bottom: 0.5rem;
       }
-    h1 {
-      font-size: large;
-      color: #1a013c;
-      text-align: center;
-    }
-  
    
+   
+    p {
+      text-align: justify;
+      font-size: 12px;
+    }
     b {
       padding: 10px;
       margin-top: 10px;
-      line-height: 20px;
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: 500;
     }
- 
-    p {
-        text-align: justify;
-        font-size:12px;
-      }
+    
 
       details div {
         border-left: 2px solid #1d0261;

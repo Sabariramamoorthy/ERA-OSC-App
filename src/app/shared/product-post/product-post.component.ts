@@ -93,6 +93,11 @@ export class ProductPostComponent {
     return this.ProductForm.controls;
   }
 
+  // onchange()
+  // {
+  //   this.Catergorysuggestions= this.configdetails.Category.filter((item) => item.BrandName==inputName).map((element) => element.CategoryName);
+  //   this.Catergorysuggestions = Array.from(new Set(this.Catergorysuggestions));
+  // }
   async detectFiles(event: any) {
     const compressPromises: Promise<void>[] = [];
     let files = event.target.files;

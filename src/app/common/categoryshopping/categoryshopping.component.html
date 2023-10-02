@@ -1,26 +1,44 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2" *ngFor="let b of Brandsuggestions ">
-            <details open>
-                <summary>{{b}}</summary>
-                <div class="links" >
-                   <p *ngFor="let c of getcategory(b) " (click)="filterdata(b,c.CategoryName)" >{{c.CategoryName}}</p>
-                </div>
-              </details>
-        </div>
-        
-        
-    </div>
+<div class="topbar">
+  <span class="topbar-filter" (click)="toggleMenu()"><i class="bi bi-filter-square"></i> FILTERS</span>
+  <span class="topbar-pages">PAGES
+    <i class="bi bi-chevron-double-left ms-2" (click)="prevSlide()"></i>
+    <strong class="ms-2">
+      {{CPage}} - {{TPage}}
+    </strong>
+    <i class="bi bi-chevron-double-right ms-2" (click)=" nextSlide()"></i>
+  </span>
 
- 
-     <app-loading-spinner
-     [spinner]="false"
-     [skelton]="true"
-     *ngIf="isLoading"
-   ></app-loading-spinner>
-   <app-product-cards
-     [products]="result"
-     [hidden]="isLoading"
-   ></app-product-cards>
+  <select id="sort-select" [(ngModel)]="selectedOption" (ngModelChange)="onSortOptionChange()" >
+    <option value="recent">Recent</option>
+    <option value="low-to-high">Price-Low to High</option>
+    <option value="high-to-low">Price-High to Low</option>
+    <!-- <option value="offer-low-high">Offer-Low to High</option>
+    <option value="offer-high-low">Offer-High to Low</option> -->
+    <option value="popular">Popular</option>
+    <option value="4-rating">4+ Rating</option>
+  </select>
+
 </div>
-<app-footers></app-footers>
+
+
+<div class="container">
+
+  <div class="filterbar" [hidden]="showMenu" [ngClass]="{'active': showMenu}">
+    <span class="filters-tag">CATEGORY FILTERS</span>
+    <button class="close-btn" (click)="toggleMenu()"><i class="bi bi-x-square"></i></button>
+
+    <details *ngFor="let b of Brandsuggestions">
+      <summary>{{ b }}</summary>
+      <div *ngFor="let c of getcategory(b)" class="check-div">
+        <input type="checkbox" class="checkmark" (change)="onCheckboxChange($event,b, c.CategoryName)">
+        <span class="checkmark-label"> {{ c.CategoryName }}</span>
+      </div>
+    </details>
+  </div>
+  
+<app-loading-spinner [spinner]="false" [skelton]="true" *ngIf="isLoading"  [cardCount]=18></app-loading-spinner>
+  <app-product-cards [products]="result"  [hidden]="isLoading"></app-product-cards>
+</div>
+
+
+<app-footers [hidden]="isLoading"></app-footers>

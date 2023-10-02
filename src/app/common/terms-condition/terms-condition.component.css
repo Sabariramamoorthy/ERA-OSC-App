@@ -3,62 +3,100 @@
     padding: 5px;
     margin-bottom: 25px;
 }
-
-h6{
-    text-align: left;
-    padding:5px;
-    margin: 5px;
-    font-size: large;
-    color:#000101;
-    border-left: 5px solid #700FEB;
-    margin-bottom: 10px;
+.faq-terms{
+    margin:7px;
+    padding: 5px;
 }
-h6 span{
-    font-size:12px;
+p{
+ white-space:pre-line;
+ text-align: justify;
+ font-weight: 500;
+ font-size: 16px;
+ color: #260d33;
+ line-height: 2;
+}
+li{
+ white-space:pre-line;
+ text-align: justify;
+ font-weight: 500;
+ font-size: 16px;
+ color: #260d33;
+ line-height: 2;
+ padding: 5px;
 }
 
-details div {
+.details-div {
     border-left: 2px solid #000;
     border-right: 2px solid #000;
     border-bottom: 2px solid #000;
     padding: 1.5em;
-    font-size: small;
-color: #420099;}
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 175px;
+    max-height: 175px;
+    color: #260d33;
+    background-color: #FFFFFF;
+}
+h6{
+    text-align: left;
+    padding:5px;
+    margin: 5px;
+    font-size: 20px;
+    color:#000000;
+    border-left: 5px solid #260d33;;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.returnpolicy{
+    font-size: 18px;
+    font-weight: 600;
+    color: #260d33;
+   
+}
+h6 span{
+    font-size:12px;
+    color: #3a0158;
+}
 details div > * + * {
     margin-top: 1.5em;
 
 }
 
-details + details {
-    margin-top: .5rem;
+.details-list  {
+    margin-top: 1.5rem;
 }
 
-summary {
+.summary-text {
     list-style: none;
-    font-size: small;
+    font-size: 12px;
+    font-weight: 500;
+    background: #260d33;
+    color: #FFFFFF;
 }
 
 summary::-webkit-details-marker {
     display: none;
 }
 
-summary {
+.summary-style {
     border: 2px solid #000000;
-    padding: .75em 1em;
+    padding: .25rem ;
     cursor: pointer;
     position: relative;
-    padding-left: calc(1.75rem + .75rem + .75rem);
+    padding-left: calc(0.75rem + .75rem + .75rem);
 }
 
-summary:before {
+.summary-style:before {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: .75rem;
     content: "↓";
-    width: 1.75rem;
-    height: 1.75rem;
-    background-color: #000;
+    width: 0.5rem;
+    height: 0.5rem;
+    font-weight: 500;
+    background-color: #260d33;
     color: #FFF;
     display: inline-flex;
     justify-content: center;
@@ -67,15 +105,105 @@ summary:before {
 }
 
 details[open] summary {
-    background-color: #eee;
+    background-color: #260d33;
+    color: #FFFFFF;
 }
 
 details[open] summary:before {
     content: "↑";
+    background-color: #260d33;
 }
 
 summary:hover {
-    background-color: #eee;
+    background-color: #260d33;
+    color: #FFFFFF;
 }
 
+details[open] summary::after {
+    background-color: #260d33;
+}
+
+.col-lg-2{
+    padding: 5px;
+    
+}
+.worktitle{
+    margin: 0px;
+    padding: 5px;
+    background-color: #260d33;
+    color: #FFF;
+    font-weight: 500;
+    text-align: center;
+    font-size: 12px;
+    /* border-radius: 10px 10px 0px 0px; */
+    /* box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.3); */
+}
+.workdesc{
+    margin: 0px;
+    padding: 10px;
+    background-color: #FFF;
+    color: #260d33;
+    font-weight: 500;
+    text-align: left;
+    font-size: 12px;
+    min-height: 175px;
+    max-height: 175px;
+    border: 2px solid #260d33;
+  
+    /* box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.3); */
+}
+@media only screen and (max-width: 600px) {
+    p{
+        white-space:pre-line;
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+        color: #260d33;
+        line-height: 2;
+       }
+       li{
+        white-space:pre-line;
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+        color: #260d33;
+        line-height: 2;
+        padding: 5px;
+       }
+
+    .row{
+        gap:0 px;
+    }
+    .col-lg-2{
+        padding: 10px;
+        border-radius:10px;
+
+    }
+    .workdesc{
+        margin: 0px;
+        padding: 10px;
+        background-color: #FFF;
+        color: #260d33;
+        font-weight: 500;
+        text-align: left;
+        font-size: 12px;
+        min-height: 100px;
+        max-height: 100px;
+        /* border-radius: 0px 0px 10px 10px; */
+    }
+
+    .details-div {
+        border-left: 2px solid #000;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        padding: 1.5em;
+        font-size: 12px;
+        font-weight: 500;
+        min-height: 100px;
+        max-height: 100px;
+        color: #260d33;
+        background-color: #FFFFFF;
+    }
+  }
+  
 

@@ -3,91 +3,18 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: 10px;
-  min-height: 100%;
 }
-
-h3 {
-  text-align: left;
-  color: #000101;
+.product-image{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  height: auto;
 }
-
-h6 {
-  text-align: left;
-  color: #000101;
-  background-color: #ffffff;
-  padding: 5px;
-  margin: 5PX;
-  border-left: 5px solid #700FEB;
-
-}
-h6 span{
-  margin-left: 10px;
-  font-size:12.5px;
-}
-
-hr {
-  border: 2px solid #20003c;
-}
-
-.col-lg-7 {
-  padding: 15px;
-  margin-top: 20px;
-  color: #000101;
-}
-
-.col-lg-4 {
-  padding: 15px;
-  margin-top: 20px;
-  color: #000101;
-}
-
-.available {
-  color: #009919;
-  padding: 2px;
-  font-weight: 500;
-  font-size: small;
-}
-
-a {
-  font-size: medium;
-  color: #3b0291;
-  font-size: small;
-}
-
-.price {
-  font-weight: 600;
-  color: #010143;
-  margin: 0px;
-  font-size: x-large;
-}
-
-.priceoffer {
-  text-align: left;
-  font-weight: 600;
-  color: #f33d37;
-  font-size: large;
-  margin-left: 10px;
-  text-decoration-line: line-through;
-}
-
-.priceoffer-offer {
-  text-align: left;
-  font-size: x-large;
-  font-weight: 600;
-  color: #19013c;
-  text-decoration-line: none;
-}
-
-p {
-  white-space: pre-line;
-  font-size: large;
-}
-
-.discount-badge {
+.product-discount-badge {
   position: absolute;
   margin: 10px;
   margin-top: 23px;
-  background-color: #9207b5;
+  background-color: #260d33;
   color: white;
   padding: 3px;
   text-align: center;
@@ -97,110 +24,254 @@ p {
   border-radius: 4px;
 }
 
-.shipping {
+
+.product-available {
+  color: #009919;
+  padding: 2px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.product-order-count{
+  color: #030099;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 5px;
+}
+.product-name {
+  text-align: left;
+  color: #000101;
+}
+
+
+.product-catergory {
+  font-size: 12px;
+  color: #260d33;
+  font-weight: 500;
+  padding:4px;
+  text-decoration: none;
+  border: 1px solid #260d33;
+  border-radius: 5px;
+}
+
+.product-catergory:hover {
+  font-size: 12px;
+  background-color: #260d33;
+  color: #ffffff;
+  font-weight: 400;
+  padding:4px;
+  text-decoration: none;
+  border: none;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #010143;
+  margin: 0px;
+  font-size: 30px;
+}
+
+.product-priceoffer {
+  text-align: left;
+  font-weight: 600;
+  color: #f33d37;
+  font-size: 14px;
+  margin-left: 10px;
+  text-decoration-line: line-through;
+}
+
+.product-price-offer {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 600;
+  color: #19013c;
+  text-decoration-line: none;
+}
+
+.product-shipping {
   text-decoration: none;
   font-size: small;
 }
 
-button {
-  background-color: #5b03ad;
+.product-action-icon {
+  background-color: #260d33;
   color: white;
   padding: 3px;
   text-align: center;
   font-size: small;
-  width: 5%;
+  width: 15%;
   border: none;
   font-weight: 500;
   border-radius: 5px;
 }
 
-.wish {
-  width: 5%;
-  background-color: #be37f3;
-}
-
-details div {
-  border:none ;
-  padding: 1.5em;
+.product-action-icon:hover {
+  background-color: transparent;
+  color: #260d33;
+  padding: 3px;
+  text-align: center;
   font-size: small;
-color: #420099;}
-details div > * + * {
-  margin-top: 1.5em;
-
-}
-
-details + details {
-  margin-top: .5rem;
-}
-
-summary {
-  list-style: none;
-  font-size: small;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary {
-  border: 2px solid #000000;
-  padding: .75em 1em;
-  cursor: pointer;
-  position: relative;
-  padding-left: calc(1.75rem + .75rem + .75rem);
-  font-size: large;
+  width: 15%;
+  border: none;
   font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #260d33;
 }
 
-summary:before {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: .75rem;
-  content: "↓";
-  width: 1.75rem;
-  height: 1.75rem;
-  background-color: #5b03ad;
-  color: #FFF;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
+.product-desc
+{
+  padding: 0px;
 }
 
-details[open] summary {
-  background-color: #ffffff;
+.product-desc-head
+{
+  font-size: 18px;
+  font-weight: bold;
+  max-width: fit-content;
+  color:  #260d33;
 }
 
-details[open] summary:before {
-  content: "↑";
+.product-desc-txt
+{
+  font-size: 14px;
+  font-weight: 500;
+  white-space: pre-line;
+  line-height: 2;
 }
 
-summary:hover {
-  background-color: #ffffff;
+.product-review-head
+{
+  font-size: 18px;
+  font-weight: bold;
+  max-width: fit-content;
+  color:  #260d33;
 }
 
+.product-review-username
+{
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+.product-review-txt{
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2;
+  color:  #260d33;
+}
+
+.product-review-rating{
+  font-size: 12px;
+  font-weight: 500;
+  color:  #ffffff;
+  padding: 2px;
+  padding-inline: 10px;
+  background-color: #009919;
+  border-radius: 5px;
+}
+
+.product-rating{
+  font-size: 12px;
+  font-weight: 500;
+  color:  #ffffff;
+  padding: 2px;
+  padding-inline: 10px;
+  background-color: #009919;
+  border-radius: 5px;
+}
+
+.col-lg-7 {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px; 
+  color: #000101;
+  border-radius: 2px;
+}
+
+.col-lg-4 {
+  padding: 15px;
+}
+
+.bi-star-fill{
+  font-size: xx-small;
+  align-content: center;
+}
+
+.realted-Products{
+  font-weight: 600;
+  color:  #260d33;font-size: 18px;
+}
+
+.realted-Products-cat{
+  font-weight: 600;
+  color:  #000000;font-size: 14px;
+}
+.product-image-span{
+  font-weight: 600;
+  font-size: medium;
+  text-align: center;
+  font-size: 12px;
+  margin: 0px;
+  padding: 3px;
+  width:100%;
+  background-color: #260d33;
+  color: white;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 3px;
+    color: #ffffff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: 1;
+}
+.bi-caret-left,
+.bi-caret-right{
+    text-align: center;
+    font-size: 20px;
+    color: #19013c;
+    background-color: #ffffff;
+    border-radius: 25px;
+
+}
+/* .carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%
+} */
 @media screen and (max-width: 630px) {
 
   .col-lg-7 {
     margin: 0px;
     margin-top: 2px;
-    width: 100%;
-    padding: 25px;
+    max-width: fit-content;
+    padding: 15px;
   }
 
   .col-lg-4 {
     margin: 0px;
-
+    margin-top: 0px;
     width: 100%;
-    padding: 25px;
   }
 
-  .discount-badge {
+  .product-discount-badge {
     position: absolute;
     margin: 10px;
     margin-top: 23px;
-    background-color: #9207b5;
+    background-color: #260d33;
     color: white;
     padding: 3px;
     text-align: center;
@@ -210,50 +281,66 @@ summary:hover {
     border-radius: 4px;
   }
 
-
-  p {
+  .product-desc-head
+  {
+    font-size: 14px;
+    font-weight: bold;
+    max-width: fit-content;
+    color:  #260d33;
+  }
+  
+  .product-desc-txt
+  {
+    font-size: 12px;
+    font-weight: 500;
     white-space: pre-line;
-    font-size: medium;
+    line-height: 2;
+  }
+  .product-review-head
+  {
+    font-size: 14px;
+    font-weight: bold;
+    max-width: fit-content;
+    color:  #260d33;
+  }
+  .product-review-username
+  {
+    font-size: 12.5px;
+    color:  #0b8301;
+  }
+  .product-review-txt{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2;
   }
 
-  button {
-    background-color: #5b03ad;
-    color: white;
-    padding: 3px;
-    text-align: center;
-    font-size: small;
-    width: 15%;
-    border: none;
+  .product-review-rating{
+    font-size: 12px;
     font-weight: 500;
+    color:  #ffffff;
+    padding: 2px;
+    padding-inline: 10px;
+    background-color: #009919;
     border-radius: 5px;
   }
-
-  .wish {
-    width: 15%;
-    background-color: #be37f3;
+  
+  .realted-Products{
+    font-weight: 600;
+    color:  #260d33;font-size: 14px;
   }
-
+  
+  .realted-Products-cat{
+    font-weight: 600;
+    color:  #000000;font-size: 12px;
+  }
+  
   .row {
-    gap: .75rem !important;
+    gap: .25rem !important;
     padding: .25rem;
     margin-bottom: .5rem;
   }
 
-  p {
-    white-space: pre-line;
-    font-size: small;
-  }
-  summary {
-    border: 2px solid #000000;
-    padding: .75em 1em;
-    cursor: pointer;
-    position: relative;
-    padding-left: calc(1.75rem + .75rem + .75rem);
-    font-size: medium;
-    font-weight: 500;
-  }
-  h6 span{
-    font-size:12.5px;
-  }
-  
+ 
+
+
 }

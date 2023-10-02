@@ -1,110 +1,117 @@
-<app-loading-spinner [spinner]=true [skelton]=false *ngIf="isLoading"></app-loading-spinner>
+<app-loading-spinner
+  [spinner]="true"
+  [skelton]="false"
+  *ngIf="isLoading"
+></app-loading-spinner>
 
-<div class="container " [hidden]="isLoading" >
-    <div class="row gap-4">
-        <div class="col-lg-4">
-            <span *ngIf="ProductData.ProductIsOffer === 'Yes'" class="discount-badge">{{ProductData.ProductOfferDiscount}}%</span>
-            <!-- <app-photo-carousel [photos]="photos"></app-photo-carousel>  -->
-            <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
-                <div class="row py-3 shadow-5">
-                  <div class="col-12 mb-1">
-                    <div class="lightbox">
-                      <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-                        alt="Gallery image 1"
-                        class="ecommerce-gallery-main-img active w-100"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-3 mt-1">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-                      data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-                      alt="Gallery image 1"
-                      class="active w-100"
-                    />
-                  </div>
-                  <div class="col-3 mt-1">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                      data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                      alt="Gallery image 2"
-                      class="w-100"
-                    />
-                  </div>
-                  <div class="col-3 mt-1">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                      data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                      alt="Gallery image 3"
-                      class="w-100"
-                    />
-                  </div>
-                  <div class="col-3 mt-1">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-                      data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-                      alt="Gallery image 4"
-                      class="w-100"
-                    />
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="col-lg-7">
-            <h3>{{ProductData.ProductName.split('-')[0] |uppercase}}</h3>
-            <label class="available">{{stock}}</label>
+<div class="container" [hidden]="isLoading">
+  <div class="row gap-4">
+    <div class="col-lg-4">
+      <span
+        *ngIf="ProductData.ProductIsOffer === 'Yes'"
+        class="product-discount-badge"
+        >{{ ProductData.ProductOfferDiscount }}%</span
+      >
+     
+      <!-- <img src="./assets/watch.webp" class="product-image" > -->
+
       
-            <div class="mt-2 mb-1">
-                <a routerLink="/brand">{{ProductData.ProductBrand}}</a> 
-                <a [routerLink]="['/category',ProductData.ProductCatergory]" class="ms-2">{{ProductData.ProductCatergory}}</a> 
-            </div>
+      <div class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
            
-
-            <p *ngIf="ProductData.ProductIsOffer === 'No'" class="price mt-2">{{ProductData.ProductPrice | currency:'INR'}}</p>
-            <div *ngIf="ProductData.ProductIsOffer === 'Yes'" class="mt-2 mb-1" >
-              <span class="priceoffer-offer">{{ProductData.ProductOfferPrice | currency:'INR'}}</span>
-              <span class="priceoffer">{{ProductData.ProductPrice | currency:'INR'}}</span>
-            </div>
-            <span class="shipping"> <strong>&#x20B9;</strong> <b> {{ProductData.ProductShipping}} Shipping </b></span>
-            <br>
-           
-            <button class="mt-4 "><i class="bi bi-cart-check"></i></button>
-            <button class="mt-4 ms-2 wish"><i class="bi bi-heart"></i></button>
-            <button class="mt-4 ms-2 mb-1" (click)="share()"><i class="bi bi-share"></i></button>
-
-        
-            <details class="mt-4" open>
-                <summary>
-                    Description
-                </summary>
-                <div>
-                    <p>{{ProductData.ProductDetails}}</p>
-                </div>
-              </details>
-
-              <details class="mb-3" open >
-                <summary>
-                 Additional Information
-                </summary>
-                <div>
-                    <p>{{ProductData.ProductOtherDetails}}</p>
-                </div>
-              </details>
+              <img [src]="Productimages.url"  class="d-block w-100" />
+          
+          </div>
         </div>
+        <span class="carousel-control-prev" (click)="prevSlide(Productimages.index)">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <i class="bi bi-caret-left"></i>
+        </span>
+        <span class="carousel-control-next" (click)="nextSlide(Productimages.index)">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <i class="bi bi-caret-right"></i>
+        </span>
+      </div>
+
+      <label class="product-image-span">{{Productimages.index+1}}-{{photos.length}}</label>
     </div>
-    <!-- <div *ngIf="RelatedBrand.length>0">
-        <h6>Related Brand<span>- {{ProductData.ProductBrand}}</span></h6>
-        <app-product-cards [products]="RelatedBrand"></app-product-cards>
-    </div> -->
-   
-    <div *ngIf="RelatedProduct.length>0">
-        <h6>Related Product<span>- {{ProductData.ProductCatergory}}</span></h6>
-    <app-product-cards [products]="RelatedProduct"></app-product-cards>
+    <div class="col-lg-7">
+
+      <h3 class="product-name">
+        {{ ProductData.ProductName.split("-")[0] | uppercase }}
+      </h3>
+
+      <label class="product-available">{{ stock }}</label>
+      <br>
+      <span class="mt-2 product-rating">4.5 <i class="bi bi-star-fill"></i></span><span class="product-order-count">1,000</span>
+
+      <div class="mt-4 mb-1">
+        <a [routerLink]="['/category', ProductData.ProductCatergory]"
+          class="product-catergory">
+          {{ ProductData.ProductCatergory }}
+        </a>
+      </div>
+
+      <p *ngIf="ProductData.ProductIsOffer === 'No'" class="product-price mt-2">
+        {{ ProductData.ProductPrice | currency : "INR" }}
+      </p>
+
+      <div *ngIf="ProductData.ProductIsOffer === 'Yes'" class="mt-2 mb-1">
+        <span class="product-price-offer">
+          {{ ProductData.ProductOfferPrice | currency : "INR"}}
+        </span>
+        <span class="product-priceoffer">
+          {{ProductData.ProductPrice | currency : "INR"}}
+        </span>
+      </div>
+
+      <span class="product-shipping">
+        <strong>&#x20B9;</strong>
+        <b> {{ ProductData.ProductShipping }} Shipping </b>
+      </span>
+
+      <br>
+      <button class="product-action-icon mt-2">
+        <i class="bi bi-cart-check"></i>
+      </button>
+      <button class="product-action-icon mt-2 ms-2">
+        <i class="bi bi-heart"></i>
+      </button>
+      <button class="product-action-icon mt-2 ms-2 mb-1" (click)="share()">
+        <i class="bi bi-share"></i>
+      </button>
+
+      <div class="mt-3 product-desc">
+        <span class="product-desc-head">DESCRIPTION</span>
+          <p class="product-desc-txt">{{ ProductData.ProductDetails }}</p>
+      </div>
+
+      <div class="mt-3 product-desc">
+        <span class="product-desc-head">ADDITIONAL INFORMATION</span>
+          <p class="product-desc-txt">{{ ProductData.ProductOtherDetails }}</p>
+      </div>
+
+      <div class="mt-3 product-desc">
+        <span class="product-review-head">REVIEWS</span>
+          <p class="product-review-txt">
+            <STRONG class="product-review-username">ABIRAMI</STRONG>
+            <br>Excellent product<br>
+            <STRONG class="product-review-rating">4.0 <i class="bi bi-star-fill"></i></STRONG>
+          </p>
+         
+      </div>
+
     </div>
-    
-       
-    
+
+    <div *ngIf="RelatedProduct.length > 0">
+      <h4 class="realted-Products">
+        Related Product<span class="realted-Products-cat"> - {{ ProductData.ProductCatergory }}</span>
+      </h4>
+      <app-product-cards [products]="RelatedProduct"></app-product-cards>
+    </div>
+  </div>
 </div>
+
 
 <app-footers [hidden]="isLoading" class="w-100"></app-footers>

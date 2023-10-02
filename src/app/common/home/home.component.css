@@ -9,10 +9,11 @@
 .seeall a {
   float: right;
   margin-right: 5px;
-  font-weight: normal;
-  font-size: small;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
   text-decoration: none;
-  color: #1e0048;
+  color: #260d33;
 }
 
 .add {
@@ -24,9 +25,9 @@
   margin-bottom: 15px;
   width: 100%;
   padding: 3px;
-  font-size: smaller;
-  background-color: #ffffff;
-  color: #1e0048;
+  font-size: 12px;
+  background-color: #260d33;
+  color: #FFFFFF
 }
 
 
@@ -42,7 +43,7 @@ h3 {
   margin: 5px;
   font-size: large;
   color: #000101;
-  border-left: 5px solid#39008f;
+  border-left: 5px solid #260d33;;
   margin-bottom: 10px;
 }
 
@@ -120,11 +121,14 @@ h3 span {
     margin-bottom: 15px;
     width: 100%;
     padding: 2px;
-    font-size: xx-small;
-    background-color: #230058;
+    font-size: 10px;
+    text-align: justify;
+    background-color: #260d33;
     color: #FFFFFF;
   }
-
+.seeall{
+  font-size: 12px;
+}
   .bannerhero {
     background-image: url('/assets/bannrmobile.jpg');
     background-size: cover;

@@ -1,112 +1,142 @@
-details div {
-  border-left: 2px solid #1d0261;
-  border-right: 2px solid #1d0261;
-  border-bottom: 2px solid #1d0261;
-  padding: .5em;
-  font-size: small;
-  color: #420099;
+.filterbar {
+  position: absolute;
+  left: 0px;
+  background: #260d33;
+  width: 200px;
+  height: 100%;
+  min-height: 102vh;
+  max-height: max-content;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+
 }
 
 .container {
-    margin: 0px;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
+  margin: 0px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  min-height: 100vh;
+}
+
+.bi-x-square {
+  float: right;
+  background-color: #260d33;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: #ffffff;
+  top: 2px;
+  right: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  position: absolute;
+  border: none;
+}
+
+.filters-tag {
+  color: #ffffff;
+  font-size: 12px;
+  margin: 5px;
+  padding: 2px;
+}
+select{
+  font-size: 12px;
+  width:auto;
+  right: 0px;
+  position: absolute;
+  margin: 5px;
+  border-radius: 4px;
+}
+select::after,select:focus,select::before{
+  font-size: 12px;
+  width:auto;
+  margin: 5px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+summary {
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 5px;
+  position: relative;
+  font-size: 13px;
+}
 
 details {
-  max-width: max-content;
-  margin: 5px;
+  position: relative;
+  left: 5px;
+  margin: 10px;
+
+}
+
+.topbar {
+  left: 0px;
+  cursor: pointer;
+  float: left;
+  margin: 0px;
+  height: 30px;
+  background: #260d33;
+  width: 100%;
+}
+.topbar-filter{
+  color: #ffffff;
+  font-size: 12px;
+  margin: 2px;
+  padding: 2px;
+  position: absolute;
+}
+
+.topbar-pages{
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  left:30%;
+  margin: 2px;
+  padding: 2px;
+}
+
+.topbar i {
+  color: #ffffff;
+  padding: 2px;
+}
+
+.checkmark {
+  width:11px;
+  height:11px;
+  margin: 4px;
+}
+.check-div{
   padding: 5px;
 }
-
-details div > * + * {
-  margin-top: 1.5em;
+.checkmark-label {
+  color: #ffffff;
+  font-size: 12px;
+  margin: 2px;
 }
 
-details + details {
-  margin-top: 0.25rem;
-}
-
-summary {
-  list-style: none;
-  font-size: small;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary {
-  border: 2px solid #1d0261;
-  padding: 0.25em 1em;
-  cursor: pointer;
-  position: relative;
-  font-weight: bold;
-  padding-left: calc(1.75rem + 0.75rem + 0.75rem);
-}
-
-summary:before {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0.75rem;
-  content: "↓";
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #000;
-  color: #fff;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-details[open] summary {
-  background-color: #eee;
-}
-
-details[open] summary:before {
-  content: "↑";
-}
-
-summary:hover {
-  background-color: #eee;
-}
 
 @media only screen and (max-width: 600px) {
-  details div {
-    border-left: 2px solid #1d0261;
-    border-right: 2px solid #1d0261;
-    border-bottom: 2px solid #1d0261;
-    padding: 0.15em;
-    font-size: small;
-    color: #420099;
-  }
-
-  summary {
-    list-style: none;
-    font-size: 12.5px;
-  }
-  summary:before {
+  
+  .topbar-pages{
+    color: #ffffff;
+    font-size: 12px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0.75rem;
-    content: "↓";
-    width: 1rem;
-    height: 1rem;
-    background-color: #000;
-    color: #fff;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+    left:25%;
+    margin: 2px;
+    padding: 2px;
   }
-  .col-lg-2 {
-    align-items: flex-start;
-    flex: 0 0 auto;
-    margin-left: 5px;
-    width: 45.555%
-  }
+  
+   
+ 
 }

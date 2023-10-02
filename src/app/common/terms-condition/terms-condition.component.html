@@ -1,13 +1,31 @@
-<div class="faq">
+<!-- <div class="faq">
   <h6>FAQ <span>(Frequently Asked Question)</span></h6>
-  <details *ngFor="let f of faqDeatils">
-    <summary>
+  <details *ngFor="let f of faqDeatils" open class="details-list ">
+    <summary class="summary-style summary-text">
       {{f.Question}}
     </summary>
-    <div>
+    <div class="details-div">
       {{f.Answer}}
     </div>
   </details>
+
+</div>
   
+</div> -->
+
+<div  class="faq">
+  <h6>Terms & Conditions<span>(by Online Shopping Cart)</span></h6>
+  <div class="row">
+      <div *ngFor="let term of faqDeatils" style="margin-top: .75rem;" class="col-lg-4">
+          <details open>
+              <summary class="summary-style summary-text">
+                  {{term.Question}}
+              </summary>
+              <div class="details-div" style="height: auto;min-height: fit-content;max-height: max-content;">
+                  {{term.Answer}}
+              </div>
+          </details>
+      </div>
+  </div>
 </div>
 <app-footers></app-footers>

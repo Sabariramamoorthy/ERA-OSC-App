@@ -39,7 +39,10 @@ export interface SignIn {
     ProductOfferDiscount: string,
     
     ProductHeading:string,
-    ProductOrderType:string,
+    ProductOrderType:string,//yet to code the logic
+
+    ProductAvgRating:string,
+    ProductReviews:any[]
     
 }
 

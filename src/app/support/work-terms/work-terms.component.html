@@ -1,18 +1,22 @@
- 
-<!-- <div class="faq-terms">
+<div class="faq-terms" *ngIf="!page">
     <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
-    <details *ngFor="let step of steps">
-        <summary>
-            {{step.title}}
-        </summary>
-        <div>
-            {{step.description}}
+    <div class="row">
+        <div *ngFor="let step of steps" class="col-lg-2">
+            <details open>
+                <summary class="summary-style summary-text">
+                    {{step.title}}
+                </summary>
+                <div class="details-div">
+                    {{step.description}}
+                </div>
+            </details>
         </div>
-      </details>
-</div> -->
+    </div>
+
+</div>
 
 
-<div class="faq-terms">
+<!-- <div class="faq-terms">
     <h6 *ngIf="page">How It's Work<span>(Steps to Order)</span></h6>
 
     <div class="row">
@@ -26,19 +30,87 @@
         </div>
     </div>
     
+</div> -->
+
+<div *ngIf="page" class="faq">
+    <h6>Return Policy<span>(by Online Shopping Cart)</span></h6>
+    <p>Online Shopping Cart’s return & cancellation policy gives you an option to cancel or return the products in case
+        of damage within the specified return / cancellation period. We only ask you not to use the product in case you
+        want to return it and also to preserve its original condition, tags and packaging. You are always welcome to try
+        the product on, but make sure that you are not causing any kind of damage to the product as well as the package.
+    </p>
+    <span class="returnpolicy">Return Policy</span>
+    <p>
+        We work with the motto of customer satisfaction. If you are not satisfied with the product or service we have
+        provided, our customers are always welcome to return the products and request refunds from us. Our policy
+        <strong>EXCEPTIONS</strong> and <strong>RULES</strong> are as following:
+    </p>
+    <ul>
+        <li>We take returns or exchanges on products that are defective, wrong size or delivered a wrong product.
+        <li>All items to be returned or exchanged must be unused and in their original condition with all original tags
+            and packaging intact.</li>
+        <li>If you self-ship your returns, please make sure that the packaging is intact and secured to prevent any kind
+            of loss or damage during transit.</li>
+        <li>If you self-ship the product a reimbursement fee of Rs. 100 will be paid to the customer as courier charges
+            if necessary proof is provided. </li>
+        <li>For self-ship returns the refund for returned products will only be initiated if their quality is intact
+            when at the warehouse. If the quality check fails the product will be reshipped back to you.</li>
+        <li>If the payment for the purchased product is made by credit card, refunds will be issued to the original
+            credit card provided at the time of purchase and in case of payment gateway name payments refund will be
+            made to the same account.</li>
+
+    </ul>
+    <span class="returnpolicy">How to return a product?</span>
+    <p>
+        You can return products purchased from Online Shopping Cart within the specified return/exchange period
+        mentioned with the product at the time of buying by making a return request from the account which the product
+        is been bought.
+    </p>
+    <ul>
+        <li><strong>Create a Return Request</strong>
+            <p>
+                To create a return request you will need to click on the WhatsApp icon on the website. It will redirect
+                you to Online Shopping Cart’s business chat and you can make the return request there with proof.
+                Details you have to send in WhatsApp for returning the product are:</p>
+            <ul>
+
+                <li>A video of you opening the courier for the first time. (The video should be continues with no
+                    blackout or edits in between)</li>
+                <li>Reason for the return.</li>
+            </ul>
+        </li>
+
+        <li><strong>Verification</strong>
+            <p>Our team will verify your return request and video. After verification you will be directed with the
+                shipping address to which you can return the product.</p>
+        </li>
+        <li><strong>Self-Shipping</strong>
+            <p>Customer is requested to self-ship the product back to the address that is provided by the Online
+                Shopping Cart team.</p>
+        </li>
+        <li><strong>Return Acknowledgement</strong>
+            <p>After receiving the returned product at our side, we will run a quality check over the returned product.
+                If the returned product passes the quality check, the price of the returned product is credited back to
+                the customer.</p>
+        </li>
+    </ul>
 </div>
 
 
-
-<div *ngIf="page" class="faq"><h6>Terms & Conditions<span>(by Online Shopping Cart)</span></h6>
-<details *ngFor="let term of terms">
-    <summary>
-        {{term.section}}
-    </summary>
-    <div>
-        {{term.content}}
+<div *ngIf="page" class="faq">
+    <h6>Terms & Conditions<span>(by Online Shopping Cart)</span></h6>
+    <div class="row">
+        <div *ngFor="let term of terms" style="margin-top: .75rem;" class="col-lg-4">
+            <details open>
+                <summary class="summary-style summary-text">
+                    {{term.section}}
+                </summary>
+                <div class="details-div" style="height: auto;min-height: fit-content;max-height: max-content;">
+                    {{term.content}}
+                </div>
+            </details>
+        </div>
     </div>
-  </details>
-  </div>
+</div>
 
-  <app-footers *ngIf="page"></app-footers>
+<app-footers *ngIf="page"></app-footers>
